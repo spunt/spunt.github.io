@@ -1,0 +1,21 @@
+
+
+## noita/_scss/foundation/components
+
+### _top-bar.scss
+
+- Background color for the top bar
+    - line 16: $topbar-bg-color: $oil !default;
+    - line 17: $topbar-bg: $topbar-bg-color !default;
+- Height and margin
+    - line 20: $topbar-height: rem-calc(70) !default;
+    - line 21: $topbar-margin-bottom: rem-calc(5) !default;
+
+
+### _tables.scss
+- line 24: $table-border-size: 0px !default;
+- line 28: $table-head-bg: #DBDBDB !default;
+- line 29: $table-head-font-size: rem-calc(20) !default;
+
+
+$font-weight-normal
