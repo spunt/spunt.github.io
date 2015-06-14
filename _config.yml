@@ -23,11 +23,11 @@ compress_html:
     envs: [travis]
 # theme
 noita:
-  name: Noita
-  description: Jekyll theme built with Foundation
+  name: Bob Spunt
+  description: Postdoctoral Fellow
   author:
-    name: Anatol Broder
-    url: http://penibelst.de/
+    name: Bob Spunt
+    url: http://bobspunt.com/
   lang: en
   favicons:
     - /assets/2014/04/21/favicon-152.png
@@ -36,10 +36,12 @@ noita:
     right:
       - name: About
         url: /about/
-      - name: Guide
-        url: /guide/
+      - name: Papers
+        url: /papers/
       - name: Blog
         url: /blog/
-      - name: Repository
-        url: https://github.com/penibelst/jekyll-noita
+      - name: Software
+        url: /software/
+      - name: Git
+        url: https://github.com/spunt?tab=repositories
         class: small button
