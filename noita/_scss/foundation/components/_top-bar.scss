@@ -17,20 +17,20 @@ $topbar-bg-color: $oil !default;
 $topbar-bg: $topbar-bg-color !default;
 
 // Height and margin
-$topbar-height: rem-calc(45) !default;
-$topbar-margin-bottom: 0 !default;
+$topbar-height: rem-calc(60) !default;
+$topbar-margin-bottom: rem-calc(10) !default;
 
 // Controlling the styles for the title in the top bar
 $topbar-title-weight: $font-weight-normal !default;
-$topbar-title-font-size: rem-calc(17) !default;
+$topbar-title-font-size: rem-calc(30) !default;
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: $white !default;
-$topbar-link-color-hover: $white !default;
+$topbar-link-color-hover: $monsoon !default;
 $topbar-link-color-active: $white !default;
 $topbar-link-color-active-hover: $white !default;
 $topbar-link-weight: $font-weight-normal !default;
-$topbar-link-font-size: rem-calc(13) !default;
+$topbar-link-font-size: rem-calc(18) !default;
 $topbar-link-hover-lightness: -10% !default; // Darken by 10%
 $topbar-link-bg: $topbar-bg !default;
 $topbar-link-bg-hover: $oil !default;
@@ -42,7 +42,7 @@ $topbar-link-text-transform: none !default;
 $topbar-link-padding: ($topbar-height / 3) !default;
 $topbar-back-link-size: rem-calc(18) !default;
 $topbar-link-dropdown-padding: rem-calc(20) !default;
-$topbar-button-font-size: 0.75rem !default;
+$topbar-button-font-size: rem-calc(20) !default;
 $topbar-button-top: 7px !default;
 
 // Style the top bar dropdown elements
