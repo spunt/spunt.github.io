@@ -37,7 +37,7 @@ noita:
       - name: About
         url: /about/
       - name: CV
-        url: https://www.bobspunt.com/resources/CV_BobSpunt.pdf
+        url: https://spunt.github.io/resources/CV_BobSpunt.pdf
       - name: Papers
         url: /papers/
       - name: Code
