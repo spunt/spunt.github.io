@@ -107,5 +107,3 @@ title: CV
 |Spunt, RP (January, 2014). Attribution: A Social Cognitive Neuroscience Approach. Invited talk in the Department of Psychology at University of California, Santa Barbara.                                                                                                                                        |
 |**Spunt RP** (February, 2014). Automaticity and Control in Social Cognitive Neuroscience. Talk presented at the Social Cognition preconference at the annual meeting of the Society for Personality and Social Psychology.                                                                                        |
 |**Spunt RP** (February, 2014). A Framework for Investigating Automaticity and Control in Social Cognitive Neuroscience. Talk presented at the annual meeting of the Society for Personality and Social Psychology.                                                                                                |
-
----
