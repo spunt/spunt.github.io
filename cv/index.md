@@ -7,7 +7,7 @@ title: CV
 
 ---
 
-|**Contact** | |
+| **Contact** | |
 |:-------------|:-------------------------------------------------------------------------------------------------|
 |Division of Humanities and Social Sciences<br>California Institute of Technology, MC 228-77<br>Pasadena, CA 91125|Email: <spunt@caltech.edu><br>Web: <http://bobspunt.com><br>GitHub: <http://github.com/spunt>|
 
