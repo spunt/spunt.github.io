@@ -42,3 +42,5 @@ noita:
         url: /papers/
       - name: Code
         url: /code/
+      - name: Links
+        url: /code/
