@@ -3,7 +3,9 @@ layout: page
 title: Papers
 ---
 
-|**Electronic versions are provided here only to ensure the timely and unbiased dissemination of scientific research. Copyright resides with the respective copyright holders as stated in each article. So, you know, don't download these for commercial purposes. With that said, if you can find a way to make money off of these, then you're a genius.**                                                              |
+---
+
+|**Electronic versions are provided here to ensure the timely and unbiased dissemination of scientific research. Copyright resides with the respective copyright holders as stated in each article.**|                                                         
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Scheele D, Schwering C, **Spunt RP**, Elison JT, Maier W, Hurlemann R (in press) A human tendency to anthropomorphize is enhanced by oxytocin. *European Neuropsychopharmacology*.                                                                                                                                                                                                                                         |
 |**Spunt RP** & Adolphs R (2015). Folk explanations of behavior: A specialized use of a domain-general mechanism. *Psychological Science*. 26(6), 724-736. [PDF](https://www.bobspunt.com/resources/papers/Spunt_&_Adolphs_2015_Psycholog_Sci.pdf) \| [Supplement](https://www.bobspunt.com/resources/papers/Spunt_&_Adolphs_2015_Psycholog_Sci_Supplement.pdf) \| [Open Science Framework Page](https://osf.io/59cbe/) \| [NeuroVault](http://neurovault.org/collections/297/)|
