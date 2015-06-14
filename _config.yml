@@ -38,10 +38,11 @@ noita:
         url: /about/
       - name: Papers
         url: /papers/
-      - name: Blog
-        url: /blog/
-      - name: Software
-        url: /software/
+      - name: Code
+        url: /code/
+      - name: CV
+        url: https://www.bobspunt.com/resources/papers/CV_BobSpunt.pdf
+        class: small button
       - name: Git
         url: https://github.com/spunt?tab=repositories
         class: small button
