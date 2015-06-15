@@ -6,6 +6,7 @@ exclude:
   - Gemfile
   - LICENSE
   - Rakefile
+  - STYLE_REFERENCE.txt
   - README.md
   - vendor/
   - vnu/

@@ -18,7 +18,7 @@ $topbar-bg: $topbar-bg-color !default;
 
 // Height and margin
 $topbar-height: rem-calc(65) !default;
-$topbar-margin-bottom: rem-calc(5) !default;
+$topbar-margin-bottom: rem-calc(10) !default;
 
 // Controlling the styles for the title in the top bar
 $topbar-title-weight: $font-weight-normal !default;
@@ -30,7 +30,7 @@ $topbar-link-color-hover: $monsoon !default;
 $topbar-link-color-active: $white !default;
 $topbar-link-color-active-hover: $white !default;
 $topbar-link-weight: $font-weight-normal !default;
-$topbar-link-font-size: rem-calc(18) !default;
+$topbar-link-font-size: rem-calc(15) !default;
 $topbar-link-hover-lightness: -10% !default; // Darken by 10%
 $topbar-link-bg: $topbar-bg !default;
 $topbar-link-bg-hover: $oil !default;
@@ -39,8 +39,8 @@ $topbar-link-bg-active: $primary-color !default;
 $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%) !default;
 $topbar-link-font-family: $body-font-family !default;
 $topbar-link-text-transform: none !default;
-$topbar-link-padding: ($topbar-height / 3) !default;
-$topbar-back-link-size: rem-calc(18) !default;
+$topbar-link-padding: ($topbar-height / 4) !default;
+$topbar-back-link-size: rem-calc(16) !default;
 $topbar-link-dropdown-padding: rem-calc(20) !default;
 $topbar-button-font-size: rem-calc(20) !default;
 $topbar-button-top: 5px !default;
