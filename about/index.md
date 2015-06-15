@@ -17,7 +17,7 @@ title: About
         <div class="card">
             <div class="image"><img src="/public/spuntreach.jpg"></div>
         <div class="content">
-            <p align="center" style="font-size:80%">In case you were wondering, this is what I look like when I reach for guacamole.</p>
+            <p align="center" style="font-size:80%">By the way, this is what I look like when I reach for guacamole.</p>
         </div>
     </div>
 </div>
