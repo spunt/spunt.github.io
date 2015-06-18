@@ -1,0 +1,48 @@
+# build
+markdown: kramdown # kramdown, rdiscount
+permalink: pretty # /blog/:year/:title/
+# Files and folders with underscores prepending the name will not be copied to the final, generated website.
+exclude:
+  - CNAME
+  - Gemfile
+  - LICENSE
+  - Rakefile
+  - STYLE_REFERENCE.txt
+  - README.md
+  - vendor/
+  - vnu/
+  - vnu.zip
+layouts: ./_noita
+sass:
+  sass_dir: noita/_scss
+  style: compressed
+# compress layout in _noita/compress.html
+compress_html:
+  clippings: all
+  endings: all
+  comments: ["<!--", "-->"]
+  ignore:
+    envs: [travis]
+# theme
+noita:
+  name: Bob Spunt
+  description: Postdoctoral Fellow
+  author:
+    name: Bob Spunt
+    url: http://bobspunt.com/
+  lang: en
+  favicons:
+    - /public/img/icon_200x200.png
+  topbar:
+    toggle: Menu
+    right:
+      - name: About
+        url: /about/
+      - name: CV
+        url: /cv/
+      - name: Papers
+        url: /papers/
+      - name: Code
+        url: /code/
+      - name: Links
+        url: /links/
