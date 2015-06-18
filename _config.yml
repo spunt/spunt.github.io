@@ -1,6 +1,7 @@
 # build
-markdown: kramdown
-permalink: /blog/:year/:title/
+markdown: kramdown # kramdown, rdiscount
+permalink: pretty # /blog/:year/:title/
+# Files and folders with underscores prepending the name will not be copied to the final, generated website.
 exclude:
   - CNAME
   - Gemfile
@@ -31,7 +32,7 @@ noita:
     url: http://bobspunt.com/
   lang: en
   favicons:
-    - /public/icon_200x200.png
+    - /public/img/icon_200x200.png
   topbar:
     toggle: Menu
     right:
