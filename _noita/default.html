@@ -1,92 +1,146 @@
 ---
 layout: compress
 ---
-
 <!doctype html>
 <html dir="ltr" lang="{{ site.noita.lang }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  {% include noita/robots.html %}
-  {% include noita/meta-description.html %}
-
-  {% for favicon in site.noita.favicons %}
-    {% assign size = favicon | split: '-' | last | split: '.' | first %}
-    <link rel="icon"
-      sizes="{{ size }}x{{ size }}"
-      href="{{ favicon }}">
-    <link rel="apple-touch-icon"
-      sizes="{{ size }}x{{ size }}"
-      href="{{ favicon }}">
-  {% endfor %}
-
-  <link rel="alternate" href="/blog/feed.atom"
-    title="{{ site.noita.name }}" type="application/atom+xml">
-
-  <link rel="stylesheet" href="/noita/app.css">
-  <script src="/noita/js/vendor/modernizr.js"></script>
-</head>
-<body>
-
-<div class="contain-to-grid">
-  <nav class="top-bar" data-topbar id="topbar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/"><img src="/public/img/icon_title.png" style="max-height:55px;margin-left:-20px"></a></h1>
-      </li>
-<!--       <li class="name">
-        <h1><a href="/">{{ site.noita.name }}</a></h1>
-      </li> -->
-      <li class="toggle-topbar menu-icon"><a href="#topbar"><span>{{ site.noita.topbar.toggle }}</span></a></li>
-    </ul>
-    <div class="top-bar-section">
-      {% if site.noita.topbar.left %}
-      <ul class="left">
-      {% for item in site.noita.topbar.left %}
-        <li{% if item.class %} class="has-form"{% endif %}>
-          <a href="{{ item.url }}" class="{{ item.class }}">{{ item.name }}</a>
-        </li>
-      {% endfor %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    {% include noita/robots.html %}
+    {% include noita/meta-description.html %}
+    {% for favicon in site.noita.favicons %}
+      {% assign size = favicon | split: '-' | last | split: '.' | first %}
+      <link rel="icon"
+        sizes="{{ size }}x{{ size }}"
+        href="{{ favicon }}">
+        <link rel="apple-touch-icon"
+          sizes="{{ size }}x{{ size }}"
+          href="{{ favicon }}">
+        {% endfor %}
+        <link rel="alternate" href="/blog/feed.atom"
+          title="{{ site.noita.name }}" type="application/atom+xml">
+          <link rel="stylesheet" href="/noita/app.css">
+          <script src="/noita/js/vendor/modernizr.js"></script>
+        </head>
+        <body>
+          <div class="contain-to-grid">
+            <nav class="top-bar" data-topbar id="topbar">
+              <ul class="title-area">
+                <li class="name">
+                  <h1><a href="/"><img src="/public/img/icon_title.png" style="max-height:55px;margin-left:-20px"></a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#topbar"><span>{{ site.noita.topbar.toggle }}</span></a></li>
+              </ul>
+              <div class="top-bar-section">
+                {% if site.noita.topbar.right %}
+                  <ul class="right">
+{% comment %}
+    ____  _       __    __     _   __            _             __  _           
+   / __ \(_)___ _/ /_  / /_   / | / /___ __   __(_)___ _____ _/ /_(_)___  ____ 
+  / /_/ / / __ `/ __ \/ __/  /  |/ / __ `/ | / / / __ `/ __ `/ __/ / __ \/ __ \
+ / _, _/ / /_/ / / / / /_   / /|  / /_/ /| |/ / / /_/ / /_/ / /_/ / /_/ / / / /
+/_/ |_/_/\__, /_/ /_/\__/  /_/ |_/\__,_/ |___/_/\__, /\__,_/\__/_/\____/_/ /_/ 
+        /____/                                 /____/                          
+{% endcomment %}
+                  {% for item in site.noita.topbar.right %}
+                    {% if item.url contains 'http' %}
+                      {% assign domain = '' %}
+                      {% elsif item.url == '#' %}
+                      {% assign domain = '' %}
+                    {% else %}
+                      {% assign domain = site.url %}
+                    {% endif %}
+                    {% if item.dropdown == nil %}
+                      <li{% if item.url == page.url %} class="active"{% endif %}>
+                      <a href="{{ domain }}{{ site.baseurl }}{{ item.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ item.title }}</a>
+                    </li>
+                  {% else %}
+                    <li class="has-dropdown{% if item.url == page.url %} active{% endif %}">
+                    <a href="{{ domain }}{{ site.baseurl }}{{ item.url }}"{% if item.url contains 'http' %} target="_blank"{% endif %}>{{ item.title }}</a>
+                    <ul class="dropdown">
+                      {% for subitem in item.dropdown %}
+                        {% if subitem.url contains 'http' %}
+                          {% assign domain = '' %}
+                        {% else %}
+                          {% assign domain = site.url %}
+                        {% endif %}
+                        <li><a href="{{ domain }}{{ site.baseurl }}{{ subitem.url }}"{% if subitem.url contains 'http' %} target="_blank"{% endif %}>{{ subitem.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+{% comment %}
+    __         ______     _   __            _             __  _           
+   / /   ___  / __/ /_   / | / /___ __   __(_)___ _____ _/ /_(_)___  ____ 
+  / /   / _ \/ /_/ __/  /  |/ / __ `/ | / / / __ `/ __ `/ __/ / __ \/ __ \
+ / /___/  __/ __/ /_   / /|  / /_/ /| |/ / / /_/ / /_/ / /_/ / /_/ / / / /
+/_____/\___/_/  \__/  /_/ |_/\__,_/ |___/_/\__, /\__,_/\__/_/\____/_/ /_/ 
+                                          /____/                          
+{% endcomment %}
+        {% if site.noita.topbar.left %}
+          <ul class="left">
+            {% for item in site.noita.topbar.left %}
+              {% if item.url contains 'http' %}
+                {% assign domain = '' %}
+                {% elsif item.url == '#' %}
+                {% assign domain = '' %}
+              {% else %}
+                {% assign domain = site.url %}
+              {% endif %}
+              {% if item.dropdown == nil %}
+                <li{% if item.url == page.url %} class="active"{% endif %}>
+                <a href="{{ domain }}{{ site.baseurl }}{{ item.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ item.title }}</a>
+              </li>
+            {% else %}
+              <li class="has-dropdown{% if item.url == page.url %} active{% endif %}">
+              <a href="{{ domain }}{{ site.baseurl }}{{ item.url }}"{% if item.url contains 'http' %} target="_blank"{% endif %}>{{ item.title }}</a>
+              <ul class="dropdown">
+                {% for subitem in item.dropdown %}
+                  {% if subitem.url contains 'http' %}
+                    {% assign domain = '' %}
+                  {% else %}
+                    {% assign domain = site.url %}
+                  {% endif %}
+                  <li><a href="{{ domain }}{{ site.baseurl }}{{ subitem.url }}"{% if subitem.url contains 'http' %} target="_blank"{% endif %}>{{ subitem.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
-      {% endif %}
-
-      {% if site.noita.topbar.right %}
-      <ul class="right">
-      {% for item in site.noita.topbar.right %}
-        <li{% if item.class %} class="has-form"{% endif %}>
-          <a href="{{ item.url }}" class="{{ item.class }}">{{ item.name }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
-  </nav>
+    {% endif %}
+  </div>
+</nav>
 </div>
-
-  <div class="row">
-    <div class="column">
-      <h2>{{ page.title }}</h2>
-    </div>
-  </div>
-
-  {{ content }}
-
-  <div class="row">
-    <div class="column">
-      <hr>
-    </div>
-    <div class="small-12 columns">
-      <p>© 2015 <a href="http://bobspunt.com/">Bob Spunt</a>. Built using <a href="https://github.com/penibelst/jekyll-noita">Noita Jekyll Theme</a>.</p>
-    </div>
-    <div class="small-4 columns">
-      <p class="text-right menu-icon"><a href="#topbar">&#x25B2;</a></p>
-    </div>
-  </div>
-
-  <script src="/noita/js/vendor/jquery.js"></script>
-  <script src="/noita/js/vendor/fastclick.js"></script>
-  <script src="/noita/js/foundation.min.js"></script>
-  <script>$(document).foundation();</script>
+{% comment %}       Page Title     {% endcomment %}
+<div class="row">
+<div class="column">
+  <h2>{{ page.title }}</h2>
+</div>
+</div>
+{{ content }}
+<div class="row">
+<div class="column">
+  <hr>
+</div>
+{% comment %}       Footer     {% endcomment %}
+<div class="small-12 columns">
+  <ul class="inline-list">
+    <li><a href="https://twitter.com/bobspunt" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @bobspunt</a></li>
+    <li><a class="github-button" href="https://github.com/spunt" aria-label="Follow @spunt on GitHub">Follow @spunt</a></li>
+  </ul>
+  <script >!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+  <h6 align="left">© Bob Spunt 2015 | Built using <a href="https://github.com/penibelst/jekyll-noita">noita-jekyll</a></h6>
+</div>
+</div>
+<script src="/noita/js/vendor/jquery.js"></script>
+<script src="/noita/js/vendor/fastclick.js"></script>
+<script src="/noita/js/foundation.min.js"></script>
+<script>$(document).foundation();</script>
 </body>
 </html>

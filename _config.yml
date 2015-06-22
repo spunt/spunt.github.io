@@ -2,6 +2,8 @@
 markdown: kramdown # kramdown, rdiscount
 permalink: pretty # /blog/:year/:title/
 # Files and folders with underscores prepending the name will not be copied to the final, generated website.
+gems:
+  - jekyll-redirect-from
 exclude:
   - CNAME
   - Gemfile
@@ -11,7 +13,7 @@ exclude:
   - README.md
   - vendor/
   - vnu/
-  - vnu.zip
+  - vnu.zip 
 layouts: ./_noita
 sass:
   sass_dir: noita/_scss
@@ -23,6 +25,9 @@ compress_html:
   comments: ["<!--", "-->"]
   ignore:
     envs: [travis]
+# Main addresses (don't include slash at end)
+url: ""
+baseurl: ""
 # theme
 noita:
   name: Bob Spunt
@@ -36,13 +41,22 @@ noita:
   topbar:
     toggle: Menu
     right:
-      - name: About
-        url: /about/
-      - name: CV
-        url: /cv/
-      - name: Papers
-        url: /papers/
-      - name: Code
-        url: /code/
-      - name: Links
-        url: /links/
+      - title: "CV"
+        url: "/cv/"
+      - title: "Papers"
+        url: "/papers/"
+      - title: "Code"
+        url: "/code/"
+        dropdown:
+        - title: "bspmview | SPM Image Viewer"
+          url: "http://spunt.github.io/bspmview"
+        - title: "Why/How Localizer Task"
+          url: "http://spunt.github.io/whyhowlocalizer"
+        - title: "fMRI Design Optimization Software"
+          url: "http://spunt.github.io/easy-optimize-x"
+        - title: "Psychtoolbox Utilities"
+          url: "http://spunt.github.io/ptb-utilities"
+        - title: "GitHub Repositories"
+          url: "https://github.com/spunt?tab=repositories"
+      - title: "Links"
+        url: "/links/"

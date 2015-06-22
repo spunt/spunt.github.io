@@ -6,3 +6,5 @@ group :test do
   gem "html-proofer"
   gem "rake"
 end
+
+gem 'jekyll-redirect-from'
