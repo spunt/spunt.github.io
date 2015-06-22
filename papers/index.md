@@ -1,8 +1,6 @@
 ---
 layout: page
-title: Papers
----
-
+title: 
 ---
 
 |**Electronic versions are provided here to ensure the timely and unbiased dissemination of scientific research. Copyright resides with the respective copyright holders as stated in each article.**|                                                         

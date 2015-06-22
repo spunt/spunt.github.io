@@ -1,10 +1,8 @@
 ---
 layout: page
-title: About
+title: 
 redirect_to:
   - http://www.bobspunt.com
----
-
 ---
 
 <div class="row" data-equalizer data-equalizer-mq="medium-up">

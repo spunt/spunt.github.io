@@ -1,8 +1,6 @@
 ---
 layout: page
-title: About
----
-
+title: 
 ---
 
 <div class="row" data-equalizer data-equalizer-mq="medium-up">

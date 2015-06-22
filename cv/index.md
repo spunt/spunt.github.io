@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CV
+title: 
 ---
 
 [**PDF**](https://spunt.github.io/public/CV_BobSpunt.pdf) \| [**Papers**](https://spunt.github.io/papers)

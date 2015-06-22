@@ -1,8 +1,6 @@
 ---
 layout: page
-title: Links
----
-
+title: 
 ---
 
 ### Behavioral Tasks & Stimulus Sets
