@@ -1,16 +1,18 @@
 ---
 layout: page
-title: 
+title: Teaching
 ---
 
-The MATLAB code that I use in my research is maintaining on [GitHub](https://github.com/spunt?tab=repositories). If you are an experimental psychologist who uses neuroimaging in your research, the following software may be particularly useful to you: 
+---
 
-- [bspmview](http://spunt.github.io/bspmview)
-- [Why/How Localizer Task](http://spunt.github.io/whyhowlocalizer)
-- [fMRI Design Optimization Software](http://spunt.github.io/easy-optimize-x)
-- [Psychtoolbox Utilities](http://spunt.github.io/ptb-utilities)
+I created these materials for an instructional lab I helped lead as part of the [2014 Training Course in fMRI](http://sitemaker.umich.edu/fmri.training.course/home) offered by the University of Michigan. They aim to provide students with practical experience in planning and designing an task-based fMRI study, preprocessing the acquired data, and analyzing and visualizing the results. The walk-through is hands-on, and tailored to analysis in MATLAB software, in particular SPM8. Moreover, much of the walk-through refers to sample data that I can't currently share publicly; however, the majority of it should be general enough to be applicable to practically any fMRI dataset you can get your hands on. For instance, there are multiple [sample fMRI datasets](http://www.fil.ion.ucl.ac.uk/spm/data/) available on the SPM website. Anyways, maybe these instructional materials will be useful to you or someone you love. Who knows? Someday, they may even save your life...
 
+**The Labs**:
 
+1. [Preprocessing](/resources/teaching/preprocessing/)
+2. [TaskDesign_and_Power](/resources/teaching/task-design-and-power/)
+3. [SingleSubjectAnalysis](/resources/teaching/single-subject-analysis/)
+4. [GroupAnalysis](/resources/teaching/group-analysis/)
 
 
 

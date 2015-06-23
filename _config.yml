@@ -65,5 +65,5 @@ noita:
           url: "/resources/links/"
         - title: "Teaching"
           url: "/resources/teaching/"
-        - title: "Cheat Sheets"
-          url: "/resources/cheatsheets/"
+        # - title: "Reference"
+        #   url: "/resources/reference/"

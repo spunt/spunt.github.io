@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="pandoc" />
+    <title></title>
+    <style type="text/css">
+    code {
+        white-space: pre;
+    }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html
+        PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+    <html>
+
+    <head>
+        <pre><code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+                &lt;!--</code></pre> This HTML was auto-generated from MATLAB code. To make changes, update the MATLAB code and republish this document. –&gt;
+        <title>
+            makeParametricModulator
+        </title>
+        <pre><code>&lt;meta name=&quot;generator&quot; content=&quot;MATLAB 8.2&quot;&gt;
+                    &lt;link rel=&quot;schema.DC&quot; href=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+                    &lt;meta name=&quot;DC.date&quot; content=&quot;2014-08-09&quot;&gt;
+                    &lt;meta name=&quot;DC.source&quot; content=&quot;makeParametricModulator.m&quot;&gt;
+                    &lt;style type=&quot;text/css&quot;&gt;
+                    html,
+                    body,
+                    div,
+                    span,
+                    applet,
+                    object,
+                    iframe,
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6,
+                    p,
+                    blockquote,
+                    pre,
+                    a,
+                    abbr,
+                    acronym,
+                    address,
+                    big,
+                    cite,
+                    code,
+                    del,
+                    dfn,
+                    em,
+                    font,
+                    img,
+                    ins,
+                    kbd,
+                    q,
+                    s,
+                    samp,
+                    small,
+                    strike,
+                    strong,
+                    sub,
+                    sup,
+                    tt,
+                    var,
+                    b,
+                    u,
+                    i,
+                    center,
+                    dl,
+                    dt,
+                    dd,
+                    ol,
+                    ul,
+                    li,
+                    fieldset,
+                    form,
+                    label,
+                    legend,
+                    table,
+                    caption,
+                    tbody,
+                    tfoot,
+                    thead,
+                    tr,
+                    th,
+                    td {
+                        margin: 10;
+                        padding: 0;
+                        border: 0;
+                        outline: 0;
+                        font-size: 100%;
+                        vertical-align: baseline;
+                        background: transparent
+                    }
+                    body {
+                        line-height: 1
+                    }
+                    ol,
+                    ul {
+                        list-style: none
+                    }
+                    blockquote,
+                    q {
+                        quotes: none
+                    }
+                    blockquote:before,
+                    blockquote:after,
+                    q:before,
+                    q:after {
+                        content: &#39;&#39;;
+                        content: none
+                    }
+                    :focus {
+                        outine: 0
+                    }
+                    ins {
+                        text-decoration: none
+                    }
+                    del {
+                        text-decoration: line-through
+                    }
+                    table {
+                        border-collapse: collapse;
+                        border-spacing: 0
+                    }
+                    html {
+                        width: 100%;
+                        height: 100%;
+                        min-height: 100%;
+                        margin-bottom: 0%;
+                    }
+                    html body {
+                        height: 100%;
+                        margin: 0px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        color: #000;
+                        line-height: 160%;
+                        background: white none;
+                        overflow-y: scroll;
+                    }
+                    html body td {
+                        vertical-align: top;
+                        text-align: left;
+                    }
+                    hr {
+                        color: black;
+                    }
+                    h1 {
+                        padding: 0px;
+                        margin: 0px 0px 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 1.6em;
+                        color: #00274c;
+                        line-height: 100%;
+                        font-weight: bolder;
+                    }
+                    h2 {
+                        padding: 0px;
+                        margin: 25px 0px 8px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 1.4em;
+                        color: #000;
+                        font-weight: bold;
+                        line-height: 140%;
+                        border-bottom: 3px solid #d6d4d4;
+                        display: block;
+                    }
+                    h3 {
+                        padding: 0px;
+                        margin: 0px 0px 5px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 1.2em;
+                        color: #000;
+                        font-weight: bold;
+                        line-height: 140%;
+                    }
+                    a {
+                        color: #005fce;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: #005fce;
+                        text-decoration: underline;
+                    }
+                    a:visited {
+                        color: #004aa0;
+                        text-decoration: none;
+                    }
+                    p {
+                        padding: 0px;
+                        margin: 0px 0px 20px;
+                    }
+                    img {
+                        padding: 10px;
+                        margin: 0px 0px 20px;
+                    }
+                    p img,
+                    pre img,
+                    tt img,
+                    li img {
+                        margin-bottom: 0px;
+                    }
+                    ul {
+                        padding: 0px;
+                        margin: 0px 0px 20px 23px;
+                        list-style: square;
+                    }
+                    ul li {
+                        padding: 0px;
+                        margin: 0px 0px 7px 0px;
+                    }
+                    ul li ul {
+                        padding: 5px 0px 0px;
+                        margin: 0px 0px 7px 23px;
+                    }
+                    ul li ol li {
+                        list-style: decimal;
+                    }
+                    ol {
+                        padding: 0px;
+                        margin: 0px 0px 20px 0px;
+                        list-style: decimal;
+                    }
+                    ol li {
+                        padding: 0px;
+                        margin: 0px 0px 7px 23px;
+                        list-style-type: decimal;
+                    }
+                    ol li ol {
+                        padding: 5px 0px 0px;
+                        margin: 0px 0px 7px 0px;
+                    }
+                    ol li ol li {
+                        list-style-type: lower-alpha;
+                    }
+                    ol li ul {
+                        padding-top: 7px;
+                    }
+                    ol li ul li {
+                        list-style: square;
+                    }
+                    .content {
+                        font-size: 1.45em;
+                        line-height: 140%;
+                        padding: 20px;
+                    }
+                    pre,
+                    tt,
+                    code {
+                        font-size: 12px;
+                    }
+                    pre {
+                        margin: 0px 0px 20px;
+                    }
+                    pre.error {
+                        color: red;
+                    }
+                    pre.codeinput {
+                        padding: 10px;
+                        border: 1px solid #d3d3d3;
+                        background: #f7f7f7;
+                    }
+                    pre.codeoutput {
+                        padding: 10px 11px;
+                        margin: 0px 0px 20px;
+                        color: #4c4c4c;
+                    }
+                    @media print {
+                        pre.codeinput,
+                        pre.codeoutput {
+                            word-wrap: break-word;
+                            width: 100%;
+                        }
+                    }
+                    span.keyword {
+                        color: #0000FF
+                    }
+                    span.comment {
+                        color: #228B22
+                    }
+                    span.string {
+                        color: #A020F0
+                    }
+                    span.untermstring {
+                        color: #B20000
+                    }
+                    span.syscmd {
+                        color: #B28C00
+                    }
+                    .footer {
+                        width: auto;
+                        padding: 10px 0px;
+                        margin: 25px 0px 0px;
+                        border-top: 1px dotted #878787;
+                        font-size: 1.0em;
+                        line-height: 140%;
+                        font-style: italic;
+                        color: #878787;
+                        text-align: left;
+                        float: none;
+                    }
+                    .footer p {
+                        margin: 0px;
+                    }
+                    .footer a {
+                        color: #878787;
+                    }
+                    .footer a:hover {
+                        color: #878787;
+                        text-decoration: underline;
+                    }
+                    .footer a:visited {
+                        color: #878787;
+                    }
+                    table th {
+                        padding: 7px 5px;
+                        text-align: left;
+                        vertical-align: middle;
+                        border: 1px solid #d6d4d4;
+                        font-weight: bold;
+                    }
+                    table td {
+                        padding: 7px 5px;
+                        text-align: left;
+                        vertical-align: top;
+                        border: 1px solid #d6d4d4;
+                    }
+                &lt;/style&gt;</code></pre>
+    </head>
+
+    <body>
+        <pre><code>&lt;div class=&quot;content&quot;&gt;
+                        &lt;h2&gt;Lab Overview&lt;/h2&gt;&lt;/p&gt;
+                        Welcome to the first lab of the rest of your life. This lab is about the future. It is about creation. Of an fMRI experiment. Not just any fMRI experiment, but an fMRI experiment that will probably work. No guarantees, though.&lt;/p&gt;
+                        &lt;p&gt;The first two parts primarily deal with making a behavioral task that is optimal given both the unique properties of BOLD signal and the specific comparisons you plan on testing:&lt;/p&gt;
+                        &lt;p&gt;&lt;a href=&quot;PlotPredictor/BOLD_Predictors.html&quot;&gt;Part 1. Making BOLD Predictions&lt;/a&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;a href=&quot;OptimizeX/Instructions.html&quot;&gt;Part 2. Optimization of Event-Related Design Efficiency&lt;/a&gt;&lt;/p&gt;
+                        &lt;p&gt;The last part will introduce you to a tool - fMRIPower - that you can use to calculate power for fMRI studies and, in particular, estimate the number of participants you will need plan on collecting to have sufficient power to detect your effects of interest:&lt;/p&gt;
+                        &lt;p&gt;&lt;a href=&quot;Power/Power_Calculation.html&quot;&gt;Part 3. Power Calculation with fMRIPower&lt;/a&gt;&lt;/p&gt;
+                        &lt;p class=&quot;footer&quot;&gt;
+                            &lt;br&gt;&lt;a href=&quot;http://www.mathworks.com/products/matlab/&quot;&gt;Published with MATLAB&amp;reg; R2013b&lt;/a&gt;
+                            &lt;br&gt;
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;!--</code></pre>
+        <h5 id="source-begin">SOURCE BEGIN</h5>
+        <p>clear all; close all; % Parametric Modulation % In SPM, a parametric modulation regressor is used to predict variability in % the strength (that is, height/amplitude) of the neural response across % different instances of the same condition. To construct such a regressor, % we first need to construct a regressor that represents the mean or % time-invariant neural response to the condition: nTR = 100; % number of TRs onsets = [5 25 45 65 85]; % trial onsets (in TRs) ME = zeros(nTR,1); % creates a vector of 100 TRs (all zeros for now) ME(onsets) = 1; % puts 1s where trial onsets occur</p>
+        <p>% % Convolve with a hemodynamic respones function to get a BOLD prediction figure(‘color’, ‘white’, ‘units’, ‘normal’, ‘position’,[.2 .2 .5 .25]); plot(ME, ‘-’, ‘LineWidth’, 2, ‘Color’, [0 0 0]); hold on; axis([0 nTR+1 -.15 1.15]); box off; xlabel(gca, ‘TR’, ‘fontname’, ‘Arial’, ‘fontsize’, 12, ‘fontweight’, ‘bold’); ylabel(gca, ‘Predicted Response’, ‘fontsize’, 12, ‘fontweight’, ‘bold’); hold on;</p>
+        <p>% % Convolve with a hemodynamic respones function to get a BOLD prediction bf = spm_hrf(2); % define the basis function cME = conv(bf,ME); % convolve mian effect with basis function cME = cME(1:nTR); % remove extra values added by convolution cME = cME/max(cME); % puts on scale comparable to main effect</p>
+        <p>plot(cME, ‘-’, ‘LineWidth’, 2, ‘Color’, ‘r’);</p>
+        <p>% % Now, use a parameter to create a new regressor that modulates the height % of the main effect regressor parameter = [5 3 1 7 1.5]; % the parameter (size corresponds to onsets) PM = zeros(nTR,1); % creates a vector of 100 TRs (all zeros for now) PM(onsets) = parameter/max(parameter); % puts same scale as main effect</p>
+        <p>figure(‘color’, ‘white’, ‘units’, ‘normal’, ‘position’,[.2 .2 .5 .25]); plot(PM, ‘-’, ‘LineWidth’, 2, ‘Color’, [0 0 0]); hold on; axis([0 nTR+1 -.15 1.15]); box off; xlabel(gca, ‘TR’, ‘fontname’, ‘Arial’, ‘fontsize’, 12, ‘fontweight’, ‘bold’); ylabel(gca, ‘Predicted Response’, ‘fontsize’, 12, ‘fontweight’, ‘bold’); hold on;</p>
+        <p>% % Convolve with a hemodynamic respones function to get a BOLD prediction cPM = conv(bf,PM); cPM = cPM(1:100); cPM = cPM/max(cPM);</p>
+        <p>plot(cPM, ‘-’, ‘LineWidth’, 2, ‘Color’, ‘r’);</p>
+        <p>% % But wait, there’s a problem here. The parametric modulation regressor is % highly correlated with the main effect regressor: figure(‘color’, ‘white’, ‘units’, ‘normal’, ‘position’,[.2 .2 .5 .25]); plot(cME, ‘-’, ‘LineWidth’, 2, ‘Color’, ‘r’); hold on; axis([0 nTR+1 -.15 1.15]); box off; xlabel(gca, ‘TR’, ‘fontname’, ‘Arial’, ‘fontsize’, 15, ‘fontweight’, ‘bold’); ylabel(gca, ‘Predicted Response’, ‘fontsize’, 15, ‘fontweight’, ‘bold’); hold on; plot(cPM-.025, ‘-’, ‘LineWidth’, 2, ‘Color’, ‘b’); title(gca, sprintf(‘Predictor Correlation = %2.4f’, corr(cPM, cME)), ‘fontsize’, 18, ‘fontweight’, ‘bold’); legend(gca, {‘Average Effect’ ‘Parametric Effect’}, ‘fontsize’, 15);</p>
+        <p>% % Highly collinear regressors like this are highly problematic for % regression models. Fortunately, We can eliminate this correlation by % orthogonalizing the parameter before modulating the height of the main % effect. The easiest way to do this is to simply d-mean the parameter, % i.e., subtract out the mean from every value so that it is centered % around 0: oparameter = parameter - mean(parameter); % de-mean the parameter oPM = zeros(nTR, 1); % another vector of zeros oPM(onsets) = oparameter/max(oparameter); % re-scale coPM = conv(bf,oPM); % convolve coPM = coPM(1:100); % remove extra values coPM = coPM/max(coPM); % re-scale</p>
+        % % We’e eliminated the problem, so says the CORR function MATLAB: figure(‘color’, ‘white’, ‘units’, ‘normal’, ‘position’,[.2 .2 .5 .25]); plot(cME, ‘-’, ‘LineWidth’, 2, ‘Color’, ‘r’); hold on; xlabel(gca, ‘TR’, ‘fontname’, ‘Arial’, ‘fontsize’, 15, ‘fontweight’, ‘bold’); ylabel(gca, ‘Predicted Response’, ‘fontsize’, 15, ‘fontweight’, ‘bold’); hold on; plot(coPM-.025, ‘-’, ‘LineWidth’, 2, ‘Color’, ‘b’); hold on; axis([0 nTR+1 min(coPM)-.10 1.15]); box off; title(gca, sprintf(‘Predictor Correlation = %2.4f’, corr(coPM, cME)), ‘fontsize’, 18, ‘fontweight’, ‘bold’); legend(gca, {‘Average Effect’ ‘Parametric Effect’}, ‘fontsize’, 15); ##### SOURCE END ##### –&gt;
+    </body>
+
+    </html>
+</body>
+
+</html>

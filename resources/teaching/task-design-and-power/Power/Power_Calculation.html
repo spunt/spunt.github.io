@@ -1,0 +1,513 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+    <title>Power Analyses</title>
+    <meta name="generator" content="MATLAB 8.2">
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.date" content="2014-08-06">
+    <meta name="DC.source" content="PowerExercise_v2.m">
+    <style type="text/css">
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+        margin: 10;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent
+    }
+    body {
+        line-height: 1
+    }
+    ol,
+    ul {
+        list-style: none
+    }
+    blockquote,
+    q {
+        quotes: none
+    }
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none
+    }
+    :focus {
+        outine: 0
+    }
+    ins {
+        text-decoration: none
+    }
+    del {
+        text-decoration: line-through
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+    html {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        margin-bottom: 0%;
+    }
+    html body {
+        height: 100%;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #000;
+        line-height: 160%;
+        background: white none;
+        overflow-y: scroll;
+    }
+    html body td {
+        vertical-align: top;
+        text-align: left;
+    }
+    hr {
+        color: black;
+    }
+    h1 {
+        padding: 0px;
+        margin: 0px 0px 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6em;
+        color: #00274c;
+        line-height: 100%;
+        font-weight: bolder;
+    }
+    h2 {
+        padding: 0px;
+        margin: 25px 0px 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4em;
+        color: #000;
+        font-weight: bold;
+        line-height: 140%;
+        border-bottom: 3px solid #d6d4d4;
+        display: block;
+    }
+    h3 {
+        padding: 0px;
+        margin: 0px 0px 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2em;
+        color: #000;
+        font-weight: bold;
+        line-height: 140%;
+    }
+    a {
+        color: #005fce;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #005fce;
+        text-decoration: underline;
+    }
+    a:visited {
+        color: #004aa0;
+        text-decoration: none;
+    }
+    p {
+        padding: 0px;
+        margin: 0px 0px 20px;
+    }
+    img {
+        padding: 10px;
+        margin: 0px 0px 20px;
+    }
+    p img,
+    pre img,
+    tt img,
+    li img {
+        margin-bottom: 0px;
+    }
+    ul {
+        padding: 0px;
+        margin: 0px 0px 20px 23px;
+        list-style: square;
+    }
+    ul li {
+        padding: 0px;
+        margin: 0px 0px 7px 0px;
+    }
+    ul li ul {
+        padding: 5px 0px 0px;
+        margin: 0px 0px 7px 23px;
+    }
+    ul li ol li {
+        list-style: decimal;
+    }
+    ol {
+        padding: 0px;
+        margin: 0px 0px 20px 0px;
+        list-style: decimal;
+    }
+    ol li {
+        padding: 0px;
+        margin: 0px 0px 7px 23px;
+        list-style-type: decimal;
+    }
+    ol li ol {
+        padding: 5px 0px 0px;
+        margin: 0px 0px 7px 0px;
+    }
+    ol li ol li {
+        list-style-type: lower-alpha;
+    }
+    ol li ul {
+        padding-top: 7px;
+    }
+    ol li ul li {
+        list-style: square;
+    }
+    .content {
+        font-size: 1.45em;
+        line-height: 140%;
+        padding: 20px;
+    }
+    pre,
+    tt,
+    code {
+        font-size: 12px;
+    }
+    pre {
+        margin: 0px 0px 20px;
+    }
+    pre.error {
+        color: red;
+    }
+    pre.codeinput {
+        padding: 10px;
+        border: 1px solid #d3d3d3;
+        background: #f7f7f7;
+    }
+    pre.codeoutput {
+        padding: 10px 11px;
+        margin: 0px 0px 20px;
+        color: #4c4c4c;
+    }
+    @media print {
+        pre.codeinput,
+        pre.codeoutput {
+            word-wrap: break-word;
+            width: 100%;
+        }
+    }
+    span.keyword {
+        color: #0000FF
+    }
+    span.comment {
+        color: #228B22
+    }
+    span.string {
+        color: #A020F0
+    }
+    span.untermstring {
+        color: #B20000
+    }
+    span.syscmd {
+        color: #B28C00
+    }
+    .footer {
+        width: auto;
+        padding: 10px 0px;
+        margin: 25px 0px 0px;
+        border-top: 1px dotted #878787;
+        font-size: 1.0em;
+        line-height: 140%;
+        font-style: italic;
+        color: #878787;
+        text-align: left;
+        float: none;
+    }
+    .footer p {
+        margin: 0px;
+    }
+    .footer a {
+        color: #878787;
+    }
+    .footer a:hover {
+        color: #878787;
+        text-decoration: underline;
+    }
+    .footer a:visited {
+        color: #878787;
+    }
+    table th {
+        padding: 7px 5px;
+        text-align: left;
+        vertical-align: middle;
+        border: 1px solid #d6d4d4;
+        font-weight: bold;
+    }
+    table td {
+        padding: 7px 5px;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid #d6d4d4;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Power Analysis and Sample Size Determination</h1>
+        <!--introduction-->
+        <p>Statistical power is the ability to detect an effect when that effect is, in fact, present. On the one hand, statistical power allows researchers to determine, before the study begins, what they will need to do to have a really good shot (i.e., greater than 80% chance) of detecting the effect they're after (if the effect they're after truly exists). The flipside of this is that statistical power helps protect researchers - and the scientific enterprise more generally - from making Type I errors, that is, concluding that an effect is present when it is actually not.</p>
+        <p>As was noted in lecture, researchers can increase statistical power by increasing the number of participants they plan on including in the study. In fact, many funding agencies and journals now require researchers to determine their sample sizes in advance using a formal power analysis. In this exercise, you will learn how to do this using Jeanette Mumford's MATLAB tool<i>fMRIPower,</i>which is specifically designed for calculating the power of future fMRI studies. The tool is publicly available for download at:<a href="http://fmripower.org/">fMRIPower.</a> Some of the content in this exercise is adapted from Dr. Mumford's published<a href="http://fmripower.org/instructions.pdf">Instructions</a> for using fMRIPower, as well as the following published power calculuation guide: Mumford, J. A. (2012). A power calculation guide for fMRI studies. Soc Cogn Affect Neurosci, 7(6), 738-742.</p>
+        <!--/introduction-->
+        <h2>Contents</h2>
+        <div>
+            <ul>
+                <li><a href="#1">Overview of fMRIPower</a>
+                </li>
+                <li><a href="#4">Step 1. Select Pilot Data</a>
+                </li>
+                <li><a href="#5">Step 2. Specify Future Analysis Parameters</a>
+                </li>
+                <li><a href="#8">Step 3. Specify Regions of Interest (ROIs)</a>
+                </li>
+                <li><a href="#9">Step 4. Run the Power Analysis</a>
+                </li>
+                <li><a href="#12">Additional Resources</a>
+                </li>
+            </ul>
+        </div>
+        <h2>Overview of fMRIPower
+            <a name="1"></a>
+        </h2>
+        <p>fMRIPower is a MATLAB-based software package with GUI functionality. It performs region of interest (ROI)-based power calculations based on methods describe in Mumford and Nichols (2008). Currently, fMRIPower can only calculate power based on sample size. Given this, the power analysis must assume that the future data will be acquired using the same or similar experimental design as the pilot data used to calculate power. fMRIPower can calculate power for one-sample, two-sample, and paired-sample t-tests. In this exercise, we demonstrate how to use it to estimate the power for a one-sample t-test. Start the program by entering the following command in a MATLAB command window:</p><pre class="codeinput">fmripower_spm
+</pre>
+        <p>
+            <img vspace="5" hspace="5" src="media/gui.png" alt="">
+        </p>
+        <p>You should now see the fMRIPower GUI. Note that the font sizes should be adjustable with shortcut keys CTRL-I (Increase) and CTRL-D (Decrease), or by using the dropdown menu.</p>
+        <h2>Step 1. Select Pilot Data</b> 
+            <a name="4"></a>
+        </h2>
+        <p>fMRIPower performs its power calculations for a <i>future</i> group analysis using the reuslts of an <i>existing</i> group analysis that was estimated in either FSL or SPM. Here, we'll use a group analysis from an existing dataset including 59 neurotypical right-handed adults. Click on the<b>select SPM.mat file</b>button on the top right. Use the file selection dialogue to enter the folder<b>Why-How_GroupResult_One-SampleTTest_N=59</b>and select the file<b>SPM.mat</b>(there should be only one). Once you've done that, you should see that the<b>Select contrast of interest</b>dropdown menu has been updated to show two contrasts:<b>Positive,</b>which is the Why &gt; How comparison, and<b>Negative,</b>which is the inverse, How &gt; Why. Let's stick with Why &gt; How for now.</p>
+        <h2>Step 2. Specify Future Analysis Parameters 
+            <a name="5"></a>
+        </h2>
+        <p>To specify the test you will use in your future analysis, click the<b>select design matrix</b>button. This will open a dialogue window like this:</p>
+        <p>
+            <img vspace="5" hspace="5" src="media/matrix_dialogue.png" alt="">
+        </p>
+        <p>The software should automatically detect that the pilot data used a one-sample t-test. Hence, you can click the<b>Yes</b>button to the question<i>"Was the previous test a 1 sample t-test?".</i> Now, you can specify either a single sample size or a range of sample sizes for which to estimate power. For educational purposes, let's estimate a<b>Range</b>from<b>2 to 100.</b>Press<b>OK</b>to continue.</p>
+        <h2>Step 3. Specify Regions of Interest (ROIs)
+            <a name="8"></a>
+        </h2>
+        <p>fMRIPower does not calculate power for every voxel that was analyzed in the previous group analysis. Instead, it is based on pre-defined ROIs. By default, it will calculate power for each of the ROIs in the automated anatomical labeling (AAL) atlas (Tzourio-Mazoyer et al., 2002). These ROIs are contained in the file<b>aal_spm.nii</b>located in the<b>fmripower</b>directory. However, for now let's calculate power on a couple of ROIs that were defined using meta-analytic data from neurosynth.org for the term<i>mentalizing.</i> Press the<b>select ROI mask</b>button, navigate to the folder<b>ROI,</b>and select the ROI image ROI_MASK_DMPFC_LTPJ.nii, which contains ROIs for the dorsomedial prefrontal cortex and left temporoparietal junction. Given that one of our topics in the Group Analysis Lab is going to be ROI Selection, all you need to know for now is the following:<i>These ROIs were not defined based on the results observed in the existing group analysis on which the power calculations will be based.</i>
+        </p>
+        <h2>Step 4. Run the Power Analysis
+            <a name="9"></a>
+        </h2>
+        <p>Now you should be ready to roll. Press<b>Calculate.</b>This should take less than a minute to run. This should produce an output screen like this:</p>
+        <p>
+            <img vspace="5" hspace="5" src="media/power_result.jpg" alt="">
+        </p>
+        <p>The key figure is the<b>Power Curve,</b>which plots statistical power for your future study as a function of the number of subjects you include. Although you can click around the entire brain, you'll only see a Power Curve when you click on a voxel that is in one of the two ROIs we examined. Examine the curves for both, and come up with a rough estimate of the number of subjects that each ROI needs to achieve a power of &gt;80%. Note that fMRIPower automatically saves the results of every analysis in a folder in the previous (pilot) data group analysis folder.</p>
+        <h2>Additional Resources
+            <a name="12"></a>
+        </h2>
+        <p>That was just a brief (practical) introduction to running a power analysis for a future fMRI study. To learn more about running power analyses in fMRIPower, see the<a href="media/Instructions.pdf">Instructions document</a>as well as<a href="media/mumford_2012.pdf">this paper by Jeanette Mumford.</a>In addition, the MATLAB statistics toolbox has tools especially built for testing power, for instance the function<a href="http://www.mathworks.com/help/stats/sampsizepwr.html">SAMPSIZEPWR</a>which is specifically tailored for sample size determination (for even more MATLAB power tools, see <a href="http://www.mathworks.com/help/stats/examples/selecting-a-sample-size.html">here.</a>)</p>
+        <p class="footer">
+            <br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a>
+            <br>
+        </p>
+    </div>
+    <!--
+##### SOURCE BEGIN #####
+% Power Analyses
+% Statistical power is the ability to detect an effect when present. In
+% this exercise, we will learn how to calculate power with Jeanette
+% Mumford's MATLAB tool _fMRIPower_, which is specifically designed for
+% calculating the power of future fMRI analyses. The tool is publicly
+% available for download at: <http://fmripower.org/ fMRIPower>. Some of the
+% content in this exercise is adapted from either Dr. Mumford's published
+% <http://fmripower.org/instructions.pdf Instructions> for using fMRIPower,
+% as well as the following published power calculuation guide: Mumford, J.
+% A. (2012). A power calculation guide for fMRI studies. Soc Cogn Affect
+% Neurosci, 7(6), 738-742.
+
+% fMRIPower
+% fMRIPower is a MATLAB-based software package with GUI functionality. It
+% performs region of interest (ROI)-based power calculations based on
+% methods describe in Mumford and Nichols (2008). Currently, fMRIPower can
+% only calculate power based on sample size. Given this, the power analysis
+% must assume that the future data will be acquired using the same or
+% similar experimental design as the pilot data used to calculate power.
+% fMRIPower can calculate power for one-sample, two-sample, and
+% paired-sample t-tests. In this exercise, we demonstrate how to use it to
+% estimate the power for a one-sample t-test. Start the program by entering
+% the following command in a MATLAB command window:
+fmripower_spm
+
+%  
+% 
+% <<media/gui.png>>
+% 
+
+
+%  
+% You should now see the fMRIPower GUI. Note that the font sizes should be
+% adjustable with shortcut keys CTRL-I (Increase) and CTRL-D (Decrease), or
+% by using the dropdown menu.
+%
+
+% *Select Pilot Data*. 
+% fMRIPower performs its power calculations for a _future_ group analysis
+% using the reuslts of an _existing_ group analysis that was estimated in
+% either FSL or SPM. Here, we'll use a group analysis from an existing
+% dataset including 59 neurotypical right-handed adults. Click on the
+% *select SPM.mat file* button on the top right. Use the file selection
+% dialogue to enter the folder *Why-How_GroupResult_One-SampleTTest_N=59*
+% and select the file *SPM.mat* (there should be only one). Once you've
+% done that, you should see that the *Select contrast of interest* dropdown
+% menu has been updated to show two contrasts: *Positive*, which is the Why
+% > How comparison, and *Negative*, which is the inverse, How > Why. Let's
+% stick with Why > How for now.
+%
+
+% *Specify Future Analysis Parameters*. 
+% To specify the test you will use in your future analysis, click the
+% *select design matrix* button. This will open a dialogue window like
+% this:
+
+%  
+% 
+% <<media/matrix_dialogue.png>>
+% 
+
+%
+% The software should automatically detect that the pilot data used a
+% one-sample t-test. Hence, you can click the *Yes* button to the question
+% "_Was the previous test a 1 sample t-test?_". Now, you can specify either
+% a single or a range of sample sizes for which to estimate power. For
+% educational purposes, let's estimate a *Range* from *2 to 100*. Press
+% *OK* to continue.
+%
+
+% *Specify Regions of Interest (ROIs)*. 
+% fMRIPower does not calculate power for every voxel that was analyzed in
+% the previous group analysis. Instead, it is based on pre-defined ROIs. By
+% default, it will calculate power for each of the ROIs in the automated
+% anatomical labeling (AAL) atlas (Tzourio-Mazoyer et al., 2002). These
+% ROIs are contained in the file *aal_spm.nii* located in the *fmripower*
+% directory. However, for now let's calculate power on a couple of ROIs
+% that were defined using meta-analytic data from neurosynth.org for the
+% term _mentalizing_. Press the *select ROI mask* button, navigate to the
+% folder *ROI*, and select the ROI image ROI_MASK_DMPFC_LTPJ.nii, which
+% contains ROIs for the dorsomedial prefrontal cortex and left
+% temporoparietal junction. Given that one of our topics in the Group
+% Analysis Lab is going to be ROI Selection, all you need to know for now
+% is the following: _These ROIs were not defined based on the results
+% observed in the existing group analysis on which the power calculations
+% will be based._
+%
+
+% *Running the Power Analysis*. 
+% Now you should be ready to roll. Press *Calculate*. This should take less
+% than a minute to run. This should produce an output screen like this:
+%
+
+%  
+% 
+% <<media/power_result.jpg>>
+% 
+
+%
+% The key figure is the *Power Curve*, which plots statistical power for your
+% future study as a function of the number of subjects you include.
+% Although you can click around the entire brain, you'll only see a Power
+% Curve when you click on a voxel that is in one of the two ROIs we
+% examined. Examine the curves for both, and come up with a rough estimate
+% of the number of subjects that each ROI needs to achieve a power of >80%.
+% Note that fMRIPower automatically saves the results of every analysis in
+% a folder in the previous (pilot) data group analysis folder.
+%
+
+% Additional Resources
+% That was just a brief (practical) introduction to running a power
+% analysis for a future fMRI study. To learn more, a good place to start
+% would be to examine the <media/Instructions.pdf Instructions PDF>.
+%
+
+
+##### SOURCE END #####
+-->
+</body>
+
+</html>

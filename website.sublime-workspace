@@ -8,18 +8,10 @@
 	"buffers":
 	[
 		{
-			"file": "_noita/default.html",
+			"file": "resources/teaching/task-design-and-power/index.html",
 			"settings":
 			{
-				"buffer_size": 7091,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/cheatsheets/index.md",
-			"settings":
-			{
-				"buffer_size": 275,
+				"buffer_size": 17781,
 				"line_ending": "Unix"
 			}
 		}
@@ -31,10 +23,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 48.0,
-		"last_filter": "terminal",
+		"height": 228.0,
+		"last_filter": "preview",
 		"selected_items":
 		[
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
 			[
 				"terminal",
 				"Open in terminal"
@@ -73,10 +69,6 @@
 			],
 			[
 				"prev",
-				"Markdown Preview: Preview in Browser"
-			],
-			[
-				"preview",
 				"Markdown Preview: Preview in Browser"
 			],
 			[
@@ -146,15 +138,21 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/cheatsheets",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/links",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive"
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io"
 	],
 	"file_history":
 	[
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_config.yml",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/teaching/task-design-and-power/index.html",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/teaching/group-analysis/index.html",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/teaching/single-subject-analysis/index.html",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/teaching/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/reference/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/papers/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/papers/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/cheatsheets/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/links/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_noita/default.html",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_config.yml",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/index.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/cv/index.md",
@@ -164,7 +162,6 @@
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/links/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/links.md",
 		"/usr/local/.git/MERGE_MSG",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/papers/index.md",
 		"/Users/bobspunt/Desktop/tmp.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_includes/navigation.html",
@@ -185,7 +182,6 @@
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/jekyll-foundation-5-starter/pages/about.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/jekyll-foundation-5-starter/pages/code.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/jekyll-foundation-5-starter/_includes/nav.html",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/papers/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/about/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/code/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/assets/css/style_rss.css",
@@ -274,6 +270,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"resources/papers",
 			"footer-link",
 			"social-icon",
 			"social icons",
@@ -374,6 +371,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"papers/pdf",
 			"/public/img/icon_title.png",
 			"/public/img/icon_200x200.png",
 			"public/img/icon_200x200.png",
@@ -407,19 +405,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "_noita/default.html",
-					"semi_transient": true,
+					"file": "resources/teaching/task-design-and-power/index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7091,
+						"buffer_size": 17781,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5999,
-								6867
+								0,
+								0
 							]
 						],
 						"settings":
@@ -429,36 +427,41 @@
 							"WordCountSyntax": "html (jekyll)",
 							"bh_regions":
 							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -469,128 +472,33 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/Jekyll/Syntaxes/HTML (Jekyll).tmLanguage",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 64447.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "resources/cheatsheets/index.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 275,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								46,
-								46
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "academicmarkdown",
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/AcademicMarkdown/AcademicMarkdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5647.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -622,7 +530,7 @@
 		"cols":
 		[
 			0.0,
-			0.0492610837438,
+			0.904946499673,
 			1.0
 		],
 		"rows":
@@ -682,7 +590,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
