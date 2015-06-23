@@ -9,10 +9,9 @@ I created these materials for an instructional lab I helped lead as part of the 
 
 **The Labs**:
 
-1. [Preprocessing](/resources/teaching/preprocessing/)
-2. [TaskDesign_and_Power](/resources/teaching/task-design-and-power/)
-3. [SingleSubjectAnalysis](/resources/teaching/single-subject-analysis/)
-4. [GroupAnalysis](/resources/teaching/group-analysis/)
+<!-- 1. [Task Design and Power](/resources/teaching/task-design-and-power/) -->
+1. [SingleSubjectAnalysis](/resources/teaching/single-subject-analysis/)
+2. [GroupAnalysis](/resources/teaching/group-analysis/)
 
 
 
