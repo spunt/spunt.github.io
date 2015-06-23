@@ -1,11 +1,18 @@
 ---
 layout: page
-title: 
-redirect_to:
-  - http://www.bobspunt.com/resources/links
+title: Useful Links
 ---
 
-### Behavioral Tasks & Stimulus Sets
+---
+
+## CONTENTS
+1. [Behavioral Tasks and Stimulus Sets](#behavioral-tasks-and-stimulus-sets)
+2. [Conducting Behavioral Studies](#conducting-behavioral-studies)
+3. [Conducting fMRI](#conducting-fmri)
+
+---
+
+### Behavioral Tasks and Stimulus Sets
 
 * [NimStim Face Stimulus Set][14]
 * [Bertram Malle Lab (Coding Schemes, Video Stims, and Measures)][15]
@@ -22,12 +29,16 @@ redirect_to:
 * [COGSCI List of Stimulus Sets][26]
 * [False Belief Localizer Task (Saxe Lab)][27]
 
+---
+
 ### Conducting Behavioral Studies
 
 * [Princeton Vision Toolkit (PVT)][43]
 * [LabelMe, the open annotation tool][44]
 * [Mechanical Turk Tutorial (Timothy Brady)][45]
 * [mturkMatlab: MATLAB Mechanical Turk Toolbox][46]
+
+---
 
 ### Conducting fMRI
 

@@ -14,6 +14,14 @@
 				"buffer_size": 7091,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "resources/cheatsheets/index.md",
+			"settings":
+			{
+				"buffer_size": 275,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -23,10 +31,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 68.0,
-		"last_filter": "foundation 5 dro",
+		"height": 48.0,
+		"last_filter": "terminal",
 		"selected_items":
 		[
+			[
+				"terminal",
+				"Open in terminal"
+			],
 			[
 				"foundation 5 dro",
 				"Snippet: ZURB Foundation 5 Dropdown Buttons"
@@ -134,34 +146,30 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_includes",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_includes/noita",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_noita",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/assets/2014",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/assets/2014/04",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/assets/2014/04/21",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/cv",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/public/fontello/font",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/public/img",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_pagesold",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_posts",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/assets",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/assets/css",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/assets/fonts",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/assets/img",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/assets/js"
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/cheatsheets",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/links",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive"
 	],
 	"file_history":
 	[
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/index.md",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/links/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_noita/default.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_config.yml",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/index.html",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/cv/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/code/index.html",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/about/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/code/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/links/index.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/resources/links.md",
+		"/usr/local/.git/MERGE_MSG",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/papers/index.md",
+		"/Users/bobspunt/Desktop/tmp.md",
+		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_includes/navigation.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_config.yml",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/Gemfile",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/about/index.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_layouts/default.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Professional/Presentations/Talks/ISSB2015/slides/notes_from_practice.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_sass/_02_settings_typography.scss",
@@ -170,7 +178,6 @@
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_sass/_04_settings_global.scss",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_sass/_01_settings_colors.scss",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/cv/index.md",
-		"/Users/bobspunt/Desktop/tmp.md",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_data/navigation.yml",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/jekyll-foundation-5-starter/_config.yml",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/jekyll-foundation-5-starter/pages/papers.md",
@@ -185,7 +192,6 @@
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_sass/_06_typography.scss",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_sass/foundation-components/_top-bar.scss",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/links/index.md",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_noita/default.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_data/socialmedia.yml",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_data/language.yml",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/thirdparty_notinpath/feeling-responsive/_data/authors.yml",
@@ -202,10 +208,8 @@
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_noita/compress.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/noita/_scss/foundation/components/_tables.scss",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/noita/_scss/foundation/_settings.scss",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/index.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/about/index.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/blog/index.html",
-		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/code/index.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/cv/index.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/links/index.html",
 		"/Users/bobspunt/Desktop/Dropbox/Bob/Matlab/_functions_/git/spunt.github.io/_site/papers/index.html",
@@ -404,7 +408,7 @@
 				{
 					"buffer": 0,
 					"file": "_noita/default.html",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 7091,
@@ -414,8 +418,8 @@
 						"selection":
 						[
 							[
-								6860,
-								6860
+								5999,
+								6867
 							]
 						],
 						"settings":
@@ -425,26 +429,21 @@
 							"WordCountSyntax": "html (jekyll)",
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -460,16 +459,78 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/Jekyll/Syntaxes/HTML (Jekyll).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 64447.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "resources/cheatsheets/index.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "academicmarkdown",
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -479,24 +540,57 @@
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
 							],
-							"syntax": "Packages/Jekyll/Syntaxes/HTML (Jekyll).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/AcademicMarkdown/AcademicMarkdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1799.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -528,7 +622,7 @@
 		"cols":
 		[
 			0.0,
-			0.959349593496,
+			0.0492610837438,
 			1.0
 		],
 		"rows":
@@ -588,7 +682,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
@@ -596,7 +690,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 138.0,
+	"side_bar_width": 265.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

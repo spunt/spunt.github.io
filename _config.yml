@@ -26,7 +26,7 @@ compress_html:
   ignore:
     envs: [travis]
 # Main addresses (don't include slash at end)
-url: ""
+url: "http://bobspunt.com"
 baseurl: ""
 # theme
 noita:
@@ -58,5 +58,12 @@ noita:
           url: "http://spunt.github.io/ptb-utilities"
         - title: "GitHub Repositories"
           url: "https://github.com/spunt?tab=repositories"
-      - title: "Links"
-        url: "/links/"
+      - title: "Resources"
+        url: "/resources/"
+        dropdown:
+        - title: "Links"
+          url: "/resources/links/"
+        - title: "Teaching"
+          url: "/resources/teaching/"
+        - title: "Cheat Sheets"
+          url: "/resources/cheatsheets/"
