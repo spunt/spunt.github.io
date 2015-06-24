@@ -11,7 +11,7 @@
 			"file": "papers/index.md",
 			"settings":
 			{
-				"buffer_size": 8677,
+				"buffer_size": 8712,
 				"line_ending": "Unix"
 			}
 		},
@@ -420,15 +420,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8677,
+						"buffer_size": 8712,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1101,
-								1101
+								940,
+								940
 							]
 						],
 						"settings":
