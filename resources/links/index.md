@@ -1,96 +1,51 @@
 ---
 layout: page
-title: Useful Links
+title: Links
 ---
 
 ---
 
-## CONTENTS
-1. [Behavioral Tasks and Stimulus Sets](#behavioral-tasks-and-stimulus-sets)
-2. [Conducting Behavioral Studies](#conducting-behavioral-studies)
-3. [Conducting fMRI](#conducting-fmri)
-
----
-
-### Behavioral Tasks and Stimulus Sets
-
-* [NimStim Face Stimulus Set][14]
-* [Bertram Malle Lab (Coding Schemes, Video Stims, and Measures)][15]
-* [MR2 Face Database][16]
-* [Bank of Standardized Stimuli (BOSS)][17]
-* [Amsterdam Library of Object Images (ALOI)][18]
-* [Nencki Affective Picture System (NAPS)][19]
-* [Amsterdam Dynamic Facial Expression Set (ADFES)][20]
-* [Geneva Affective PicturE Database (GAPED][21])
-* [Karolinska Directed Emotional Faces (KDEF)][22]
-* [UPenn Natural Image Database][23]
-* [UB KinFace Database][24]
-* [The FAMED Face Database][25]
-* [COGSCI List of Stimulus Sets][26]
-* [False Belief Localizer Task (Saxe Lab)][27]
-
----
-
-### Conducting Behavioral Studies
-
-* [Princeton Vision Toolkit (PVT)][43]
-* [LabelMe, the open annotation tool][44]
-* [Mechanical Turk Tutorial (Timothy Brady)][45]
-* [mturkMatlab: MATLAB Mechanical Turk Toolbox][46]
-
----
-
-### Conducting fMRI
-
-* [Chris Rorden Software][28]
-* [SPM Wikibook][29]
-* [MRC CBU Wiki][30]
-* [NITRC][31]
-* [NeuroSynth][32]
-* [Wager Lab Software][33]
-* [Poldrack Lab Software][34]
-* [Aaron Schultz Software][35]
-* [Donald McLaren Software][36]
-* [Jussi Tohka Software][37]
-* [GLMdenoise][38]
-* [RobustWLS SPM Toolbox][39]
-* [NeuroElf][40]
-* [NYU CBI NIfTI Matlab Tool][41]
-* [Jason Steffener Software][42]
-
-[14]: http://www.macbrain.org/resources.htm
-[15]: http://research.clps.brown.edu/SocCogSci/
-[16]: http://ninastrohminger.com/the-mr2/
-[17]: https://sites.google.com/site/bosstimuli/
-[18]: http://aloi.science.uva.nl/
-[19]: http://naps.nencki.gov.pl/Site/Home.html
-[20]: http://psyres.uva.nl/research/content/programme-group-social-psychology/adfes-stimulus-set/stimulusset.html
-[21]: http://www.affective-sciences.org/researchmaterial
-[22]: http://www.emotionlab.se/resources/kdef
-[23]: http://tofu.psych.upenn.edu/~upennidb/
-[24]: http://www3.ece.neu.edu/~yunfu/research/Kinface/Kinface.htm
-[25]: http://www.chrislongmore.co.uk/famed/index.html
-[26]: http://www.cogsci.nl/stimulus-sets
-[27]: http://saxelab.mit.edu/superloc.php
-[28]: http://www.mccauslandcenter.sc.edu/CRNL/tools
-[29]: http://en.wikibooks.org/wiki/SPM
-[30]: http://imaging.mrc-cbu.cam.ac.uk/imaging/CbuImaging
-[31]: http://www.nitrc.org/
-[32]: http://neurosynth.org/
-[33]: http://wagerlab.colorado.edu/tools
-[34]: http://www.poldracklab.org/software/
-[35]: http://nmr.mgh.harvard.edu/harvardagingbrain/People/AaronSchultz/Aarons_Scripts.html
-[36]: http://www.martinos.org/~mclaren/
-[37]: http://www.cs.tut.fi/~jupeto/software.html
-[38]: http://kendrickkay.net/GLMdenoise/
-[39]: http://www.icn.ucl.ac.uk/motorcontrol/imaging/robustWLS.html
-[40]: http://neuroelf.net/
-[41]: http://cbi.nyu.edu/software/niftimatlab.php
-[42]: https://sites.google.com/site/steffener/Papers
-[43]: http://vision.princeton.edu/code.html
-[44]: http://labelme2.csail.mit.edu/Release3.0/index.php
-[45]: http://timbrady.org/ttt/index.html
-[46]: https://github.com/adikhosla/mturkMatlab
-
-
-
+<div class="row" data-equalizer data-equalizer-mq="medium-up">
+<div class="large-7 columns" data-equalizer-watch>
+<h4 id="behavioral-tasks-and-stimulus-sets">Behavioral Experiments and Stimuli</h4>
+<ul>
+    <li><a href="http://www.macbrain.org/resources.htm">NimStim Face Stimulus Set</a></li>
+    <li><a href="http://research.clps.brown.edu/SocCogSci/">Bertram Malle Lab (Coding Schemes, Video Stims, and Measures)</a></li>
+    <li><a href="http://ninastrohminger.com/the-mr2/">MR2 Face Database</a></li>
+    <li><a href="https://sites.google.com/site/bosstimuli/">Bank of Standardized Stimuli (BOSS)</a></li>
+    <li><a href="http://aloi.science.uva.nl/">Amsterdam Library of Object Images (ALOI)</a></li>
+    <li><a href="http://naps.nencki.gov.pl/Site/Home.html">Nencki Affective Picture System (NAPS)</a></li>
+    <li><a href="http://psyres.uva.nl/research/content/programme-group-social-psychology/adfes-stimulus-set/stimulusset.html">Amsterdam Dynamic Facial Expression Set (ADFES)</a></li>
+    <li><a href="http://www.affective-sciences.org/researchmaterial">Geneva Affective PicturE Database (GAPED</a>)</li>
+    <li><a href="http://www.emotionlab.se/resources/kdef">Karolinska Directed Emotional Faces (KDEF)</a></li>
+    <li><a href="http://tofu.psych.upenn.edu/~upennidb/">UPenn Natural Image Database</a></li>
+    <li><a href="http://www3.ece.neu.edu/~yunfu/research/Kinface/Kinface.htm">UB KinFace Database</a></li>
+    <li><a href="http://www.chrislongmore.co.uk/famed/index.html">The FAMED Face Database</a></li>
+    <li><a href="http://www.cogsci.nl/stimulus-sets">COGSCI List of Stimulus Sets</a></li>
+    <li><a href="http://saxelab.mit.edu/superloc.php">False Belief Localizer Task (Saxe Lab)</a></li>
+    <li><a href="http://vision.princeton.edu/code.html">Princeton Vision Toolkit (PVT)</a></li>
+    <li><a href="http://labelme2.csail.mit.edu/Release3.0/index.php">LabelMe, the open annotation tool</a></li>
+    <li><a href="http://timbrady.org/ttt/index.html">Mechanical Turk Tutorial (Timothy Brady)</a></li>
+    <li><a href="https://github.com/adikhosla/mturkMatlab">mturkMatlab: MATLAB Mechanical Turk Toolbox</a></li>
+</ul>
+</div>
+<div class="large-5 columns" data-equalizer-watch>
+<h4 id="conducting-fmri">fMRI Experiments</h4>
+<ul>
+    <li><a href="http://www.mccauslandcenter.sc.edu/CRNL/tools">Chris Rorden Software</a></li>
+    <li><a href="http://en.wikibooks.org/wiki/SPM">SPM Wikibook</a></li>
+    <li><a href="http://imaging.mrc-cbu.cam.ac.uk/imaging/CbuImaging">MRC CBU Wiki</a></li>
+    <li><a href="http://www.nitrc.org/">NITRC</a></li>
+    <li><a href="http://neurosynth.org/">NeuroSynth</a></li>
+    <li><a href="http://wagerlab.colorado.edu/tools">Wager Lab Software</a></li>
+    <li><a href="http://www.poldracklab.org/software/">Poldrack Lab Software</a></li>
+    <li><a href="http://nmr.mgh.harvard.edu/harvardagingbrain/People/AaronSchultz/Aarons_Scripts.html">Aaron Schultz Software</a></li>
+    <li><a href="http://www.martinos.org/~mclaren/">Donald McLaren Software</a></li>
+    <li><a href="http://www.cs.tut.fi/~jupeto/software.html">Jussi Tohka Software</a></li>
+    <li><a href="http://kendrickkay.net/GLMdenoise/">GLMdenoise</a></li>
+    <li><a href="http://www.icn.ucl.ac.uk/motorcontrol/imaging/robustWLS.html">RobustWLS SPM Toolbox</a></li>
+    <li><a href="http://neuroelf.net/">NeuroElf</a></li>
+    <li><a href="http://cbi.nyu.edu/software/niftimatlab.php">NYU CBI NIfTI Matlab Tool</a></li>
+    <li><a href="https://sites.google.com/site/steffener/Papers">Jason Steffener Software</a></li>
+</ul>
+</div>

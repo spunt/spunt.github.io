@@ -3,7 +3,8 @@ layout: page
 title: Papers
 ---
 
-Electronic versions of my papers are provided here to ensure timely and unbiased dissemination of science to the public. Copyright resides with the respective copyright holders as stated in each article. Please consult [your neighborhood lawyer](https://spunt.github.io/papers/pdf/better_call_saul_copyright.jpg) for further details on this matter. 
+<h6 align="justify"><strong>Electronic versions of my papers are provided here to ensure timely and unbiased dissemination of science to the public. Copyright resides with the respective copyright holders as stated in each article. Please consult <a href="https://spunt.github.io/papers/pdf/better_call_saul_copyright.jpg">your neighborhood lawyer</a> for further details on this matter.</strong></h6> 
+
                                                      
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |**Spunt RP**, Kemmerer D, & Adolphs R (in press) The neural basis of conceptualizing the same action at different levels of abstraction. *Social Cognitive & Affective Neuroscience*. [PDF](https://spunt.github.io/papers/pdf/Spunt_Kemmerer_Adolphs_InPress_SubmissionPDF.pdf)                                                                                                                                                                                                                                        |

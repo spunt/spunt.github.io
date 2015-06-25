@@ -9,5 +9,7 @@ title:
 </div>
 <div class="large-2 columns hide-for-medium-down" data-equalizer-watch>
 <img src="/public/img/spuntreach.jpg">
-  <p align="center"><strong>This is what I look like when I reach for guacamole.</strong></p>
+    <h5 align="center"><strong><small>This is what I look like when I reach for guacamole.</small></strong></h5>
 </div>
+
+
