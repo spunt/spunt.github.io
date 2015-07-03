@@ -208,6 +208,14 @@
 	  }
 	};
 
+	var save_data_block = {
+	  type: 'call-function',
+	  func: function(){
+	    saveData("data/datafile", jsPsych.data.dataAsCSV())
+	  },
+	  timing_post_trial: 0
+	}
+
     /* Blocks */
     var experiment = [];
     experiment.push(welcome_block);
@@ -215,6 +223,7 @@
     experiment.push(instructions_block2);
     experiment.push(test_block);
 	experiment.push(debrief_block);
+	experiment.push(save_data_block);
 
     /* Run the experiment */
     function startExperiment(){
