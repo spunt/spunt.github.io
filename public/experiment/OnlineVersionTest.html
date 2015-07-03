@@ -24,17 +24,14 @@
 					margin:2em auto !important;
 				}
 	 		</style>
-	<?php
-			// the $_POST[] array will contain the passed in filename and data
-			// the directory "data" is writable by the server (chmod 777)
-			$filename = "data/".$_POST['filename'];
-			$data = $_POST['filedata'];
-			// write the file to disk
-			file_put_contents($filename, $data);
-			?>
+	
   </head>
   <body>
-	 
+ 	<?php
+ 			$filename = "data/".$_POST['filename'];
+ 			$data = $_POST['filedata'];
+ 			file_put_contents($filename, $data);
+ 			?>
   </body>
   <script>
 
