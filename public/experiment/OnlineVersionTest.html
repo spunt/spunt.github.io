@@ -27,11 +27,14 @@
 	
   </head>
   <body>
- 	<?php
- 			$filename = "data/".$_POST['filename'];
- 			$data = $_POST['filedata'];
- 			file_put_contents($filename, $data);
- 			?>
+	  <?php 
+// the $_POST[] array will contain the passed in filename and data 
+// the directory "data" is writable by the server (chmod 777) 
+$file = $_POST['filename'] . date("_d-m-y-His") . '.csv'; 
+$data = $_POST['filedata']; 
+file_put_contents("data/".$file, $data); 
+?> 
+
   </body>
   <script>
 
@@ -205,13 +208,14 @@
 	  }
 	};
 
-	var save_data_block = {
-	  type: 'call-function',
-	  func: function(){
-	    saveData("data/datafile", jsPsych.data.dataAsCSV())
-	  },
-	  timing_post_trial: 0
-	}
+    function saveData(filename, filedata){ 
+       $.ajax({ 
+          type:'post', 
+          cache: false, 
+          url: 'save_data.php', 
+          data: {filename: filename, filedata: filedata} 
+       }); 
+    }; 
 
     /* Blocks */
     var experiment = [];
@@ -220,13 +224,13 @@
     experiment.push(instructions_block2);
     experiment.push(test_block);
 	experiment.push(debrief_block);
-	experiment.push(save_data_block);
+	// experiment.push(save_data_block);
 
     /* Run the experiment */
     function startExperiment(){
 	jsPsych.init({
       experiment_structure: experiment,
-	  on_finish: function(data){ saveData("filename.csv", jsPsych.data.dataAsCSV()) }
+        on_finish: function(data){ saveData("datafile", jsPsych.data.dataAsCSV()) } 
       //
       // on_finish: function() {
       //   jsPsych.data.displayData();
