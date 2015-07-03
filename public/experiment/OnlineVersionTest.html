@@ -220,9 +220,11 @@
     function startExperiment(){
 	jsPsych.init({
       experiment_structure: experiment,
-      on_finish: function() {
-        jsPsych.data.displayData();
-      }
+	  on_finish: function(data){ saveData("filename.csv", jsPsych.data.dataAsCSV()) }
+      //
+      // on_finish: function() {
+      //   jsPsych.data.displayData();
+      // }
     });
 	}
   </script>
