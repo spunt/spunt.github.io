@@ -67,6 +67,8 @@ noita:
           url: "/resources/links/"
         - title: "Teaching"
           url: "/resources/teaching/"
-        # - title: "Reference"
-        #   url: "/resources/reference/"
-google_analytics_tracking_id: UA-56476723-1
+        - title: "Reference"
+        - url: "/resources/reference/"
+      # - title: "Blog"
+      #   url: "/blog/"
+      #   class: small button

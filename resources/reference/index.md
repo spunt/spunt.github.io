@@ -3,13 +3,13 @@ layout: page
 title: Reference
 ---
 
----
 
-<div class="small-12 columns">
-    <ul class="inline-list">
-        <li><a href="#" class="button secondary radius">Sublime Text</a></li>
-        <li><a href="#" class="button secondary radius">Shell</a></li>
-    </ul>
-</div>
+This is just me trying to collect documentation, guides, and shortcuts for some of applications/languages I use. *Maybe* you'll find it useful? I should not that some of the content is culled from other sources, and when I starting making these I did a poor job of keeping track of sources. So, let's just say that I take credit for none of it.  
+
+- [Markdown](/resources/reference/markdown)
+- [Shell](/resources/reference/shell)
+- [Sublime Text](/resources/reference/sublime-text)
+
+
 
 
