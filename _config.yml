@@ -68,7 +68,7 @@ noita:
         - title: "Teaching"
           url: "/resources/teaching/"
         - title: "Reference"
-        - url: "/resources/reference/"
+          url: "/resources/reference/"
       # - title: "Blog"
       #   url: "/blog/"
       #   class: small button
