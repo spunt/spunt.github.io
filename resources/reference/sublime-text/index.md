@@ -46,30 +46,29 @@ This is just a <sub>crazy</sub> test
 
 # Editing Shortcuts
 
-⌃ + ⇧ + ⌘ + F
-| Shortcut                                                          | Action                                                |
-| :-----------------                                                | :---------------------------------------------------- |
-| <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>              | Open Command Palette                                  |
-| <kbd>cmd</kbd> + <kbd>ctrl</kbd> + <kbd>p</kbd>              | Open Switch Project Dialogue
-| <kbd>cmd</kbd> + <kbd>p</kbd>                                 | Go to anything (e.g., new file)                       |
-| <kbd>cmd</kbd> + <kbd>r</kbd>                                 | Show Available Methods                                |
-| <kbd>cmd</kbd> + <kbd>d</kbd>                                 | Select Word & Next Occurrence of Word                 |
-| <kbd>cmd</kbd> + <kbd>click</kbd>                             | Select Multiple to Edit                               |
-| <kbd>tab</kbd>                                                | Complete Entry Using Snippet                          |
-| <kbd>ctrl</kbd> + <kbd>cmd</kbd> + <kbd>a</kbd>               | Neatly Align Current Selection                        |
-| <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>c</kbd>              | Open Color Picker                                     |
-| <kbd>cmd</kbd> + <kbd>m</kbd>                                 | Minimize window                                       |
-| <kbd>ctrl</kbd> + <kbd>cmd</kbd> + <kbd>f</kbd>               | Enter Full-Screen Mode                                |
-| <kbd>cmd</kbd> <kbd>z</kbd>/<kbd>cmd</kbd> <kbd>y</kbd>       | Undo/Redo                                             |
-| <kbd>opt</kbd> + <kbd>cmd</kbd> + <kbd>q</kbd>                | Wrap paragraph at ruler                               |
-| <kbd>ctrl</kbd> + <kbd>space</kbd>                            | Show Completions                                      |
-| <kbd>opt</kbd> + <kbd>cmd</kbd> + <kbd>t</kbd>                | Special Characters                                    |
-| <kbd>opt</kbd> + <kbd>cmd</kbd> + <kbd>f</kbd>                | Find and Replace                                      |
-| <kbd>cmd</kbd>  + <kbd>k</kbd>, <kbd>cmd</kbd> + <kbd>u</kbd> | Upper Case                                            |
-| <kbd>cmd</kbd> + <kbd>k</kbd>, <kbd>cmd</kbd> + <kbd>l</kbd>  | Lower Case                                            |
-| <kbd>ctrl</kbd> + <kbd>t</kbd>                                | Transpose                                             |
-| <kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>v</kbd>               | View in Browser                                       |
-| <kbd>ctrl</kbd> + <kbd>`</kbd>                                    | Show Console                                                      |
+| Shortcut                                                      | Action                                                |
+| :-----------------                                            | :---------------------------------------------------- |
+| ⌘⇧P              | Open Command Palette                                  |
+| ⌘⌃P               | Open Switch Project Dialogue                          |
+| ⌘P                                 | Go To Anything (e.g., New File)                       |
+| ⌘R                                 | Show Available Methods                                |
+| ⌘D                                 | Select Word & Next Occurrence Of Word                 |
+| ⌘click                             | Select Multiple To Edit                               |
+| Tab                                                | Complete Entry Using Snippet                          |
+| ⌃⌘A               | Neatly Align Current Selection                        |
+| ⌘⇧C              | Open Color Picker                                     |
+| ⌘M                                 | Minimize Window                                       |
+| ⌃⌘F               | Enter Full-screen Mode                                |
+| ⌘Z / ⌘Y       | Undo/redo                                             |
+| ⌥⌘Q                | Wrap Paragraph At Ruler                               |
+| ⌃spacebar                            | Show Completions                                      |
+| ⌥⌘T                | Special Characters                                    |
+| ⌥⌘F                | Find And Replace                                      |
+| ⌘K, ⌘U | Upper Case                                            |
+| ⌘K, ⌘L  | Lower Case                                            |
+| ⌃T                                | Transpose                                             |
+| ⌃⌥V               | View In Browser                                       |
+| ⌃`                                | Show Console                                          |
 
 
 
