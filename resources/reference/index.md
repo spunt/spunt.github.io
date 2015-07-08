@@ -11,6 +11,7 @@ This is just me trying to collect documentation, guides, and shortcuts for some 
 - [OSX](/resources/reference/osx)
 - [Shell](/resources/reference/shell)
 - [Sublime Text](/resources/reference/sublime-text)
+- [Slack](/resources/reference/slack)
 
 
 
