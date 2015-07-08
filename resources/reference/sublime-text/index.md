@@ -72,7 +72,8 @@ This is just a <sub>crazy</sub> test
 
 
 
-# Command Palette Commands 
+# Command Palette Commands
+
 | Command              | Action                               |
 | :----------------    | :----------------------------------- |
 | **install**          | Search for New Package to Install    |

@@ -16,7 +16,8 @@ title: OSX
 
 
 # Special Key Symbols
-|     Name     |  Symbol  |
+
+|      Name      | Symbol |
 |----------------|--------|
 | Command        | ⌘      |
 | Shift          | ⇧      |
@@ -38,6 +39,5 @@ title: OSX
 | Numberlock     | ⇭      |
 | Enter          | ⌤      |
 | Eject          | ⏏      |
-|                |        |
 
 
