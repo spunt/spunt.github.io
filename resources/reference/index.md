@@ -13,6 +13,14 @@ This is just me trying to collect documentation, guides, and shortcuts for some 
 - [Sublime Text](/resources/reference/sublime-text)
 - [Slack](/resources/reference/slack)
 
+---
 
+Cheatsheet pages from [Shortcutfoo](https://www.shortcutfoo.com/):
 
-
+- [GitHub](https://www.shortcutfoo.com/app/dojos/github/cheatsheet)
+- [Git](https://www.shortcutfoo.com/app/dojos/git/cheatsheet)
+- [Slack](https://www.shortcutfoo.com/app/dojos/slack/cheatsheet)
+- [Command Line](https://www.shortcutfoo.com/app/dojos/command-line/cheatsheet)
+- [Sublime Text (Mac)](https://www.shortcutfoo.com/app/dojos/sublime-text-2-mac/cheatsheet)
+- [Gmail](https://www.shortcutfoo.com/app/dojos/gmail/cheatsheet)
+- [Regex](https://www.shortcutfoo.com/app/dojos/regex/cheatsheet)
