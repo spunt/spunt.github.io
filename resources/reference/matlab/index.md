@@ -9,6 +9,10 @@ title: Matlab
 
 - [File Exchange](http://www.mathworks.com/matlabcentral/fileexchange/)
 - [Writing Apps in MATLAB](http://www.mathworks.com/company/newsletters/articles/writing-apps-in-matlab.html)
+- [Uicontrol Properties](http://www.mathworks.com/help/matlab/ref/uicontrol-properties.html)
+- [UI Controls and Indicators](http://www.mathworks.com/help/matlab/gui-controls-and-indicators.html)
+- [Menus and Toolbars](http://www.mathworks.com/help/matlab/menus-and-toolbars.html)
+- [Predefined Dialog Boxes](http://www.mathworks.com/help/matlab/predefined-dialog-boxes.html)
 - [Implementing a Set/Get Interface for Properties](http://www.mathworks.com/help/matlab/matlab_oop/implementing-a-set-get-interface-for-properties.html)
 - [Property Access Methods](http://www.mathworks.com/help/matlab/matlab_oop/property-access-methods.html)
 - [Cluster Analysis](http://www.mathworks.com/help/stats/examples/cluster-analysis.html)
