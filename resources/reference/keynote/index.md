@@ -30,4 +30,4 @@ title: Keynote
 | Justify Text          | ⌥⌘&#124;    | Align Bottom            | ⌥⌘B       |
 | Auto-Align Table Cell | ⌥⌘U         | Distribute Horizontally | ⇧⌘H       |
 | Emoji and Symbols     | ⌃⌘Space     | Distribute Vertically   | ⌥⌘V       |
-| | |Reward/Fastforward Movie    | J/L         |
+| Show Fonts | ⌘T |Reward/Fastforward Movie    | J/L         |
