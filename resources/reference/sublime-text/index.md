@@ -43,6 +43,8 @@ This is just a <sub>crazy</sub> test
 * [Terminal](https://packagecontrol.io/packages/Terminal)
 * [HTML-Beautify](https://packagecontrol.io/packages/HTMLBeautify)
 * [GhostText](https://github.com/Cacodaimon/GhostText-for-SublimeText/), [Chrome Extension](https://chrome.google.com/webstore/detail/ghosttext-for-chrome/godiecgffnchndlihlpaajjcplehddca)
+* [SnippetMaker](https://packagecontrol.io/packages/SnippetMaker)
+
 
 # Editing Shortcuts
 
