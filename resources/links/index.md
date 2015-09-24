@@ -27,6 +27,8 @@ title: Links
     <li><a href="http://labelme2.csail.mit.edu/Release3.0/index.php">LabelMe, the open annotation tool</a></li>
     <li><a href="http://timbrady.org/ttt/index.html">Mechanical Turk Tutorial (Timothy Brady)</a></li>
     <li><a href="https://github.com/adikhosla/mturkMatlab">mturkMatlab: MATLAB Mechanical Turk Toolbox</a></li>
+    <li><a href="http://www.cs.princeton.edu/~blei/topicmodeling.html">Topic Modeling Resources (David Blei)</a></li>
+    <li><a href="http://text-processing.com/docs/index.html">Text Processing API</a></li>
 </ul>
 </div>
 <div class="large-5 columns" data-equalizer-watch>
