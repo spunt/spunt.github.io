@@ -1,30 +1,7 @@
-My research is broadly concerned with understanding human *social expertise* - our ability to understand other people and interact with them in adaptive ways. Our lives are deeply intertwined with the lives of countless others, making social expertise a crucial part of our survival and happiness. Each person we ever encounter will different in not just their physical appearance and observable behavior, but also in their unobservable beliefs, motives, and personality dispositions.  Thus, an important part of social expertise - and the part that I just so happen to study - is being able to learn about the unobservable mental-states and traits of another person by paying close attention to their observable behavior, such as their actions and facial expressions. The idea is simple: If I observe just one of your actions ("sipping a pint of ale") and reactions ("raising upper lip and drawing up and wrinkled the nose"), I already have enough knowledge to start making intelligent guesses about your present state of mind ("you think the ale is disgusting"), your stable preferences ("you generally don't like ales"), and your future behavior ("you're not going to finish that ale, are you?"). In this way, we get to know a lot about each other on the basis of a little information.
+My research is broadly concerned with understanding human *social expertise* - our ability to understand other people and interact with them in adaptive ways. Our lives are deeply intertwined with the lives of countless others, making social expertise a crucial part of our survival and happiness. Each person we ever encounter will different in not just their physical appearance and observable behavior, but also in their unobservable beliefs, motives, and personality dispositions.  Thus, an important part of social expertise - and the part that I just so happen to study - is being able to learn about the unobservable mental-states and traits of another person by paying close attention to their observable behavior, such as their actions and facial expressions. The idea is simple: 
+
+>If I observe just one of your actions ("sipping a pint of ale") and reactions ("raising upper lip and drawing up and wrinkled the nose"), I already have enough knowledge to start making intelligent guesses about your >present state of mind ("you think the ale is disgusting"), your stable preferences ("you generally don't like ales"), and your future behavior ("you're not going to finish that ale, are you?"). 
+
+In this way, we get to know a lot about each other on the basis of a little information.
 
 Typical adults are skilled experts at figuring out the unobservable parts of other people's lives. Moreover, most typical adults enjoy using this skill even when it's unnecessary - for instance, to anthropomorphize our pets and property. I want to know why. My scientific approach to these questions is interdisciplinary, drawing on the ideas and tools offered by experimental psychology and neuroscience. In particular, I draw on methods from Social Psychology to designed well-controlled tests that measure aspects of a person's social expertise, and use functional magnetic resonance imaging (or fMRI) to measure that person's brain activity during test performance. [Sometimes, I even examine my own.](http://www.spspblog.org/this-is-my-brain-on-social-cognition).
-
-
-
-
-
-   
-    <hr>
-    <table><thead>
-    <tr>
-    <th><strong>I am using this approach to answer three broad questions</strong>:</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-    <td>Which areas of our brain are most important for acquiring/expressing social expertise?</td>
-    </tr>
-    <tr>
-    <td>What distinguishes social expertise - its acquisition, expression, or both - from forms of non-social expertise which demand many years of schooling and are sometimes difficult to learn, such as mathematics and physics?</td>
-    </tr>
-    <tr>
-    <td>How and why do people differ in their social expertise? Can people gain or lose social expertise in adulthood in ways similar to other kinds of expertise?</td>
-    </tr>
-    </tbody></table>
-</div>
-<div class="large-2 columns hide-for-medium-down" data-equalizer-watch>
-<img src="/public/img/spuntreach.jpg">
-    <h5 align="center"><strong><small>This is what I look like when I reach for guacamole.</small></strong></h5>
-</div>
