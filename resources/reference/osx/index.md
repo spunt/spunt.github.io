@@ -5,7 +5,7 @@ title: OSX
 
 ---
 
-# Shortcuts Documentation Pages
+# Selected Apple Support Pages
 * [Key Placement & Functions](https://support.apple.com/en-us/HT201181)
 * [Keyboard Shortcuts](https://support.apple.com/en-us/HT201236)
 * [Startup Key Combinations](https://support.apple.com/en-us/HT201255)
@@ -14,6 +14,9 @@ title: OSX
 * [Type accents, emoji, symbols](https://support.apple.com/en-us/HT201586)
 * [Use Dictation Commands](https://support.apple.com/en-us/HT203085)
 
+# Other Useful Resources
+* [Mac OS X Unleashed User Guide](http://www.informit.com/library/library.aspx?b=Mac_OS_X_Unleashed)
+* [Mac Network Commands Cheat Sheet](http://krypted.com/mac-security/mac-network-commands-cheat-sheet/)
 
 # Special Key Symbols
 

@@ -82,7 +82,8 @@ title: Keynote
 | Keynote                        | Quit Keynote                     | ⌘Q           |
 | Keynote                        | Hide Others                      | ⌥⇧⌘H         |
 | Keynote                        | Quit and Keep Windows            | ⌥⌘Q          |
-| Play                           | Rehearse Slideshow               | ⌥⌘R          |
+| Play                           | Rehearse Slideshow               | ⇧⌘R          |
+| Play                           | Play Slideshow                   | ⇧⌘P          |
 | Presentation Mode              | Toggle shortcuts window          | ?            |
 | Presentation Mode              | Next/Prev. Slide                 | ]/P          |
 | Presentation Mode              | First/Last Slide                 | ↖            |
@@ -106,9 +107,9 @@ title: Keynote
 | View                           | Zoom In                          | ⇧⌘>          |
 | View                           | Zoom to Selection                | ⇧⌘0          |
 | View                           | Show Colors                      | ⇧⌘C          |
-| View                           | Show Arrange Tools               | ⌃⇧A          |
-| View                           | Show Adjust Image                | ⌃⇧I          |
-| View                           | Show Build Order                 | ⌃⇧O          |
+| View                           | Show Arrange Tools               | ⇧⌘A          |
+| View                           | Show Adjust Image                | ⇧⌘I          |
+| View                           | Show Build Order                 | ⇧⌘O          |
 | View                           | Enter Full Screen                | ⌃⌘F          |
 | View                           | Light Table                      | ⌃⌥L          |
 | View                           | Navigator                        | ⌃⌥N          |
