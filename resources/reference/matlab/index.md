@@ -8,6 +8,10 @@ title: Matlab
 # Links
 
 - [File Exchange](http://www.mathworks.com/matlabcentral/fileexchange/)
+- [MATLAB Support](http://www.mathworks.com/support/search_results.html)
+- [Statistics & Machine Learning Toolbox](http://www.mathworks.com/products/statistics/)
+- [Image Processing Toolbox](http://www.mathworks.com/products/image/)
+- 
 - [Writing Apps in MATLAB](http://www.mathworks.com/company/newsletters/articles/writing-apps-in-matlab.html)
 - [Uicontrol Properties](http://www.mathworks.com/help/matlab/ref/uicontrol-properties.html)
 - [UI Controls and Indicators](http://www.mathworks.com/help/matlab/gui-controls-and-indicators.html)
