@@ -14,6 +14,7 @@ This is just me trying to collect documentation, guides, and shortcuts for some 
 - [Shell](/resources/reference/shell)
 - [Sublime Text](/resources/reference/sublime-text)
 - [Slack](/resources/reference/slack)
+- [TagNotate](/resources/reference/tagnotate)
 
 ---
 
