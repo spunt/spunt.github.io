@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: Resources
 ---
 
 <div class="row" data-equalizer data-equalizer-mq="small-up">

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: Resources
 ---
 
 The beginnings of a collection of resources related to conducting, teaching, and learning about research.
