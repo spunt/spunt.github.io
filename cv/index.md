@@ -3,7 +3,7 @@ layout: page
 title: CV
 ---
 
-[**PDF**](https://spunt.github.io/public/CV_BobSpunt.pdf) \| [**Papers**](https://spunt.github.io/papers)
+[**PDF**](/public/CV_BobSpunt.pdf) \| [**Papers**](/papers/)
 
 ---
 

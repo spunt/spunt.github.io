@@ -13,7 +13,9 @@ exclude:
   - README.md
   - vendor/
   - vnu/
-  - vnu.zip 
+  - vnu.zip
+  - about
+  - blog
 layouts: ./_noita
 sass:
   sass_dir: noita/_scss
@@ -41,8 +43,8 @@ noita:
   topbar:
     toggle: Menu
     right:
-      - title: "About"
-        url: "/about/"
+      # - title: "About"
+      #   url: "/about/"
       - title: "CV"
         url: "/cv/"
       - title: "Papers"
