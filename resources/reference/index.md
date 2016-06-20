@@ -5,7 +5,7 @@ title: Reference
 
 ---
 
-This is just me trying to collect documentation, guides, and shortcuts for some of applications/languages I use. *Maybe* you'll find it useful? I should not that some of the content is culled from other sources, and when I starting making these I did a poor job of keeping track of sources. So, let's just say that I take credit for none of it.  
+This is just me trying to collect documentation, guides, and shortcuts for some of applications/languages I use. *Maybe* you'll find it useful? I should not that some of the content is culled from other sources, and when I starting making these I did a poor job of keeping track of sources. So, let's just say that I take credit for none of it.
 
 - [Markdown](/resources/reference/markdown)
 - [Keynote](/resources/reference/keynote)
@@ -15,6 +15,7 @@ This is just me trying to collect documentation, guides, and shortcuts for some 
 - [Sublime Text](/resources/reference/sublime-text)
 - [Slack](/resources/reference/slack)
 - [TagNotate](/resources/reference/tagnotate)
+- [Bookends](/resources/reference/bookends)
 
 ---
 
