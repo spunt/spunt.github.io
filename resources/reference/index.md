@@ -19,7 +19,10 @@ This is just me trying to collect documentation, guides, and shortcuts for some 
 
 ---
 
-Cheatsheet pages from [Shortcutfoo](https://www.shortcutfoo.com/):
+- [Quiver Shortcuts](https://github.com/HappenApps/Quiver/wiki/Keyboard-Shortcuts)
+
+
+### Cheatsheet pages from [Shortcutfoo](https://www.shortcutfoo.com/):
 
 - [GitHub](https://www.shortcutfoo.com/app/dojos/github/cheatsheet)
 - [Git](https://www.shortcutfoo.com/app/dojos/git/cheatsheet)
