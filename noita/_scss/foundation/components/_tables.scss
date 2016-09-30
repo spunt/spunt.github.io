@@ -21,7 +21,7 @@ $table-even-row-bg: $snow !default;
 
 // These control the table cell border style
 $table-border-style: solid !default;
-$table-border-size: 0px !default;
+$table-border-size: 1px !default;
 $table-border-color: $gainsboro !default;
 
 // These control the table head styles
@@ -45,7 +45,7 @@ $table-caption-font-size: rem-calc(16) !default;
 $table-caption-font-weight: bold !default;
 
 // These control the row padding and font styles
-$table-row-padding: rem-calc(12 16) !default;
+$table-row-padding: rem-calc(16 14) !default;
 $table-row-font-size: rem-calc(16) !default;
 $table-row-font-color: $jet !default;
 $table-line-height: rem-calc(20) !default;
