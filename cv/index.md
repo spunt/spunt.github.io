@@ -7,17 +7,17 @@ title: CV
 
 ---
 
-| **Employment** |                                                                                                    |
-| :------------- | :------------------------------------------------------------------------------------------------- |
+| **Employment** |                                                                                                       |
+| :------------- | :-------------------------------------------------------------------------------------------------    |
 | 2012 - Present | **California Institute of Technology**<br>Postdoctoral Fellow<br>Supervisor:  Ralph Adolphs           |
 | 2011 - 2012    | **University of California, Los Angeles**<br>Postdoctoral Scholar<br>Supervisor: Naomi I. Eisenberger |
 
 ---
 
-|**Education** | |
-|:----------|:--------------------------------------------------------------------------------------------------------------------|
-|2005 - 2011|**University of California, Los Angeles**<br>Ph.D. - Social and Cognitive Psychology<br>Supervisor: Matthew D. Lieberman|
-|1999 - 2003|**University of California, Berkeley**<br>B.A. - Psychology<br>B.A. - Rhetoric                                       |
+| **Education** |                                                                                                                          |
+| :----------   | :--------------------------------------------------------------------------------------------------------------------    |
+| 2005 - 2011   | **University of California, Los Angeles**<br>Ph.D. - Social and Cognitive Psychology<br>Supervisor: Matthew D. Lieberman |
+| 1999 - 2003   | **University of California, Berkeley**<br>B.A. - Psychology<br>B.A. - Rhetoric                                           |
 
 ---
 
