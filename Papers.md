@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Papers
+title: papers
 ---
 
 Electronic versions of my papers are provided here to ensure the timely and unbiased dissemination of science to the public. Copyright resides with the respective copyright holders as stated in each article. Please consult <a href="/public/pdf/better_call_saul_copyright.jpg">your neighborhood lawyer</a> for further details on this matter.
