@@ -6,7 +6,7 @@ google_analytics_tracking_id: UA-56476723-1
 
 # Author Content
 favicon: /public/favicon.ico
-icon: /public/icon/icon-144x144.png
+icon: /public/touch-icon-144x144.png
 author:
   name: Bob Spunt
   url: http://www.bobspunt.com
