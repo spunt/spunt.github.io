@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww14920\viewh11800\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 spm_defaults.m
+\b0 \
+line 75\
+change defaults.mask.thresh to -inf to turn off implicit masking (this is very useful if you have one or two subjects who have a lot of signal loss, since you can use an explicit mask and all voxels in the explicit mask will be included, including those with signal loss)\
+line 66\
+change defaults.stats.fmri.ufp to relax the threshold for defining voxels for variance estimation at the ReML stage. By default, SPM does the variance calculations on only those voxels that survive an F-test at .001. If there are no voxels which survive this threshold (which is commonly the case when estimating models within small volumes), the estimation will fail. In this case, you can relax the threshold for finding the voxels to do the estimation on. \
+\
+
+\b to have SPM save images containing the model residuals:
+\b0 \
+in spm_defaults.m, line 64\
+change defaults.stats.maxres value to inf: defaults.stats.maxres = inf; \
+in spm_spm.m, search for \'93Delete the residuals\'94 and comment out the small section of code that follows, i.e.\
+%-Delete the residuals images\
+%==========================================================================\
+% j = spm_select('List',SPM.swd,'^ResI_.\{4\}\\..\{3\}$');\
+% for k = 1:size(j,1)\
+% spm_unlink(deblank(j(k,:)));\
+% end\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 \
+spm_get_ons.m
+\b0 \
+line 229: u = spm_orth(u)\
+Comment this line to remove automatic orthogonalization of parametric regressors\
+\
+
+\b spm_list.m
+\b0 \
+lines 187-191: variables "Num" and Dis"\
+Change variables "Num" and "Dis" to change the number of peaks within a cluster SPM displays when you do whole-brain results. \
+Num = maximum # of peaks to display\
+Dis = minimum distance (in mm) between peaks\
+For instance, when Num = 3 and Dis = 8, it will show 3 local maxima more than 8 mm apart. \
+\
+
+\b spm_getSPM.m
+\b0 \
+line 689\
+disable or enable extent thresholds for conjunctions in SPM5\
+\
+
+\b spm_spm.m
+\b0 \
+line 687\
+disable filtering and weighting (for correlation) of data (Y)\
+must add line: KWY = Y;\
+}

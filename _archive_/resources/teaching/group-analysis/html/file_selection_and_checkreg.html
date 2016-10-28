@@ -1,0 +1,166 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Using the function FILES to select files for fMRI data analysis</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-08-12"><meta name="DC.source" content="file_selection_and_checkreg.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Using the function FILES to select files for fMRI data analysis</h1><!--introduction--><p>File selection is one of the most time consuming aspects of working with the SPM GUI. More importantly, having to manually select files in order to process your data makes it virtually impossible to automate your analysis pipeline. But you're in luck: You are in possession of a MATLAB function called "FILES" that, with just one line of code from the command line, will grab all the files that you're looking for. Here, I illustrate how files can be used to grab a specific file from all 10 subjects. In addition, I illustrate why this is useful with a function called BSPM_CHECKREG (which is basically a command line version of the "Check Reg" button you're already familiar with).</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Use the HELP function to see documentation for using FILES</a></li><li><a href="#2">Use FILES to select all 10 mask.img files</a></li><li><a href="#3">Use BSPM_CHECKREG to examine the selected images using Check Reg</a></li><li><a href="#4">Use FILES to select all 10 wanat_hires.nii files</a></li><li><a href="#5">Use BSPM_CHECKREG to examine the selected images using Check Reg</a></li></ul></div><h2>Use the HELP function to see documentation for using FILES<a name="1"></a></h2><pre class="codeinput">help <span class="string">files</span>
+</pre><pre class="codeoutput">  FILES OS-Sensitive Wrapper for RDIR
+ 
+    USAGE:  [fullpath, filename] = files(pattern, [celloutput])
+ 
+    (adapted from RDIR documentation) "pattern" can be a pathname,
+    filename, or can include both. One can use absolute and relative
+    pathnames and wildcards (*). Wildcard can be placed anywhere and used
+    many times like 'path*\*.m'. One can also use a double wildcard (**) to
+    match multiple directory levels. For example pattern = 'path\**\*.m'
+    will match all ".m" files in "path" and all subdirectories of "path".
+ 
+    INPUT
+        pattern:    string to use to select files (wildcards OK)
+        charoutput: output as cell arrays [0=no (default), 1 = yes]  
+ 
+    OUTPUTS
+        fullpath:   full path to filenames (char by default)
+        filename:   filename only (cekl array by default) (OPTIONAL)
+  
+    This is a wrapper function for RDIR.m, which is included in this file
+    as a subfunction. RDIR.m was downloaded from the MATLAB File Exchange:
+ 
+        www.mathworks.com/matlabcentral/fileexchange/
+        32226-recursive-directory-listing-enhanced-rdir
+ 
+
+</pre><h2>Use FILES to select all 10 mask.img files<a name="2"></a></h2><pre class="codeinput">allmask = files(<span class="string">'sub*/**/precooked/2x2/mask.img'</span>, 1)
+</pre><pre class="codeoutput">
+allmask =
+
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub01/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub02/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub03/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub04/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub05/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub06/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub07/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub08/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub09/results/precooked/2x2/mask.img
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub10/results/precooked/2x2/mask.img
+
+</pre><h2>Use BSPM_CHECKREG to examine the selected images using Check Reg<a name="3"></a></h2><pre class="codeinput">bspm_checkreg(allmask);
+</pre><img vspace="5" hspace="5" src="file_selection_and_checkreg_01.png" alt=""> <h2>Use FILES to select all 10 wanat_hires.nii files<a name="4"></a></h2><pre class="codeinput">allanat = files(<span class="string">'sub*/**/wanat_hires.nii'</span>, 1)
+</pre><pre class="codeoutput">
+allanat =
+
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub01/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub02/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub03/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub04/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub05/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub06/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub07/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub08/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub09/anatomy/precooked/wanat_hires.nii
+/Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub10/anatomy/precooked/wanat_hires.nii
+
+</pre><h2>Use BSPM_CHECKREG to examine the selected images using Check Reg<a name="5"></a></h2><pre class="codeinput">bspm_checkreg(allanat);
+</pre><img vspace="5" hspace="5" src="file_selection_and_checkreg_02.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Using the function FILES to select files for fMRI data analysis
+% File selection is one of the most time consuming aspects of working with
+% the SPM GUI. More importantly, having to manually select files in order
+% to process your data makes it virtually impossible to automate your
+% analysis pipeline. But you're in luck: You are in possession of a MATLAB
+% function called "FILES" that, with just one line of code from the command
+% line, will grab all the files that you're looking for. Here, I illustrate
+% how files can be used to grab a specific file from all 10 subjects. In
+% addition, I illustrate why this is useful with a function called
+% BSPM_CHECKREG (which is basically a command line version of the "Check
+% Reg" button you're already familiar with). 
+%
+
+%% Use the HELP function to see documentation for using FILES
+help files
+
+%% Use FILES to select all 10 mask.img files
+allmask = files('sub*/**/precooked/2x2/mask.img', 1)
+
+%% Use BSPM_CHECKREG to examine the selected images using Check Reg
+bspm_checkreg(allmask); 
+
+%% Use FILES to select all 10 wanat_hires.nii files
+allanat = files('sub*/**/wanat_hires.nii', 1)
+
+%% Use BSPM_CHECKREG to examine the selected images using Check Reg
+bspm_checkreg(allanat);
+
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>

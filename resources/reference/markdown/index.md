@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: subpage
 title: Markdown
 ---
 
@@ -88,7 +88,7 @@ This is a normal paragraph:
     This is a code block.
 
 `Inline code`
-Use the `printf()` function. 
+Use the `printf()` function.
 ``There is a literal backtick (`) here.``
 A single backtick in a code span: `` ` ``
 A backtick-delimited string in a code span: `` `foo` ``

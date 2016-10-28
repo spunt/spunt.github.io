@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Word
+layout: subpage
+subtitle: Word
 ---
 
 ---

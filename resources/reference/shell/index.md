@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: subpage
 title: Shell
 ---
 
@@ -30,7 +30,7 @@ Once you've done this, you can check and see if it worked:
 
 You should get a message like this:
 
-    Hi excid3! You've successfully authenticated, but GitHub does not provide     shell access. 
+    Hi excid3! You've successfully authenticated, but GitHub does not provide     shell access.
 
 ## Jekyll and Git
 [Git Documentation](https://help.github.com/articles/using-jekyll-with-pages/)
