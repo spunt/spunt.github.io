@@ -1,33 +1,88 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
+# Site Content
+title:            'Bob Spunt, PhD'
+tagline:          'Bob Spunt | Experimental Psychologist and Brain Imager'
+description:      'Bob Spunt, PhD'
+google_analytics_tracking_id: UA-56476723-1
+
+# Author Content
+favicon: /public/favicon.ico
+icon: /public/icon/icon-144x144.png
+author:
+  name: Bob Spunt
+  url: http://www.bobspunt.com
+  email: bobspunt@gmail.com
+  github_username: spunt
+  twitter_username: bobspunt
+
+# Where things are
+source:       .
+destination:  ./_site
+plugins_dir:  _plugins
+layouts_dir:  _layouts
+data_dir:     _data
+includes_dir: _includes
+collections:
+  posts:
+    output:   true
+
+# Handling Reading
+safe:         false
+include:      [".htaccess"]
+exclude:      ["node_modules", "vendor"]
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
+
+# Plugins
+whitelist: []
 gems:
   - jekyll
   - jekyll-paginate
   - jekyll-gist
   - jekyll-redirect-from
 
-# Permalinks
-permalink:        pretty
-# relative_permalinks: true
-url:              "http://bobspunt.com"
-baseurl:          "/"
+# Conversion
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
 
-# Setup
-title:            'Bob Spunt, PhD'
-tagline:          'Bob Spunt has a PhD'
-description:      'Bob Spunt, PhD'
-author:
-  name: Bob Spunt
-  url: http://bobspunt.com
-lang: en
-favicons:
-  - "public/img/icon_200x200.png"
+# Serving
+detach:  false
+port:    4000
+host:    127.0.0.1
+baseurl: "/" # does not include hostname
+show_dir_listing: false
 
-# Custom vars
-google_analytics_tracking_id: UA-56476723-1
+# Outputting
+permalink:     pretty
 paginate:         5
+paginate_path: /page:num
+timezone:      null
+quiet:    false
+verbose:  false
+defaults: []
+liquid:
+  error_mode: warn
 
-# version:          2.1.0
-# github:
-  # repo:           https://github.com/poole/hyde
+# Markdown Processors
+rdiscount:
+  extensions: []
+redcarpet:
+  extensions: []
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1

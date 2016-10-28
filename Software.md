@@ -14,10 +14,3 @@ The MATLAB code that I use in my research is maintaining on [GitHub](https://git
 ### [Psychtoolbox Utilities](http://spunt.github.io/ptb-utilities)
 
 
-<!-- --- -->
-
-<!-- <iframe src="https://docs.google.com/spreadsheets/d/1h-hFT1fOregH6YOQF3S_Y5KHND8ymNujUaZEgz9BoMQ/pubhtml?gid=925753782&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
-
-
-
-

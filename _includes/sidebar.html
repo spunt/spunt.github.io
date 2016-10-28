@@ -5,7 +5,7 @@
         <a href="{{ site.baseurl }}">
           <!-- {{ site.title }} -->
           <!-- style="max-height:55px;margin-left:-20px"></a></h1> -->
-          <a href="/"><img src="{{ site.baseurl }}public/img/icon_200x200.png" style="margin:auto;max-height:1.25em">
+          <a href="/"><img src="{{ site.icon }}" style="margin:auto;max-height:1.25em">
         </a>
         </a>
       </h1>
@@ -28,12 +28,10 @@
           {% endif %}
         {% endif %}
       {% endfor %}
-
       <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a> -->
       <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a> -->
       <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
     </nav>
-    &nbsp;
-    <p>&copy; {{ site.time | date: '%Y' }}</p>
+    <!-- <p>&copy; {{ site.time | date: '%Y' }}</p> -->
   </div>
 </div>
