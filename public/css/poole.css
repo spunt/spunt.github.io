@@ -242,10 +242,11 @@ table {
   width: 100%;
   border: 1px solid #e5e5e5;
   border-collapse: collapse;
+  font-size: 0.90rem;
 }
 td,
 th {
-  padding: 1rem .50rem;
+  padding: 0.80rem .50rem;
   border: 1px solid #e5e5e5;
 }
 tbody tr:nth-child(odd) td,
