@@ -84,6 +84,11 @@ html {
   font-size: 3rem;
 }
 
+.sidebar-name {
+  font-size: 1.35rem;
+  margin-bottom: 0.05rem;
+}
+
 /* Footer section */
 .sidebar-media-links li {
   display: inline;
@@ -94,10 +99,14 @@ html {
 
 /* Sidebar nav */
 .sidebar-nav {
+  /*margin-top: 1rem;*/
   margin-bottom: 0.25rem;
 }
 .sidebar-nav-item {
+  color: #fff;
   display: block;
+  font-weight: 325;
+  font-size: 1.25rem;
   line-height: 1.75;
 }
 a.sidebar-nav-item:hover,
@@ -106,6 +115,15 @@ a.sidebar-nav-item:focus {
 }
 .sidebar-nav-item.active {
   color: #6699CC;
+  font-weight: bold;
+}
+
+.sidebar-footer {
+  font-size: 0.65rem;
+  right:  1rem;
+  left:   1rem;
+  position: absolute;
+  bottom: 1rem;
 }
 
 /* Sticky sidebar

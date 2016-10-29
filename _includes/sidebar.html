@@ -9,7 +9,7 @@
         </a>
         </a>
       </h1>
-      <p class="lead">{{ site.description }}</p>
+      <p class="sidebar-name">{{ site.description }}</p>
     </div>
     <div class="sidebar-media-links">
         <li><a href="https://twitter.com/{{ site.author.twitter_username }}"><i class="fa fa-twitter"></i></a></li>
@@ -18,7 +18,7 @@
         <li><a href="https://scholar.google.com/citations?user={{ site.author.scholar_username }}"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
     </div>
 
-    <hr style="max-width: 10rem;">
+    <hr style="max-width: 10rem; margin-bottom: 1rem; margin-top: 1rem">
 
     <nav class="sidebar-nav">
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
@@ -38,6 +38,8 @@
       {% endfor %}
       </nav>
 
+
+
       <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a> -->
       <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a> -->
       <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
@@ -47,4 +49,9 @@
 
     <!-- <p>&copy; {{ site.time | date: '%Y' }}</p> -->
   </div>
+
+<p class="sidebar-footer">
+  This site is hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>; built with <a href="http://jekyllrb.com">Jekyll</a>; and thematically inspired by <a href="http://hyde.getpoole.com">Hyde</a>.
+</p>
+
 </div>
