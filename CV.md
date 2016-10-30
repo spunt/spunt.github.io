@@ -3,7 +3,11 @@ layout: page
 title: CV
 ---
 
-[**PDF**](/public/CV_BobSpunt.pdf) \| [**Papers**](/papers/) \| [**Open Science Framework**](http://osf.io/kgzmh)
+<div class="sidebar-media-links" style="font-size:120%">
+        <li><a href="/public/CV_BobSpunt.pdf" target="_blank">PDF <i class="fa fa-external-link"></i></a></li>
+        <li> ∙ </li>
+        <li><a href="/papers/" target="_blank">Papers <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+</div>
 
 ### Employment
 
