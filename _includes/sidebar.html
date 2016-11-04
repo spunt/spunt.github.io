@@ -1,57 +1,33 @@
 <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about">
+            <h1>
         <a href="{{ site.baseurl }}">
           <!-- {{ site.title }} -->
           <!-- style="max-height:55px;margin-left:-20px"></a></h1> -->
-          <a href="/"><img src="{{ site.icon }}" style="margin:auto;max-height:1.25em">
-        </a>
-        </a>
-      </h1>
-      <p class="sidebar-name">{{ site.description }}</p>
+            <a href="/"><img src="{{ site.icon }}" style="margin:auto;max-height:1.25em">
+            </a>
+            </a>
+            </h1>
+            <p class="sidebar-name">{{ site.title }}</p>
+        </div>
+        <div class="sidebar-media-links">
+            <li><a href="https://twitter.com/{{ site.author.twitter_username }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/{{ site.author.github_username }}" target="_blank"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/{{ site.author.linkedin_username }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://scholar.google.com/citations?user={{ site.author.scholar_username }}" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
+        </div>
+        <hr style="max-width: 10rem; margin-bottom: 1rem; margin-top: 1rem">
+        <nav class="sidebar-nav">
+            <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a> {% comment %} The code below dynamically generates a sidebar nav of pages with `layout: page` in the front-matter. See readme for usage. {% endcomment %} {% assign pages_list = site.pages %} {% for node in pages_list %} {% if node.title != null %} {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a> {% endif %} {% endif %} {% endfor %}
+        </nav>
+        <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a> -->
+        <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a> -->
+        <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
+        <!-- <p>&copy; {{ site.time | date: '%Y' }}</p> -->
     </div>
-    <div class="sidebar-media-links">
-        <li><a href="https://twitter.com/{{ site.author.twitter_username }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="https://github.com/{{ site.author.github_username }}" target="_blank"><i class="fa fa-github"></i></a></li>
-        <li><a href="https://linkedin.com/in/{{ site.author.linkedin_username }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://scholar.google.com/citations?user={{ site.author.scholar_username }}" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
-    </div>
-
-    <hr style="max-width: 10rem; margin-bottom: 1rem; margin-top: 1rem">
-
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
-
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-      </nav>
-
-
-
-      <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a> -->
-      <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a> -->
-      <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
-
-
-
-
-    <!-- <p>&copy; {{ site.time | date: '%Y' }}</p> -->
-  </div>
-
-<p class="sidebar-footer">
-  This site is hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>; built with <a href="http://jekyllrb.com">Jekyll</a>; and thematically inspired by <a href="http://hyde.getpoole.com">Hyde</a>.
-</p>
-
+    <p class="sidebar-footer">
+        This site is hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>; built with <a href="http://jekyllrb.com">Jekyll</a>; and thematically inspired by <a href="http://hyde.getpoole.com">Hyde</a>.
+    </p>
 </div>
