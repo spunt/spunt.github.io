@@ -169,7 +169,13 @@ a.sidebar-nav-item:focus {
   }
 }
 
-
+.content-footer {
+  font-size: 0.65rem;
+  /*right:  1rem;*/
+  /*left:   1rem;*/
+  position: absolute;
+  bottom: 1rem;
+}
 /*
  * Reverse layout
  *
