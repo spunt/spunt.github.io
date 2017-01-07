@@ -3,7 +3,7 @@ layout: page
 title: Papers
 ---
 
-Electronic versions of my papers are provided here to ensure the timely and unbiased dissemination of science to the public. Copyright resides with the respective copyright holders as stated in each article. Please consult <a href="/pdf/better_call_saul_copyright.jpg">your neighborhood lawyer</a> for further details on this matter.
+Electronic versions of my papers are provided here to ensure the timely and unbiased dissemination of science to the public. Copyright resides with the respective copyright holders as stated in each article. Please consult <a href="/papers/pdf/better_call_saul_copyright.jpg">your neighborhood lawyer</a> for further details on this matter.
 
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |**Spunt RP**, Ellsworth E, & Adolphs R (in press). The neural basis of understanding the expression of the emotions in man and animals. *Social Cognitive & Affective Neuroscience*. [PDF](/papers/pdf/Spunt_Ellsworth_Adolphs-InPress-SCAN.pdf) ∙ [Open Science Framework Page](https://osf.io/bn2n8/) ∙ [NeuroVault](http://neurovault.org/collections/1846/) |
