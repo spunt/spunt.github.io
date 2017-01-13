@@ -1,6 +1,8 @@
 ---
 layout: subpage
 title: Reference
+redirect_from:
+  - /reference
 ---
 
 ---

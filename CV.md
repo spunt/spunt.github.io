@@ -1,6 +1,9 @@
 ---
 layout: page
 title: CV
+redirect_from:
+  - /cv
+  - /Cv
 ---
 
 <div class="sidebar-media-links" style="font-size:120%">
