@@ -11,7 +11,6 @@ The beginnings of a collection of resources related to conducting, teaching, and
 
 ### [Links](/resources/links/)
 
-
 ### [Reference](/resources/reference/)
 
 
