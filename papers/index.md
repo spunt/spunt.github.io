@@ -9,6 +9,7 @@ Electronic versions of my papers are provided here to ensure the timely and unbi
 
 |-----|
 |  **Spunt RP** &amp; Adolphs R (In Press). A new look at domain specificity: insights from social neuroscience. _Nature Reviews Neuroscience_. [PDF][34] |
+|  **Spunt RP** &amp; Adolphs R (In Press). The neuroscience of understanding the emotions of others. _Neuroscience Letters_. [PDF][35] |
 |  **Spunt RP**, Ellsworth E, &amp; Adolphs R (2017). The neural basis of understanding the expression of the emotions in man and animals. _Social Cognitive &amp; Affective Neuroscience_. 12(1), 95-105. [PDF][1] ∙ [Open Science Framework Page][2] ∙ [NeuroVault][3] |
 |  **Spunt RP**, Kemmerer D, &amp; Adolphs R (2016). The neural basis of conceptualizing the same action at different levels of abstraction. _Social Cognitive &amp; Affective Neuroscience_. 11(7), 1141-1151. [PDF][4] ∙ [Supplement][5] ∙ [Stimuli][6] ∙ [ROIs][7] ∙ [Open Science Framework Page][8] ∙ [NeuroVault][9] |
 |  Scheele D, Schwering C, Elison JT, **Spunt RP**, Maier W, Hurlemann R (2015). A human tendency to anthropomorphize is enhanced by oxytocin. _European Neuropsychopharmacology_. 25(10), 1817-1823. [PDF][10] |
@@ -65,5 +66,6 @@ Electronic versions of my papers are provided here to ensure the timely and unbi
 [32]: http://www.bobspunt.com/papers/pdf/Spunt_2010_Psycholog_Sci.pdf
 [33]: http://www.bobspunt.com/papers/pdf/Spunt_2009_Personality_and_Individual_Differences.pdf
 [34]: http://www.bobspunt.com/papers/pdf/Spunt_Adolphs_InPress_NatRevNeurosci.pdf
+[35]: http://www.bobspunt.com/papers/pdf/Spunt_Adolphs_2017_NeurosciLett.pdf
 
   SS
