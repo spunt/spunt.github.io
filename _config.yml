@@ -1,7 +1,8 @@
 # Site Content
 title:            'Bob Spunt, PhD'
-tagline:          'Bob Spunt | Experimental Psychologist and Brain Imager'
-description:      'Experimental Psychologist and Brain Imager'
+tagline:          'Bob Spunt, PhD'
+# tagline:          'Bob Spunt | Experimental Psychologist and Human Neuroscientist'
+description:      'Experimental Psychologist and Human Neuroscientist'
 google_analytics_tracking_id: UA-56476723-1
 
 # Author Content

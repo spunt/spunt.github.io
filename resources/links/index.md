@@ -1,6 +1,8 @@
 ---
 layout: subpage
 title: Links
+redirect_from:
+  - /links
 ---
 
 ---

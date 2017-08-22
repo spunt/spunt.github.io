@@ -1,6 +1,8 @@
 ---
 layout: subpage
 title: Teaching
+redirect_from:
+  - /teaching
 ---
 
 ---
