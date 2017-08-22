@@ -49,6 +49,7 @@ gems:
   - jekyll-paginate
   - jekyll-gist
   - jekyll-redirect-from
+github: [metadata]
 
 # Conversion
 markdown:    kramdown

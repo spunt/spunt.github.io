@@ -17,8 +17,6 @@ redirect_from:
 
 ### Experience
 
-|
-|                |                                                                                             |
 |:--------------:|---------------------------------------------------------------------------------------------|
 | 2012 - Present | **California Institute of Technology**<br>Postdoctoral Fellow<br>Supervisor:  Ralph Adolphs |
 | 2011 - 2012    | **University of California, Los Angeles**<br>Postdoctoral Scholar<br>Supervisor: Naomi I. Eisenberger |
