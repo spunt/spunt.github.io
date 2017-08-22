@@ -48,39 +48,39 @@ This is just a <sub>crazy</sub> test
 
 # Editing Shortcuts
 
- Shortcut                                                      | Action                                                |
- :-----------------                                            | :---------------------------------------------------- |
- ⌘⇧P              | Open Command Palette                                  |
- ⌘⌃P               | Open Switch Project Dialogue                          |
- ⌘P                                 | Go To Anything (e.g., New File)                       |
- ⌘R                                 | Show Available Methods                                |
- ⌘D                                 | Select Word & Next Occurrence Of Word                 |
- ⌘click                             | Select Multiple To Edit                               |
- Tab                                                | Complete Entry Using Snippet                          |
- ⌃⌘A               | Neatly Align Current Selection                        |
- ⌘⇧C              | Open Color Picker                                     |
- ⌘M                                 | Minimize Window                                       |
- ⌃⌘F               | Enter Full-screen Mode                                |
- ⌘Z / ⌘Y       | Undo/redo                                             |
- ⌥⌘Q                | Wrap Paragraph At Ruler                               |
- ⌃spacebar                            | Show Completions                                      |
- ⌥⌘T                | Special Characters                                    |
- ⌥⌘F                | Find And Replace                                      |
- ⌘K, ⌘U | Upper Case                                            |
- ⌘K, ⌘L  | Lower Case                                            |
- ⌃T                                | Transpose                                             |
- ⌃⌥V               | View In Browser                                       |
- ⌃`                                | Show Console                                          |
+| Shortcut                                                      | Action                                                |
+| :-----------------                                            | :---------------------------------------------------- |
+| ⌘⇧P              | Open Command Palette                                  |
+| ⌘⌃P               | Open Switch Project Dialogue                          |
+| ⌘P                                 | Go To Anything (e.g., New File)                       |
+| ⌘R                                 | Show Available Methods                                |
+| ⌘D                                 | Select Word & Next Occurrence Of Word                 |
+| ⌘click                             | Select Multiple To Edit                               |
+| Tab                                                | Complete Entry Using Snippet                          |
+| ⌃⌘A               | Neatly Align Current Selection                        |
+| ⌘⇧C              | Open Color Picker                                     |
+| ⌘M                                 | Minimize Window                                       |
+| ⌃⌘F               | Enter Full-screen Mode                                |
+| ⌘Z / ⌘Y       | Undo/redo                                             |
+| ⌥⌘Q                | Wrap Paragraph At Ruler                               |
+| ⌃spacebar                            | Show Completions                                      |
+| ⌥⌘T                | Special Characters                                    |
+| ⌥⌘F                | Find And Replace                                      |
+| ⌘K, ⌘U | Upper Case                                            |
+| ⌘K, ⌘L  | Lower Case                                            |
+| ⌃T                                | Transpose                                             |
+| ⌃⌥V               | View In Browser                                       |
+| ⌃`                                | Show Console                                          |
 
 
 
 # Command Palette Commands
 
- Command              | Action                               |
- :----------------    | :----------------------------------- |
- **install**          | Search for New Package to Install    |
- **remove**           | Search for Package to Remove         |
- **gist**             | See Gist Options (Save or Insert)    |
- **user**             | Open User Settings                   |
- **colorsublime**     | Search for Color-Sublime Theme       |
- **markdown preview** | Preview options for Markdown         |
+| Command              | Action                               |
+| :----------------    | :----------------------------------- |
+| **install**          | Search for New Package to Install    |
+| **remove**           | Search for Package to Remove         |
+| **gist**             | See Gist Options (Save or Insert)    |
+| **user**             | Open User Settings                   |
+| **colorsublime**     | Search for Color-Sublime Theme       |
+| **markdown preview** | Preview options for Markdown         |

@@ -7,7 +7,7 @@ redirect_from:
   - /CV
 ---
 
-<div class="sidebar-media-links" style="font-size:105%">
+<div class="sidebar-media-links" style="font-size:120%">
         <li><a href="/public/CV_BobSpunt.pdf" target="_blank">CV <i class="fa fa-external-link"></i></a></li>
         <li> ∙ </li>
         <li><a href="/public/RESUME_BobSpunt.pdf" target="_blank">Resume <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
@@ -17,9 +17,9 @@ redirect_from:
 
 ### Experience
 
-| :--------------: | ----------------------------------------------------------------------------------------------------- |
-| 2012 - Present   | **California Institute of Technology**<br>Postdoctoral Fellow<br>Supervisor:  Ralph Adolphs           |
-| 2011 - 2012      | **University of California, Los Angeles**<br>Postdoctoral Scholar<br>Supervisor: Naomi I. Eisenberger |
+| :------------- | :-------------------------------------------------------------------------------------------------    |
+| 2012 - Present | **California Institute of Technology**<br>Postdoctoral Fellow<br>Supervisor:  Ralph Adolphs           |
+| 2011 - 2012    | **University of California, Los Angeles**<br>Postdoctoral Scholar<br>Supervisor: Naomi I. Eisenberger |
 
 ### Education
 
@@ -47,25 +47,25 @@ redirect_from:
 
 ### Graduate-Level Teaching
 
-| :---------- | :--------------------------------------------------------------------------------------------------------------------- |
-| Summer 2014 | **Functional MRI Design and Data Analysis Labs**<br>Instructor, Summer Training Course in fMRI, University of Michigan |
-| Summer 2011 | **Methods in Social Cognitive Neuroscience**<br>Workshop for Social Cognitive and Affective Neuroscience Labs, UCLA    |
-| Winter 2011 | **Computational Methods in Neuroimaging**<br>Teaching Assistant, University of California, Los Angeles                 |
-| 2009 - 2010 | **Presentation of Psychological Materials**<br>Teaching Assistant Consultant, University of California, Los Angeles    |
+| :----------                 | :--------------------------------------------------------------------------------------------------------------------- |
+| Summer 2014                 | **Functional MRI Design and Data Analysis Labs**<br>Instructor, Summer Training Course in fMRI, University of Michigan |
+| Summer 2011                 | **Methods in Social Cognitive Neuroscience**<br>Workshop for Social Cognitive and Affective Neuroscience Labs, UCLA    |
+| Winter 2011                 | **Computational Methods in Neuroimaging**<br>Teaching Assistant, University of California, Los Angeles                 |
+| 2009 - 2010                 | **Presentation of Psychological Materials**<br>Teaching Assistant Consultant, University of California, Los Angeles    |
 
 ### Undergraduate-Level Teaching
 
-| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Winter 2009 | **Human Motivation**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Bernard Weiner                                                      |
-| Fall 2008   | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Naomi Eisenberger                 |
-| Spring 2008 | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Sabrina Pagano                                     |
-| Winter 2008 | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Benjamin Karney                                    |
-| Fall 2007   | **Introduction to Social Cognition**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Matthew D. Lieberman                                |
-| Spring 2007 | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elisheva Gross                    |
-| Winter 2007 | **Experimental Research Methods in Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elizabeth Bjork                          |
-| Fall 2006   | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Paul Davies                                        |
-| Summer 2006 | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Adam Fingerhut and Elisheva Gross |
-                                                                                                                                                              |
+| :----------                      | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Winter 2009                      | **Human Motivation**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Bernard Weiner                                                      |
+| Fall 2008                        | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Naomi Eisenberger                 |
+| Spring 2008                      | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Sabrina Pagano                                     |
+| Winter 2008                      | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Benjamin Karney                                    |
+| Fall 2007                        | **Introduction to Social Cognition**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Matthew D. Lieberman                                |
+| Spring 2007                      | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elisheva Gross                    |
+| Winter 2007                      | **Experimental Research Methods in Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elizabeth Bjork                          |
+| Fall 2006                        | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Paul Davies                                        |
+| Summer 2006                      | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Adam Fingerhut and Elisheva Gross |
+
 ### Selected Presentations
 
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
