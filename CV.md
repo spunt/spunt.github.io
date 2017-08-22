@@ -1,21 +1,15 @@
 ---
 layout: page
-title: Professional
-redirect_from:
-  - /cv
-  - /Cv
-  - /CV
+title: CV
 ---
 
 <div class="sidebar-media-links" style="font-size:120%">
-        <li><a href="/public/CV_BobSpunt.pdf" target="_blank">CV <i class="fa fa-external-link"></i></a></li>
-        <li> ∙ </li>
-        <li><a href="/public/RESUME-Bob_Spunt-v20170404.pdf" target="_blank">Resume <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+        <li><a href="/public/CV_BobSpunt.pdf" target="_blank">PDF <i class="fa fa-external-link"></i></a></li>
         <li> ∙ </li>
         <li><a href="/papers/" target="_blank">Papers <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
 </div>
 
-### Experience
+### Employment
 
 | :------------- | :-------------------------------------------------------------------------------------------------    |
 | 2012 - Present | **California Institute of Technology**<br>Postdoctoral Fellow<br>Supervisor:  Ralph Adolphs           |
