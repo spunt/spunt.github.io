@@ -51,6 +51,14 @@
         </li>
       {% endif %}
 
+      {% if author.linkedin %}
+        <li>
+          <a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      {% endif %}
+
       {% if author.keybase %}
         <li>
           <a href="https://keybase.io/{{ author.keybase }}" itemprop="sameAs">
@@ -79,14 +87,6 @@
         <li>
           <a href="https://plus.google.com/+{{ author.google_plus }}" itemprop="sameAs">
             <i class="fa fa-fw fa-google-plus-square" aria-hidden="true"></i> Google+
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.linkedin %}
-        <li>
-          <a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs">
-            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
           </a>
         </li>
       {% endif %}

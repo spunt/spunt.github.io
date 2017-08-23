@@ -74,18 +74,16 @@ analytics:
   google:
     tracking_id          : UA-56476723-1
 
-
 # Site Author
 author:
   name          : "Bob Spunt"
-  avatar        : "/public/favicon.ico"
+  avatar        : "public/touch-icon-192x192.png"
   bio           : "I have a website. This is it."
   location      :
   email         : "bobspunt@gmail.com"
   github        : "spunt"
   twitter       : "bobspunt"
   linkedin      : "bobspunt"
-  email         :
   uri           :
   bitbucket     :
   codepen       :
@@ -96,7 +94,8 @@ author:
   gitlab        :
   google_plus   :
   keybase       :
-  instagram     :
+  instagram     : "bobspunt"
+  scholar       : "64MMv_QAAAAJ"
   lastfm        :
   pinterest     :
   soundcloud    :

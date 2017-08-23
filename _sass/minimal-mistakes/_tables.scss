@@ -3,8 +3,8 @@
    ========================================================================== */
 
 table {
-  margin-bottom: 1em;
-  width: 100%;
+  margin-bottom: 2em;
+  width: 95%;
   font-family: $global-font-family;
   font-size: $type-size-6;
   border-collapse: collapse;
@@ -17,6 +17,7 @@ table {
 thead {
   background-color: $lighter-gray;
   border-bottom: 2px solid $light-gray;
+  font-size: $type-size-5;
 }
 
 th {

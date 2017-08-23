@@ -5,9 +5,7 @@ redirect_from:
   - /reference
 ---
 
----
-
-This is just me trying to collect documentation, guides, and shortcuts for some of applications/languages I use. *Maybe* you'll find it useful? I should not that some of the content is culled from other sources, and when I starting making these I did a poor job of keeping track of sources. So, let's just say that I take credit for none of it.
+This is just me trying to collect documentation, guides, and cheat sheets for some of applications/languages I use. Some link to external sites; some feature content lifted and/or adapted from external sites. So, let's just say that I take credit for none of it.
 
 - [Markdown](/resources/reference/markdown)
 - [Keynote](/resources/reference/keynote)
@@ -18,13 +16,9 @@ This is just me trying to collect documentation, guides, and shortcuts for some 
 - [Slack](/resources/reference/slack)
 - [TagNotate](/resources/reference/tagnotate)
 - [Bookends](/resources/reference/bookends)
-
----
-
 - [Quiver Shortcuts](https://github.com/HappenApps/Quiver/wiki/Keyboard-Shortcuts)
 
-
-### Cheatsheet pages from [Shortcutfoo](https://www.shortcutfoo.com/):
+## Cheat sheets from [Shortcutfoo](https://www.shortcutfoo.com/) for which I obviously take no credit
 
 - [GitHub](https://www.shortcutfoo.com/app/dojos/github/cheatsheet)
 - [Git](https://www.shortcutfoo.com/app/dojos/git/cheatsheet)
