@@ -7,7 +7,7 @@ redirect_from:
   - /CV
 ---
 
-### Download PDF: [CV]("/public/CV_BobSpunt.pdf")  |  [Resume]("/public/RESUME_BobSpunt.pdf")
+### Download PDF: [CV](CV_BobSpunt.pdf)  |  [Resume](RESUME_BobSpunt.pdf)
 
 ### Experience
 

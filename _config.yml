@@ -80,7 +80,7 @@ author:
   name          : "Bob Spunt"
   avatar        : "/public/favicon.ico"
   bio           : "I have a website. This is it."
-  location      : "Seattle, WA"
+  location      :
   email         : "bobspunt@gmail.com"
   github        : "spunt"
   twitter       : "bobspunt"
@@ -180,7 +180,7 @@ timezone: "America/Los_Angeles"
 
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
