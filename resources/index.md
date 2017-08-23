@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: Resources
 redirect_from:
   - /resources

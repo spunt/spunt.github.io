@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: Papers
 redirect_from:
   - /papers
@@ -67,5 +67,3 @@ Electronic versions of my papers are provided here to ensure the timely and unbi
 [33]: http://www.bobspunt.com/papers/pdf/Spunt_2009_Personality_and_Individual_Differences.pdf
 [34]: http://www.bobspunt.com/papers/pdf/Spunt_Adolphs_InPress_NatRevNeurosci.pdf
 [35]: http://www.bobspunt.com/papers/pdf/Spunt_Adolphs_2017_NeurosciLett.pdf
-
-  SS

@@ -1,91 +1,259 @@
-# Site Content
-title:            'Bob Spunt, PhD'
-tagline:          'Bob Spunt, PhD'
-# tagline:          'Bob Spunt | Experimental Psychologist and Human Neuroscientist'
-description:      'Experimental Psychologist and Human Neuroscientist'
-google_analytics_tracking_id: UA-56476723-1
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
 
-# Author Content
-favicon: /public/favicon.ico
-icon: /public/touch-icon-144x144.png
+# Site Settings
+locale                   : "en"
+title                    : "Bob Spunt, PhD"
+title_separator          : "|"
+name                     : "Bob Spunt"
+description              : "I have a website. This is it."
+url                      : "https://spunt.github.io"
+baseurl                  : "/"
+repository               : "spunt/spunt.github.io"
+# teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+# breadcrumbs            : false # true, false (default)
+words_per_minute         : 200
+comments:
+  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  disqus:
+    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+staticman:
+  allowedFields          : ['name', 'email', 'url', 'message']
+  branch                 : "master"
+  commitMessage          : "New comment."
+  filename               : comment-{@timestamp}
+  format                 : "yml"
+  moderation             : true
+  path                   : "docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
+  requiredFields         : ['name', 'email', 'message']
+  transforms:
+    email                : "md5"
+  generatedFields:
+    date:
+      type               : "date"
+      options:
+        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+atom_feed:
+  path                   : # blank (default) uses feed.xml
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
+
+# Social Sharing
+twitter:
+  username               :
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 : # Open Graph/Twitter default site image
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+
+# Analytics
+analytics:
+  provider               : "google"
+  google:
+    tracking_id          : UA-56476723-1
+
+
+# Site Author
 author:
-  name: Bob Spunt
-  url: http://www.bobspunt.com
-  email: bobspunt@gmail.com
-  github_username: spunt
-  twitter_username: bobspunt
-  linkedin_username: bobspunt
-  scholar_username: 64MMv_QAAAAJ
+  name          : "Bob Spunt"
+  avatar        : "/public/favicon.ico"
+  bio           : "I have a website. This is it."
+  location      : "Seattle, WA"
+  email         : "bobspunt@gmail.com"
+  github        : "spunt"
+  twitter       : "bobspunt"
+  linkedin      : "bobspunt"
+  email         :
+  uri           :
+  bitbucket     :
+  codepen       :
+  dribbble      :
+  flickr        :
+  facebook      :
+  foursquare    :
+  gitlab        :
+  google_plus   :
+  keybase       :
+  instagram     :
+  lastfm        :
+  pinterest     :
+  soundcloud    :
+  stackoverflow : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
+  steam         :
+  tumblr        :
+  vine          :
+  weibo         :
+  xing          :
+  youtube       : # "https://youtube.com/c/MichaelRoseDesign"
 
-# Where things are
-source:       .
-destination:  ./_site
-plugins_dir:  _plugins
-layouts_dir:  _layouts
-data_dir:     _data
-includes_dir: _includes
-collections:
-  posts:
-    output:   true
 
-# Handling Reading
-safe:         false
-include:      [".htaccess"]
-exclude:      ["node_modules", "vendor"]
-keep_files:   [".git", ".svn"]
-encoding:     "utf-8"
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Filtering Content
-show_drafts: null
-limit_posts: 0
-future:      false
-unpublished: false
-
-# Plugins
-whitelist: []
-gems:
-  - jekyll
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-redirect-from
 
 # Conversion
-markdown:    kramdown
+markdown: kramdown
 highlighter: rouge
-lsi:         false
+lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-# Serving
-detach:  false
-port:    4000
-host:    127.0.0.1
-baseurl: "/" # does not include hostname
-show_dir_listing: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
 
 # Outputting
-permalink:     pretty
-paginate:         5
-paginate_path: /page:num
-timezone:      null
-quiet:    false
-verbose:  false
-defaults: []
-liquid:
-  error_mode: warn
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: "America/Los_Angeles"
 
-# Markdown Processors
-rdiscount:
-  extensions: []
-redcarpet:
-  extensions: []
-kramdown:
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  input:          GFM
-  hard_wrap:      false
-  footnote_nr:    1
+
+# Plugins
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-redirect-from
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-redirect-from
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      sidebar:
+        nav: "main"
+  # _main
+  - scope:
+      path: ""
+      type: main
+    values:
+      sidebar:
+        nav: "main"

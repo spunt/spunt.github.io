@@ -1,5 +1,5 @@
 ---
-layout: subpage
+layout: single
 title: Sublime Text
 ---
 
