@@ -9,7 +9,7 @@ redirect_from:
 
 I like to code. I also like to share my code, which you can find on my [GitHub](https://github.com/spunt?tab=repositories). Finally, I also like to make the code I share as useful as possible to as many people as possible. If you're an experimental psychologist or cognitive neuroscientist, the following software may be particularly useful to you:
 
-- [bspmview](http://spunt.github.io/bspmview)
+- [bspmview](bspmview)
 - [Why/How Localizer Task](http://spunt.github.io/whyhowlocalizer)
 - [fMRI Design Optimization Software](http://spunt.github.io/easy-optimize-x)
 - [Psychtoolbox Utilities](http://spunt.github.io/ptb-utilities)
