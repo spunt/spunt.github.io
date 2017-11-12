@@ -10,7 +10,7 @@ locale                   : "en"
 title                    : "Bob Spunt, PhD"
 title_separator          : "|"
 name                     : "Bob Spunt"
-description              : "I have a website. This is it."
+description              : "I use science and technology to understand people like you and me."
 url                      : "https://spunt.github.io"
 baseurl                  : "/"
 repository               : "spunt/spunt.github.io"
@@ -77,8 +77,8 @@ analytics:
 # Site Author
 author:
   name          : "Bob Spunt"
-  avatar        : "public/touch-icon-192x192.png"
-  bio           : "I have a website. This is it."
+  avatar        : "public/avatar-192.png"
+  bio           : "I use science and technology to understand people like you and me."
   location      :
   email         : "bobspunt@gmail.com"
   github        : "spunt"

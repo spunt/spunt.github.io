@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Papers
+author_profile: true
 redirect_from:
   - /papers
 ---
