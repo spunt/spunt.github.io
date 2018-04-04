@@ -16,7 +16,7 @@ Electronic versions of my papers are provided here to ensure the timely and unbi
 | Scheele D, Schwering C, Elison JT, **Spunt RP**, Maier W, Hurlemann R (2015). A human tendency to anthropomorphize is enhanced by oxytocin. _European Neuropsychopharmacology_. 25(10), 1817-1823. <br>[Download PDF][10]                                                                                                            |
 | **Spunt RP** &amp; Adolphs R (2015). Folk explanations of behavior: A specialized use of a domain-general mechanism. _Psychological Science_. 26(6), 724-736. <br>[Download PDF][11] ∙ [Supplement][12] ∙ [Open Science Framework Page][13] ∙ [GitHub Repo][38] ∙ [NeuroVault][14]                                                                       |
 | **Spunt RP**, Elison JT, Dufour N, Hurlemann R, Saxe R, &amp; Adolphs R (2015). Amygdala lesions do not compromise the cortical network for false-belief reasoning. Proceedings of the National Academy of Sciences. 112(15), 4827-4832. <br>[Download PDF][15]                                                                      |
-| **Spunt RP**, Meyer ML, &amp; Lieberman MD (2015). The default mode of human brain function primes the intentional stance. _Journal of Cognitive Neuroscience_. 27(6), 1116-1124. <br>[Download PDF][16] ∙ [NeuroVault][17]                                                                                                          |
+| **Spunt RP**, Meyer ML, &amp; Lieberman MD (2015). The default mode of human brain function primes the intentional stance. _Journal of Cognitive Neuroscience_. 27(6), 1116-1124. <br>[Download PDF][16] ∙ [NeuroVault][17] ∙ [Github Repo][43]                                                                                                         |
 | Schaafsma SM, Pfaff DW, **Spunt RP**, &amp; Adolphs R (2015). Deconstructing and Reconstructing "Theory of Mind". _Trends in Cognitive Sciences_. 19(2), 65-72. <br>[Download PDF][18]                                                                                                                                               |
 | **Spunt RP** &amp; Adolphs R (2014). Validating the why/how the contrast for functional MRI studies of Theory of Mind. _NeuroImage_. 99, 301-311. <br>[Download PDF][19] ∙ [NeuroVault][20] ∙ [Why/How Localizer Github][42] ∙ [Adapted False-Belief Localizer Github][36]                                                                                                                                          |
 | **Spunt RP** (2014). Dual-Process Theories in Social Cognitive Neuroscience. In A. Toga &amp; MD Lieberman (eds.) Brain Mapping: An Encyclopedic Reference. Elsevier: Oxford. <br>[Download PDF][21]                                                                                                                                 |
@@ -75,5 +75,6 @@ Electronic versions of my papers are provided here to ensure the timely and unbi
 [40]: https://github.com/spunt/neuroimage-spuntlieberman-2012
 [41]: https://github.com/spunt/scan-animal-emotion-attribution
 [42]: https://github.com/spunt/whyhowlocalizer
+[43]: https://github.com/spunt/jocn-spuntmeyerlieberman-2015
 
 
