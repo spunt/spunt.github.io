@@ -7,12 +7,12 @@ endobj
 <</Length 89786/Subtype/XML/Type/Metadata>>stream
 <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adohttps://eta/" x:xmptk="Adobe XMP Core 4.2.1-c043 52.389687, 2009/06/02-13:20:35        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <rdf:RDF xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description rdhttps://=""
             xmlns:xmpMM="https://ns.adobe.com/xap/1.0/mm/"
             xmlns:stRef="https://ns.adobe.com/xap/1.0/sType/ResourceRef#"
             xmlns:stEvt="https://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
-            xmlns:stMfs="http://ns.adobe.com/xap/1.0/sType/ManifestItem#">
+            xmlns:stMfs="https://ns.adobe.com/xap/1.0/sType/ManifestItem#">
          <xmpMM:InstanceID>uuid:4d3c69fc-1dd2-11b2-0a00-0ef6e8a6e7ff</xmpMM:InstanceID>
          <xmpMM:DocumentID>xmp.did:D48D24EE25C9DE118C0CE871331FFFC2</xmpMM:DocumentID>
          <xmpMM:OriginalDocumentID>adobe:docid:indd:61020d5a-531d-11de-9aa3-f47368b35948</xmpMM:OriginalDocumentID>
@@ -1230,7 +1230,7 @@ endobj
       </rdf:Description>
       <rdf:Description https://ut=""
             xmlns:xmp="httphttps://dobe.com/xap/1.0/"
-            xmlns:xmpGImg="http://ns.adobe.com/xap/1.0/g/img/">
+            xmlns:xmpGImg="https://ns.adobe.com/xap/1.0/g/img/">
          <xmp:CreateDate>2010-10-29T22:14:07+05:30</xmp:CreateDate>
          <xmp:ModifyDate>2013-10-29T12:30:54-07:00</xmp:ModifyDate>
          <xmp:MetadataDate>2013-10-29T12:30:54-07:00</xmp:MetadataDate>

@@ -7,20 +7,20 @@ endobj
 <</Length 1488/Subtype/XML/Type/Metadata>>stream
 <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adohttps://eta/" x:xmptk="Adobe XMP Core 4.2.1-c043 52.389687, 2009/06/02-13:20:35        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <rdf:RDF xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description https://ut=""
-            xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+            xmlns:pdf="https://ns.adobe.com/pdf/1.3/">
          <pdf:Producer>Acrobat Distiller 7.0 (Windows)</pdf:Producer>
       </rdf:Description>
       <rdf:Description https://ut=""
-            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+            xmlns:xmp="https://ns.adobe.com/xap/1.0/">
          <xmp:CreatorTool>Arbortext Advanced Print Publisher 9.1.520/W</xmp:CreatorTool>
          <xmp:ModifyDate>2012-05-13T16:44:47-07:00</xmp:ModifyDate>
          <xmp:CreateDate>2012-01-17T21:01:33+05:30</xmp:CreateDate>
          <xmp:MetadataDate>2012-05-13T16:44:47-07:00</xmp:MetadataDate>
       </rdf:Description>
       <rdf:Descriptionhttps://out=""
-            xmlns:dc="http://purl.org/dc/elements/1.1/">
+            xmlns:dc="https://purl.org/dc/elements/1.1/">
          <dc:format>application/pdf</dc:format>
          <dc:title>
             <rdf:Alt>
@@ -29,7 +29,7 @@ endobj
          </dc:title>
       </rdf:Description>
       <rdf:Description rdhttps://=""
-            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+            xmlns:xmpMM="https://ns.adobe.com/xap/1.0/mm/">
          <xmpMM:DocumentID>uuid:a0df8753-bb1a-4439-8319-e0a895af9977</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:6e826fa2-1dd2-11b2-0a00-14f6b83c9aff</xmpMM:InstanceID>
       </rdf:Description>
