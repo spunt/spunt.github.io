@@ -4,25 +4,25 @@ if nargin<1, data = []; end
 easydefaults('TR', 1, 'nCond', 1, 'nTrials', 1, 'trialDur', 0, 'ITI', 20, 'pad', 20, 'HPF', 128, 'JITTER', 0, 'AUTOSAVEPLOT', 0);
 easyparse(varargin, {'TR' 'nCond' 'nTrials' 'trialDur' 'ITI' 'HPF' 'pad' 'JITTER' 'AUTOSAVEPLOT'});
 data.screensize = get(0,'Screensize');  % Get screensize.
-data.plotW2Hratio = 2.5; 
-data.TR = TR; 
+data.plotW2Hratio = 2.5;
+data.TR = TR;
 data.nCond = nCond;
 data.nTrials = nTrials;
 data.trialDur = trialDur;
 data.ITI = ITI;
 data.HPF = HPF;
-data.pad = 20; 
+data.pad = 20;
 data.fontax = 16;
-data.fontlabels = 16; 
+data.fontlabels = 16;
 data.fontbutton = 15;
-data.osrate = 1; 
+data.osrate = 1;
 S.fh = figure('numbertitle','off',...
               'menubar','none',...
               'units','normal',...
               'position',[.025 .50 .25 .35],...
               'name','View Predictor GUI',...
               'resize','on');
-guidata(S.fh, data); 
+guidata(S.fh, data);
 % =========================================================================
 % MENUS
 % =========================================================================
@@ -55,7 +55,7 @@ if regexp(computer, 'PCWIN'), yadj = [0 0]; end
 for i = 1:length(inputname)
     data.os = computer;
     S.tx(i) = uicontrol(W1{:}, [(1-ew)/2 pos(1,i)+yadj(1) ew eh], 'string', inputname{i});
-    S.ed(i) = uicontrol(W2{:}, [(1-ew)/2 pos(2,i)+yadj(2) ew eh], 'string', num2str(defvalues(i))); 
+    S.ed(i) = uicontrol(W2{:}, [(1-ew)/2 pos(2,i)+yadj(2) ew eh], 'string', num2str(defvalues(i)));
 end
 
 % =========================================================================
@@ -79,7 +79,7 @@ set(S.tg(5), 'enable', 'off', 'callback', {@pb_xmatrix,S});
 set(S.tg(6), 'enable', 'on', 'callback', {@pb_closegui,S});
 
 if AUTOSAVEPLOT
-    
+
     time = strtrim(datestr(now,'HHMMSS'));
     day = strtrim(datestr(now,'mmm_DD'));
     name = ['screen' time '_guiplot_' day '.png'];
@@ -96,11 +96,11 @@ if AUTOSAVEPLOT
     pb_filter([],[],S); export_fig(name, '-nocrop');
     name = ['screen' time '_xmatrixplot_' day '.png'];
     pb_xmatrix([],[],S); export_fig(name, '-nocrop');
-    
-end
-    
 
-end 
+end
+
+
+end
 % =========================================================================
 % CALLBACKS
 % =========================================================================
@@ -111,7 +111,7 @@ function pb_plot(varargin)
     params = cell2mat(cellfun(@str2num, params, 'Unif', false));
     data = guidata(S.fh);
     data.nCond = 1;
-    data.TR = params(1); 
+    data.TR = params(1);
     data.nTrials = params(2);
     data.trialDur = params(3);
     data.ITI = params(4);
@@ -123,9 +123,9 @@ function pb_plot(varargin)
         data.scan_length = (data.nTrials-1)*(data.trialDur+data.ITI)+(2*data.pad);
     end
     numTR=ceil(data.scan_length/data.TR);
-    data.numTR = numTR; 
+    data.numTR = numTR;
     unisample = repmat(data.ITI + data.trialDur, data.nTrials*data.nCond, 1);
-    unisample(1) = data.pad; 
+    unisample(1) = data.pad;
     onsvector = cumsum(unisample);
     if data.nCond > 1
         tmp = randperm(length(unisample));
@@ -137,34 +137,34 @@ function pb_plot(varargin)
         onsets = onsvector;
         [X,X0,FX] = make_regressor(numTR, data.TR, 16, onsets, data.trialDur, [], 1, 0, data.HPF);
     end
-    data.unisample = unisample; 
+    data.unisample = unisample;
     data.X = X - X(1);
     data.X0 = X0;
     data.FX = FX;
     data.axis = [0 data.numTR+1 -.15 1.05];
     tmppos = get(S.fh, 'position');
-    figh = tmppos(4)*.75; 
-    figw = figh*data.plotW2Hratio; 
-    lr = tmppos(1)+tmppos(3); 
-    tb = tmppos(2) + tmppos(4) - figh; 
+    figh = tmppos(4)*.75;
+    figw = figh*data.plotW2Hratio;
+    lr = tmppos(1)+tmppos(3);
+    tb = tmppos(2) + tmppos(4) - figh;
     if lr + figw > 1, lr = tmppos(1)-figw; end
     if lr < 0
         lr = tmppos(1) - (figw/2);
-        tb = tmppos(2) - figh; 
+        tb = tmppos(2) - figh;
         if tb < 0, tb = tmppos(2) + tmppos(4); end
     end
     figpos = [lr tb figw figh];
     data.figh = figure('color', 'white', 'units', 'normal', 'position', figpos,'menubar','none', 'name', 'Predictor Plot', 'visible', 'off'); data.plotax = gca;
     if data.nCond > 1
         for i = 1:data.nCond
-            subplot(2, 1, i); 
+            subplot(2, 1, i);
             plot(X0(:,i), '-', 'LineWidth', 2, 'Color', [0 0 0], 'tag', 'raw'); hold on;
             set(gca, 'FontName', 'Arial', 'FontSize', data.fontax);
             xlabel(sprintf('Condition %d', i), 'fontsize', data.fontlabels);
             ylabel('Activation', 'fontsize', data.fontlabels);
             axis([0 length(X) + 1 -.15 1.05]);
-            box('off'); 
-        end    
+            box('off');
+        end
     else
         plot(data.X0, '-', 'LineWidth', 2, 'Color', [0 0 0], 'tag', 'raw'); hold on;
         set(gca, 'FontName', 'Arial', 'FontSize', data.fontax);
@@ -172,7 +172,7 @@ function pb_plot(varargin)
         ylabel(data.plotax, 'Predicted Response', 'fontsize', data.fontlabels, 'fontweight', 'bold');
         mytitle = sprintf('Single Predictor - %d Trial(s), Trial Duration = %d s, ITI = %d s, TR = %2.3f s', data.nTrials, data.trialDur, data.ITI, data.TR);
         title(data.plotax, mytitle, 'fontsize', ceil(data.fontlabels*1.10), 'fontweight', 'bold');
-        caxis = data.axis; 
+        caxis = data.axis;
         caxis(2) = caxis(2);
         axis(data.plotax, caxis);
         box(data.plotax, 'off');
@@ -202,7 +202,7 @@ function pb_filter(varargin)
     HPF = str2num(get(S.ed(6), 'String'));
     FX = bspm_filter(data.X, data.TR, HPF);
     FX = scalematrix(FX);
-    data.FX = FX; 
+    data.FX = FX;
     ch = findobj(data.plotax, 'tag', 'filt');
     if isempty(ch)
         axes(data.plotax)
@@ -216,9 +216,9 @@ end
 function pb_jitter(varargin)
     S = varargin{3};
     data = guidata(S.fh);
-    
+
     jitsample = getjit(ceil(data.ITI*.5), data.ITI, data.nTrials*data.nCond);
-    jitsample(1) = data.pad; 
+    jitsample(1) = data.pad;
     [JX, JX0] = make_regressor(data.numTR, data.TR, 16, cumsum(jitsample+data.trialDur), data.trialDur, [], 1, 0, data.HPF);
     JX = scalematrix(JX);
     data.X = JX - JX(1);
@@ -240,14 +240,14 @@ function pb_xmatrix(varargin)
     FX = data.FX;
     X = [scalematrix(FX) ones(size(FX,1), 1)];
     tmppos = get(S.fh, 'position');
-    figh = tmppos(4)*.75; 
-    figw = tmppos(3)*.75; 
-    lr = tmppos(1)+tmppos(3); 
-    tb = tmppos(2) + tmppos(4) - figh; 
+    figh = tmppos(4)*.75;
+    figw = tmppos(3)*.75;
+    lr = tmppos(1)+tmppos(3);
+    tb = tmppos(2) + tmppos(4) - figh;
     if lr + figw > 1, lr = tmppos(1)-figw; end
     if lr < 0
         lr = tmppos(1) - (figw/2);
-        tb = tmppos(2) - figh; 
+        tb = tmppos(2) - figh;
         if tb < 0, tb = tmppos(2) + tmppos(4); end
     end
     figpos = [lr tb figw figh];
@@ -298,8 +298,8 @@ function menu_changefontsize(varargin)
         F = 0.9;
     end
     data.fontax = data.fontax*F;
-    data.fontlabels = data.fontlabels*F; 
-    data.fontbutton = data.fontbutton*F; 
+    data.fontlabels = data.fontlabels*F;
+    data.fontbutton = data.fontbutton*F;
     h = findall(S.fh, 'type', 'uicontrol');
     fs = get(h, 'fontsize');
     for i = 1:length(h)
@@ -325,7 +325,7 @@ function [X, X0, FX] = make_regressor(nvols, TR, TRbin, ons, dur, pm, TRons, TDt
 % BOB_SPM_MAKE_REGRESSOR
 %
 %   USAGE: X = bob_spm_make_regressor(nvols, TR, TRbin, ons, dur, pm, TRons, TDtag)
-%   
+%
 %   ARGUMENTS
 %       nvols = # of volumes
 %       TR = TR (in secs)
@@ -342,7 +342,7 @@ function [X, X0, FX] = make_regressor(nvols, TR, TRbin, ons, dur, pm, TRons, TDt
 %
 % =========================================================
 if nargin<8, TDtag = 0; end
-if nargin<7, TRons = 1; end   
+if nargin<7, TRons = 1; end
 if nargin<6, pm = []; end
 if nargin<5, error('USAGE: X = bspm_make_regressor(nvols, TR, TRbin, ons, dur, pm, TRons, TDtag)'); end
 if size(ons,1)==1 && size(ons,2)~=1, ons = ons'; end
@@ -384,7 +384,7 @@ end
 if TDtag
     X1 = X;
     X01 = X0;
-    clear xo xoc X X0 po cpm po poc 
+    clear xo xoc X X0 po cpm po poc
     hrf = spm_hrf_td(TR/TRbin);
     xo = zeros(xlength,1);
     for i = 1:length(onso)
@@ -417,7 +417,7 @@ if TDtag
     X(:,2:2:end) = X2;
     X0(:,1:2:end) = X01;
     X0(:,2:2:end) = X02;
-    
+
 end
 end
 function SX = scalematrix(X)
@@ -437,11 +437,11 @@ function FX = bspm_filter(X, TR, cutoff)
     FX = spm_filter(K, X);
 end
 function jitsample = getjit(minSOA, meanSOA, nTrials)
-    goodjit = 0; 
+    goodjit = 0;
     while ~goodjit
         jitsample = minSOA + poissrnd(meanSOA-minSOA, nTrials, 1);
         if round(mean(jitsample)*100)==meanSOA*100, goodjit = 1; end
-    end 
+    end
 end
 function easydefaults(varargin)
 % easydefaults  Set many default arguments quick and easy.
@@ -449,45 +449,45 @@ function easydefaults(varargin)
 %   - For input arguments x1,x2,x3, set default values x1def,x2def,x3def
 %     using easydefaults as parameter-value pairs:
 %       easydefaults('x1',x1def,'x2',x2def,'x3',x3def);
-%   
-%   - Defaults can be set for any input argument, whether explicit or as 
+%
+%   - Defaults can be set for any input argument, whether explicit or as
 %     part of a parameter-value pair:
 %       function dummy_function(x,varargin)
 %           easydefaults('x',1,'y',2);
-%           ...   
+%           ...
 %       end
 %
-%   - easydefaults and easyparse can in principle be used in either order, 
+%   - easydefaults and easyparse can in principle be used in either order,
 %     but it is usually better to parse first and fill in defaults after:
 %       function dummy_function(x,varargin)
 %           easyparse(varargin,'y')
 %           easydefaults('x',1,'y',2);
-%           ...   
+%           ...
 %       end
 %
 %   CAVEAT UTILITOR: this function relies on evals and assignin statements.
-%   Input checking is performed to limit potential damage, but use at your 
+%   Input checking is performed to limit potential damage, but use at your
 %   own risk.
 %
-%   Author: Jared Schwede 
+%   Author: Jared Schwede
 %   Last update: Jan 14, 2013
 
     % Check that all inputs come in parameter-value pairs.
     if mod(length(varargin),2)
         error('Default arguments must be specified in pairs!');
     end
-    
+
     for i=1:2:length(varargin)
         if ~ischar(varargin{i})
             error('Variables to easydefaults must be written as strings!');
         end
-        
+
         % We'll check that the varargin is a valid variable name. This
         % should hopefully avoid any nasty code...
         if ~isvarname(varargin{i})
             error('Invalid variable name!');
         end
-        
+
         if exist(varargin{i},'builtin') || (exist(varargin{i},'file') == 2) || exist(varargin{i},'class')
             warning('MATLAB:defined_function',['''' varargin{i} ''' conflicts with the name of a function, m-file, or class along the MATLAB path and will be ignored by easydefaults.' ...
                                         ' Please rename the variable, or use a temporary variable with easydefaults and explicitly define ''' varargin{i} ...
@@ -495,7 +495,7 @@ function easydefaults(varargin)
         else
             if ~evalin('caller',['exist(''' varargin{i} ''',''var'')'])
                 % We assign the arguments to a struct, s, which allows us to
-                % check that the evalin statement will not either throw an 
+                % check that the evalin statement will not either throw an
                 % error or execute some nasty code.
                 s.(varargin{i}) = varargin{i+1};
                 assignin('caller',varargin{i},varargin{i+1});
@@ -520,28 +520,28 @@ function s = easyparse(caller_varargin,allowed_names)
 %   - To create a struct with fields specified by the names in varargin,
 %     (similar to the output of inputParser) ask for an output argument:
 %       s = easyparse(...);
-%  
+%
 %   CAVEAT UTILITOR: this function relies on assignin statements. Input
-%   checking is performed to limit potential damage, but use at your own 
+%   checking is performed to limit potential damage, but use at your own
 %   risk.
 %
 %   Author: Jared Schwede
 %   Last update: January 14, 2013
 
     % We assume all inputs come in parameter-value pairs. We'll also assume
-    % that there aren't enough of them to justify using a containers.Map. 
+    % that there aren't enough of them to justify using a containers.Map.
     for i=1:2:length(caller_varargin)
         if nargin == 2 && ~any(strcmp(caller_varargin{i},allowed_names))
             error(['Unknown input argument: ' caller_varargin{i}]);
         end
-        
+
         if ~isvarname(caller_varargin{i})
             error('Invalid variable name!');
         end
-        
-        
+
+
         % We assign the arguments to the struct, s, which allows us to
-        % check that the assignin statement will not either throw an error 
+        % check that the assignin statement will not either throw an error
         % or execute some nasty code.
         s.(caller_varargin{i}) = caller_varargin{i+1};
         % ... but if we ask for the struct, don't write all of the
@@ -605,7 +605,7 @@ function putvar(varargin)
 % D = 'The quick brown fox';
 % putvar(A,'C',D)
 % ==================
-% 
+%
 % % Next, clear your workspace. Clear ensures that no
 % % variables exist initially in the base workspace. Then
 % % run the function testputvar, and finally execute the
@@ -614,7 +614,7 @@ function putvar(varargin)
 % >> clear
 % >> testputvar
 % >> who
-% 
+%
 % % Your variables are:
 % % A  C  D
 %
@@ -658,11 +658,11 @@ for i = 1:nvar
   % what was this variable called in the caller workspace?
   varname = inputname(i);
   vari = varargin{i};
-  
+
   if ~isempty(varname)
     % We have a variable name, so assign this variable
     % into the base workspace
-    
+
     % First though, check to see if the variable is
     % already there. If it is, we will need to set
     % a warning.
@@ -671,15 +671,15 @@ for i = 1:nvar
         ['Input variable #',num2str(i),' (',varname,')', ...
         ' already exists in the base workspace. It will be overwritten.'])
     end
-    
+
     % do the assign into the indicated name
     assignin('base',varname,varargin{i})
-    
+
   elseif ischar(vari) && ismember(vari,callervars)
     % the i'th variable was a character string, that names
     % a variable in the caller workspace. We can assign
     % this variable into the base workspace.
-    
+
     % First though, check to see if the variable is
     % already there. If it is, we will need to set
     % a warning.
@@ -689,31 +689,31 @@ for i = 1:nvar
         ['Input variable #',num2str(i),' (',varname,')', ...
         ' already exists in the base workspace. It will be overwritten.'])
     end
-    
+
     % extract the indicated variable contents from
     % the caller workspace.
     vari = evalin('caller',varname);
-    
+
     % do the assign into the indicated name
     assignin('base',varname,vari)
-    
+
   else
     % we cannot resolve this variable
     warning('PUTVAR:novariable', ...
       ['Did not assign input variable #',num2str(i), ...
       ' as no caller workspace variable was available for that input.'])
-    
+
   end
-  
+
 end
 end
 function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 %STRUCDISP  display structure outline
 %
 %   STRUCDISP(STRUC, DEPTH, PRINTVALUES, MAXARRAYLENGTH, FILENAME) displays
-%   the hierarchical outline of a structure and its substructures. 
+%   the hierarchical outline of a structure and its substructures.
 %
-%   STRUC is a structure datatype with unknown field content. It can be 
+%   STRUC is a structure datatype with unknown field content. It can be
 %   either a scalar or a vector, but not a matrix. STRUC is the only
 %   mandatory argument in this function. All other arguments are optional.
 %
@@ -746,13 +746,13 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 %% Creator and Version information
 % Created by B. Roossien <roossien@ecn.nl> 14-12-2006
 %
-% Based on the idea of 
+% Based on the idea of
 %       M. Jobse - display_structure (Matlab Central FileID 2031)
 %
 % Acknowledgements:
 %       S. Wegerich - printmatrix (Matlab Central FileID 971)
 %
-% Beta tested by: 
+% Beta tested by:
 %       K. Visscher
 %
 % Feedback provided by:
@@ -777,7 +777,7 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 % 1.2.2 : Bug fix - a field being an empty array gave an error
 % 1.2.1 : Bug fix
 % 1.2.0 : Increased readability of code
-%         Makes use of 'structfun' and 'cellfun' to increase speed and 
+%         Makes use of 'structfun' and 'cellfun' to increase speed and
 %         reduce the amount of code
 %         Solved bug with empty fieldname parameter
 % 1.1.2 : Command 'eval' removed with a more simple and efficient solution
@@ -796,12 +796,12 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
     if ~isstruct(Structure)
         error('First input argument must be structure');
     end
-    
+
     % first argument can be a scalar or vector, but not a matrix
     if ~isvector(Structure)
         error('First input argument can be a scalar or vector, but not a matrix');
     end
-    
+
     % default value for second argument is -1 (print all levels)
     if nargin < 2 || isempty(depth)
         depth = -1;
@@ -814,7 +814,7 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 
     % second argument only works if it is an integer, therefore floor it
     depth = floor(depth);
-    
+
     % default value for third argument is 1
     if nargin < 3 || isempty(printValues)
         printValues = 1;
@@ -825,43 +825,43 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
         maxArrayLength = 10;
     end
 
-    
-    % start recursive function   
-    listStr = recFieldPrint(Structure, 0, depth, printValues, ... 
+
+    % start recursive function
+    listStr = recFieldPrint(Structure, 0, depth, printValues, ...
                             maxArrayLength);
 
-    
+
     % 'listStr' is a cell array containing the output
     % Now it's time to actually output the data
     % Default is to output to the command window
     % However, if the filename argument is defined, output it into a file
 
     if nargin < 5 || isempty(fileName)
-        
+
         % write data to screen
         for i = 1 : length(listStr)
             disp(cell2mat(listStr(i, 1)));
         end
-        
+
     else
-        
+
         % open file and check for errors
         fid = fopen(fileName, 'wt');
-        
+
         if fid < 0
             error('Unable to open output file');
         end
-        
+
         % write data to file
         for i = 1 : length(listStr)
             fprintf(fid, '%s\n', cell2mat(listStr(i, 1)));
         end
-        
+
         % close file
         fclose(fid);
-        
+
     end
-    
+
 
 
 
@@ -937,7 +937,7 @@ isStruct = structfun(@isstruct, Structure);
 strucFields = fields(isStruct == 1);
 
 
-%% Recursively print structure fields 
+%% Recursively print structure fields
 % The next step is to select each structure field and handle it
 % accordingly. Each structure can be empty, a scalar, a vector or a matrix.
 % Matrices and long vectors are only printed with their fields and not with
@@ -961,7 +961,7 @@ for iField = 1 : length(strucFields)
 
     fieldName = cell2mat(strucFields(iField));
     Field =  Structure.(fieldName);
-    
+
     % Empty structure
     if isempty(Field)
 
@@ -988,7 +988,7 @@ for iField = 1 : length(strucFields)
             listStr = [listStr; {line}];
         end
 
-    % Short vector structure of which the values should be printed    
+    % Short vector structure of which the values should be printed
     elseif (isvector(Field)) &&  ...
            (printValues > 0) && ...
            (length(Field) < maxArrayLength) && ...
@@ -1046,7 +1046,7 @@ maxFieldLength = max(cellfun(@length, fields));
 % Print non-structure fields without the values. This can be done very
 % quick.
 if printValues == 0
-    
+
     noStrucFields = fields(isStruct == 0);
 
     for iField  = 1 : length(noStrucFields)
@@ -1125,8 +1125,8 @@ otherFields = fields(isOther == 1);
 % - The values of cells are not printed
 
 
-% Start with printing strings and characters. To avoid the display screen 
-% becoming a mess, the part of the string that is printed is limited to 31 
+% Start with printing strings and characters. To avoid the display screen
+% becoming a mess, the part of the string that is printed is limited to 31
 % characters. In the future this might become an optional parameter in this
 % function, but for now, it is placed in the code itself.
 % if the string is longer than 31 characters, only the first 31  characters
@@ -1140,19 +1140,19 @@ for iField = 1 : length(charFields)
     Field = cell2mat(charFields(iField));
 
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if (size(Structure.(Field), 1) > 1) && (size(Structure.(Field), 2) > 1)
-        
+
         varStr = createArraySize(Structure.(Field), 'char');
-        
+
     elseif length(Field) > maxStrLength
-        
+
         varStr = sprintf(' ''%s...''', Structure.(Field(1:maxStrLength)));
-        
+
     else
-        
+
         varStr = sprintf(' ''%s''', Structure.(Field));
-        
+
     end
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1162,12 +1162,12 @@ end
 % Print empty fields
 
 for iField = 1 : length(emptyFields)
-    
-    
+
+
     Field = cell2mat(emptyFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' : [ ]' ]}];
 
 end
@@ -1177,25 +1177,25 @@ end
 % information
 
 for iField = 1 : length(logicalFields)
-    
+
     Field = cell2mat(logicalFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if isscalar(Structure.(Field))
-        
+
         logicalValue = {'False', 'True'};
-        
+
         varStr = sprintf(' %s', logicalValue{Structure.(Field) + 1});
 
     else
 
         varStr = createArraySize(Structure.(Field), 'Logic array');
-                
+
     end
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
-    
+
 end
 
 
@@ -1203,11 +1203,11 @@ end
 % floats and exponential numbers are printed in their own format.
 
 for iField = 1 : length(scalarFields)
-    
+
     Field = cell2mat(scalarFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = sprintf(' %g', Structure.(Field));
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1220,23 +1220,23 @@ end
 % the array.
 
 for iField = 1 : length(vectorFields)
-    
+
     Field = cell2mat(vectorFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if length(Structure.(Field)) > maxArrayLength
-        
+
         varStr = createArraySize(Structure.(Field), 'Array');
-        
+
     else
 
         varStr = sprintf('%g ', Structure.(Field));
 
         varStr = ['[' varStr(1:length(varStr) - 1) ']'];
-                    
+
     end
-    
+
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' : ' varStr]}];
 
 end
@@ -1253,27 +1253,27 @@ end
 % This method was developed by S. Wegerich.
 
 for iField = 1 : length(matrixFields)
-    
+
     Field = cell2mat(matrixFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if numel(Structure.(Field)) > maxArrayLength
-        
+
         varStr = createArraySize(Structure.(Field), 'Array');
 
         varCell = {[strIndent '   |' filler ' ' Field ' :' varStr]};
-        
+
     else
 
         matrixSize = size(Structure.(Field));
-        
+
         filler2 = char(ones(1, maxFieldLength + 6) * 32);
 
         dashes = char(ones(1, 12 * matrixSize(2) + 1) * 45);
 
         varCell = {[strIndent '   |' filler2 dashes]};
-        
+
         % first line with field name
         varStr = sprintf('%#10.2e |', Structure.(Field)(1, :));
 
@@ -1284,14 +1284,14 @@ for iField = 1 : length(matrixFields)
         for j = 2 : matrixSize(1)
 
             varStr = sprintf('%#10.2e |', Structure.(Field)(j, :));
-            
+
             varCell = [varCell; {[strIndent '   |' filler2 '|' varStr]}];
         end
 
         varCell = [varCell; {[strIndent '   |' filler2 dashes]}];
-                    
+
     end
-    
+
     listStr = [listStr; varCell];
 
 end
@@ -1303,9 +1303,9 @@ end
 for iField = 1 : length(cellFields)
 
     Field = cell2mat(cellFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = createArraySize(Structure.(Field), 'Cell');
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1318,9 +1318,9 @@ end
 for iField = 1 : length(otherFields)
 
     Field = cell2mat(otherFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = createArraySize(Structure.(Field), 'Unknown');
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1337,7 +1337,7 @@ end
 function str = getIndentation(indent)
     x = '   |    ';
     str = '';
-    
+
     for i = 1 : indent
         str = cat(2, str, x);
     end
@@ -1355,7 +1355,7 @@ function varStr = createArraySize(varName, type)
 
     arraySizeStr = sprintf('%gx', varSize);
     arraySizeStr(length(arraySizeStr)) = [];
-    
+
     varStr = [' [' arraySizeStr ' ' type ']'];
 end
 
@@ -1406,7 +1406,7 @@ p = s/r;
 
 if p < 1
     x = interp(x,1/p);
-elseif p > 1       
+elseif p > 1
     x = resample(x,1/tol,round(p*1/tol));
 end
 end
@@ -1417,13 +1417,13 @@ function ux = upsamplex(x, osrate)
         on = tmp(tmp(:,1)==1, 2);
         off = tmp(tmp(:,1)==1,3);
     else
-        on = find(x); off = on; 
+        on = find(x); off = on;
     end
     ux = zeros(length(x)*osrate, 1);
-    on2 = fix(on*osrate); 
+    on2 = fix(on*osrate);
     off2 = fix(off*osrate);
     for i = 1:length(on2)
-        ux(on2(i):off2(i)) = 1; 
+        ux(on2(i):off2(i)) = 1;
     end
 
 end
@@ -1500,27 +1500,27 @@ if nargin == 2
   if ~ischar(opt)
     error('Additional argument must be a string array');
   end
-  
+
   % Allow for partial arguments
   possibleOptions = ['-full '; '-reps '; '-alpha'];
   iOpt = strmatch(lower(opt), possibleOptions);
-  
+
   if isempty(iOpt) || length(iOpt) > 1
     error('Invalid option. Allowed option: ''-full'', ''-reps'', ''-alpha''');
   else
     switch iOpt
-      
+
       case 1  % '-full'
         % Include single-element chunks
         fullList = true;
         if ischar(a)
           fprintf('''-full'' option not applicable to CHAR arrays.\n');
         end
-        
+
       case 2  % '-reps'
         % Only find 2 or more repeating blocks
         fullList = false;
-        
+
       case 3  % '-alpha'
         % For char arrays, only consider alphabets and numbers as part of
         % words. Punctuations and symbols are regarded as space.
@@ -1528,7 +1528,7 @@ if nargin == 2
         if ~ischar(a)
           fprintf('''-alpha'' option only applicable to CHAR arrays.\n');
         end
-        
+
     end
   end
 end
@@ -1542,14 +1542,14 @@ a = a(:)';
 % Deal with differet classes
 %--------------------------------------------------------------------------
 switch class(a)
-  
+
   case 'double'
     % Leave as is
-    
+
   case {'logical', 'uint8', 'int8', 'uint16', 'int16', 'uint32', 'int32', 'single'}
     % Convert to DOUBLE
     a = double(a);
-    
+
   case 'char'
     if alphanumeric % Get alphabet and number locations
       try % call C-helper function directly (slightly faster)
@@ -1557,11 +1557,11 @@ switch class(a)
       catch %#ok<CTCH>
         a = isletter(a) | ismember(a, 48:57);
       end
-      
+
     else  % Get non-space locations
-      a = ~isspace(a);  
+      a = ~isspace(a);
     end
-  
+
   case 'cell'
     % Convert cell array of strings into unique numbers
     if all(cellfun('isclass', a, 'char'))
@@ -1569,7 +1569,7 @@ switch class(a)
     else
       error('Cell arrays must be array of strings.');
     end
-    
+
   otherwise
     error('Invalid type. Allowed type: CHAR, LOGICAL, NUMERIC, and CELL arrays of strings.');
 end
@@ -1600,10 +1600,10 @@ else
   b(ii)             = 1;
   c                 = diff(b);
   id                = strfind(c, -1);
-  
+
   % Get single-element chunks also
   if fullList
-  
+
     % And more convoluted code
     b1(id)          = 0;
     ii2             = find(b1(1:end-1));
@@ -1611,11 +1611,11 @@ else
     id              = [id,ii2];
     [id,tmp]        = sort(id);
     d               = d(tmp);
-    
+
   else
-    
+
     d               = strfind(c, 1) - id + 1;
-    
+
   end
 end
 end
@@ -1626,25 +1626,25 @@ function varargout = findseq(A,dim)
 %   FINDSEQ(A) Find sequences of repeated numeric values in A along the
 %              first non-singleton dimension. A should be numeric.
 %
-%   FINDSEQ(...,DIM) Look for sequences along the dimension specified by the 
+%   FINDSEQ(...,DIM) Look for sequences along the dimension specified by the
 %                    positive integer scalar DIM.
 %
 %   OUT = findseq(...)
 %       OUT is a "m by 4" numeric matrix where m is the number of sequences found.
-%       
+%
 %       Each sequence has 4 columns where:
 %           - 1st col.:  the value being repeated
 %           - 2nd col.:  the position of the first value of the sequence
 %           - 3rd col.:  the position of the last value of the sequence
 %           - 4th col.:  the length of the sequence
-%       
+%
 %   [VALUES, INPOS, FIPOS, LEN] = findseq(...)
-%       Get OUT as separate outputs. 
+%       Get OUT as separate outputs.
 %
 %       If no sequences are found no value is returned.
 %       To convert positions into subs/coordinates use IND2SUB
 %
-% 
+%
 % Examples:
 %
 %     % There are sequences of 20s, 1s and NaNs (column-wise)
@@ -1653,11 +1653,11 @@ function varargout = findseq(A,dim)
 %               20,   7,   7, NaN,   1, NaN]
 %
 %     OUT = findseq(A)
-%     OUT =  
+%     OUT =
 %            20        1          3        3
 %             1       14         15        2
 %           NaN       16         18        3
-%     
+%
 %     % 3D sequences: NaN, 6 and 0
 %     A        = [  1, 4
 %                 NaN, 5
@@ -1668,27 +1668,27 @@ function varargout = findseq(A,dim)
 %     A(:,:,3) = [  1, 0
 %                   2, 5
 %                   3, 6];
-%     
+%
 %     OUT = findseq(A,3)
-%     OUT = 
+%     OUT =
 %             6     6    18     3
 %             0    10    16     2
 %           NaN     2     8     2
 %
 % Additional features:
-% - <a href="matlab: web('http://www.mathworks.com/matlabcentral/fileexchange/28113','-browser')">FEX findseq page</a>
-% - <a href="matlab: web('http://www.mathworks.com/matlabcentral/fileexchange/6436','-browser')">FEX rude by us page</a>
+% - <a href="matlab: web('https://www.mathworks.com/matlabcentral/fileexchange/28113','-browser')">FEX findseq page</a>
+% - <a href="matlab: web('https://www.mathworks.com/matlabcentral/fileexchange/6436','-browser')">FEX rude by us page</a>
 %
 % See also: DIFF, FIND, SUB2IND, IND2SUB
 
-% Author: Oleg Komarov (oleg.komarov@hotmail.it) 
+% Author: Oleg Komarov (oleg.komarov@hotmail.it)
 % Tested on R14SP3 (7.1) and on R2012a. In-between compatibility is assumed.
 % 02 jul 2010 - Created
 % 05 jul 2010 - Reorganized code and fixed bug when concatenating results
 % 12 jul 2010 - Per Xiaohu's suggestion fixed bug in output dimensions when A is row vector
 % 26 aug 2010 - Cast double on logical instead of single
 % 28 aug 2010 - Per Zachary Danziger's suggestion reorganized check structure to avoid bug when concatenating results
-% 22 mar 2012 - Per Herbert Gsenger's suggestion fixed bug in matching initial and final positions; minor change to distribution of OUT if multiple outputs; added 3D example 
+% 22 mar 2012 - Per Herbert Gsenger's suggestion fixed bug in matching initial and final positions; minor change to distribution of OUT if multiple outputs; added 3D example
 % 08 nov 2013 - Fixed major bug in the sorting of Final position that relied on regularity conditions not always verified
 
 % NINPUTS
@@ -1738,7 +1738,7 @@ OtherValues{4} = A == -Inf;
 Values         = [0,NaN, Inf,-Inf];
 
 % Remove zeros
-A(OtherValues{1}) = NaN;                             
+A(OtherValues{1}) = NaN;
 
 % Make the bread
 bread = NaN([szA(1:dim-1),1,szA(dim+1:end)]);
@@ -1750,8 +1750,8 @@ Out = mainengine(A,bread,dim,szA);
 for c = 1:4
     if nnz(OtherValues{c}) > 1
         % Logical to double and NaN padding
-        OtherValues{c} = double(OtherValues{c});                        
-        OtherValues{c}(~OtherValues{c}) = NaN;                          
+        OtherValues{c} = double(OtherValues{c});
+        OtherValues{c}(~OtherValues{c}) = NaN;
         % Call mainengine and concatenate results
         tmp = mainengine(OtherValues{c}, bread,dim,szA);
         if ~isempty(tmp)
@@ -1761,17 +1761,17 @@ for c = 1:4
 end
 
 % Distribute output
-if nargout < 2 
+if nargout < 2
     varargout = {Out};
 else
     varargout = num2cell(Out(:,1:nargout),1);
 end
 
 end
-% MAINENGINE This functions uses run length encoding and retrieve positions 
+% MAINENGINE This functions uses run length encoding and retrieve positions
 function Out = mainengine(meat,bread,dim,szMeat)
 
-% Make a sandwich  
+% Make a sandwich
 sandwich    = cat(dim, bread, meat, bread);
 
 % Find chunks (run length encoding engine)
@@ -1800,7 +1800,7 @@ FiPos       = sub2ind(szMeat,Fi(:,1),Fi(:,2));
 
 % Assign output
 Out         = [meat(InPos),...    % Values
-               InPos      ,...    % Initial positions 
+               InPos      ,...    % Initial positions
                FiPos      ,...    % Final   positions
                Le         ];      % Length of the blocks
 end
@@ -1829,10 +1829,10 @@ function tilefigs(handles,resize,nRows,nCols,leftRightSpacing,topBottomSpacing,.
 %   spacing
 %   TILEFIGS(...,border) Leaves a border around the tiling of figures.
 %   border is a 1 x 4 matrix, which is [leftSpace bottomSpace rightSpace
-%   topSpace]. If the primary monitor is used, the default is [0 35 0 0] 
+%   topSpace]. If the primary monitor is used, the default is [0 35 0 0]
 %   which is approximately the size of the taskbar in Windows 7. If a
 %   secondary monitor is used, the default is [0 0 0 0]
-%   TILEFIGS(...,monitor , monitorLocation,monitorSize) Specifies a monitor to use, 
+%   TILEFIGS(...,monitor , monitorLocation,monitorSize) Specifies a monitor to use,
 %   which is the row of the call get(0,'MonitorPositions'). MATLAB does not
 %   officially support dual monitors. The author has found that the
 %   MonitorPositions call correctly gets the size of the monitor (in
@@ -2005,11 +2005,11 @@ else
             yLocations(row,col) = yLocation;
         end
     end
-    
+
     % Modify the positions to make it look nicer.
     % First, if the figures are too big to not overlap, spread the rows and
     % columns out to use up all of the space at the border to minimize
-    % overlap. The subtraction of the width if there are no figures is to 
+    % overlap. The subtraction of the width if there are no figures is to
     % avoid the issue of both the column and the row being moved into the
     % empty spot
     if (sum(sum(widthMat,2) > monitorSize(1)) > 0)

@@ -1015,8 +1015,8 @@ body .markdown-body
   }
 }
 </style><title>bspmview_project_site_text</title></head><body><article class="markdown-body"><h3 id="bspmview"><a name="user-content-bspmview" href="#bspmview" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>bspmview</h3>
-<p>bspmview is a graphical user interface for overlaying, thresholding, and visualizing 3D statistical neuroimages in MATLAB. It currently requires a number of core functions from the MATLAB software [Statistical Parametric Mapping] (<a href="http://www.fil.ion.ucl.ac.uk/spm/">www.fil.ion.ucl.ac.uk/spm/</a>), and indeed will work best with the statistical images produced using SPM (note that it has only been tested on SPM8/SPM12). </p>
-<p>bspmview was directly inspired by and in some cases incorporates code from from two other statistical image viewers: <a href="http://www.alivelearn.net/xjview8/developers/">xjview</a> and <a href="http://mrtools.mgh.harvard.edu/index.php/Main_Page">FIVE</a>. The idea behind bspmview was to integrate and improve some of the great features of these two viewing programs in an interface that I find to be more intuitive, accessible, and customizable. Most importantly, all of its features require <strong>no additional third-party software</strong> (other than SPM, of course). These features include: <br />
+<p>bspmview is a graphical user interface for overlaying, thresholding, and visualizing 3D statistical neuroimages in MATLAB. It currently requires a number of core functions from the MATLAB software [Statistical Parametric Mapping] (<a href="https://www.fil.ion.ucl.ac.uk/spm/">www.fil.ion.ucl.ac.uk/spm/</a>), and indeed will work best with the statistical images produced using SPM (note that it has only been tested on SPM8/SPM12). </p>
+<p>bspmview was directly inspired by and in some cases incorporates code from from two other statistical image viewers: <a href="https://www.alivelearn.net/xjview8/developers/">xjview</a> and <a href="https://mrtools.mgh.harvard.edu/index.php/Main_Page">FIVE</a>. The idea behind bspmview was to integrate and improve some of the great features of these two viewing programs in an interface that I find to be more intuitive, accessible, and customizable. Most importantly, all of its features require <strong>no additional third-party software</strong> (other than SPM, of course). These features include: <br />
 <em> reads .img/.hdr, .nii, and .nii.gz<br />
 </em> can read non-statistical/non-intensity images (e.g., binary mask, ROIs, or count images)<br />
 <em> quickly switch display of contrast sign (+, -, or +/-)<br />
@@ -1027,7 +1027,7 @@ body .markdown-body
 </em> save thresholded whole-brain maps or specific clusters as either intensity images or binary masks<br />
 <em> save region-of-interest images by growing spheres/boxes around a coordinate (and optionally intersect the sphere/box with thresholded overlay image)<br />
 </em> many colormap options<br />
-* and other random features, such using <a href="http://neurosynth.org/locations/">Neurosynth</a> to examine functional connectivity and coactivation maps for the current coordinate</p>
+* and other random features, such using <a href="https://neurosynth.org/locations/">Neurosynth</a> to examine functional connectivity and coactivation maps for the current coordinate</p>
 <p>It requires a number of supporting utility functions and data files that should have been included in the distribution of bspmview. When bspmview is launched, it will look for these files in a folder called &ldquo;supportfiles&rdquo; that should be contained in the same folder as BSPMVIEW.</p>
 <p>In addition, this software was   inspired by and in some cases uses code from   These are included in the &ldquo;supporting files&rdquo; folder that should have been included in the distribution of the main bspmview function.</p>
 <h3 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h3>
@@ -1037,15 +1037,15 @@ body .markdown-body
 </ol>
 <h3 id="starting"><a name="user-content-starting" href="#starting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Starting</h3>
 <p>If you put bspmview in the &ldquo;toolboxes&rdquo; subfolder of your SPM installation, you will be able to launch bspmview by selecting it from the &ldquo;Toolbox:&rdquo; dropdown menu in the SPM graphical user interface. Otherwise, as long as bspmview is on your MATLAB path you can start it from the command line by entering: <br />
-<pre><code>&gt;&gt; bspmview                    
+<pre><code>&gt;&gt; bspmview
 </code></pre><br />
 This will open a file selection dialogue window with which you can select the overlay image you&rsquo;d like to display:<br />
 <img alt="" src="https://raw.githubusercontent.com/spunt/bspmview/master/supportfiles/doc/gui_layout_4167x2084.jpg" /></p>
 <p>You can also give bspmview filenames for overlay and underlay images as arguments. The following will display the overlay <em>spmT_0001.img</em> on the default underlay: <br />
-<pre><code>&gt;&gt; bspmview('spmT_0001.img') 
+<pre><code>&gt;&gt; bspmview('spmT_0001.img')
 </code></pre><br />
 This will overlay &ldquo;spmT_0001.img&rdquo; on to &ldquo;T1.nii&rdquo;:<br />
-<pre><code>&gt;&gt; bspmview('spmT_0001.img', 'T1.nii') 
+<pre><code>&gt;&gt; bspmview('spmT_0001.img', 'T1.nii')
 </code></pre></p>
 <h3 id="changing-the-appearance-of-the-interface"><a name="user-content-changing-the-appearance-of-the-interface" href="#changing-the-appearance-of-the-interface" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changing the Appearance of the Interface</h3>
 <p>So&hellip;</p>

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Using the function FILES to select files for fMRI data analysis</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-08-12"><meta name="DC.source" content="file_selection_and_checkreg.m"><style type="text/css">
+      --><title>Using the function FILES to select files for fMRI data analysis</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="https://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-08-12"><meta name="DC.source" content="file_selection_and_checkreg.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img { margin-bottom:0px; }
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -67,30 +67,30 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
   </style></head><body><div class="content"><h1>Using the function FILES to select files for fMRI data analysis</h1><!--introduction--><p>File selection is one of the most time consuming aspects of working with the SPM GUI. More importantly, having to manually select files in order to process your data makes it virtually impossible to automate your analysis pipeline. But you're in luck: You are in possession of a MATLAB function called "FILES" that, with just one line of code from the command line, will grab all the files that you're looking for. Here, I illustrate how files can be used to grab a specific file from all 10 subjects. In addition, I illustrate why this is useful with a function called BSPM_CHECKREG (which is basically a command line version of the "Check Reg" button you're already familiar with).</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Use the HELP function to see documentation for using FILES</a></li><li><a href="#2">Use FILES to select all 10 mask.img files</a></li><li><a href="#3">Use BSPM_CHECKREG to examine the selected images using Check Reg</a></li><li><a href="#4">Use FILES to select all 10 wanat_hires.nii files</a></li><li><a href="#5">Use BSPM_CHECKREG to examine the selected images using Check Reg</a></li></ul></div><h2>Use the HELP function to see documentation for using FILES<a name="1"></a></h2><pre class="codeinput">help <span class="string">files</span>
 </pre><pre class="codeoutput">  FILES OS-Sensitive Wrapper for RDIR
- 
+
     USAGE:  [fullpath, filename] = files(pattern, [celloutput])
- 
+
     (adapted from RDIR documentation) "pattern" can be a pathname,
     filename, or can include both. One can use absolute and relative
     pathnames and wildcards (*). Wildcard can be placed anywhere and used
     many times like 'path*\*.m'. One can also use a double wildcard (**) to
     match multiple directory levels. For example pattern = 'path\**\*.m'
     will match all ".m" files in "path" and all subdirectories of "path".
- 
+
     INPUT
         pattern:    string to use to select files (wildcards OK)
-        charoutput: output as cell arrays [0=no (default), 1 = yes]  
- 
+        charoutput: output as cell arrays [0=no (default), 1 = yes]
+
     OUTPUTS
         fullpath:   full path to filenames (char by default)
         filename:   filename only (cekl array by default) (OPTIONAL)
-  
+
     This is a wrapper function for RDIR.m, which is included in this file
     as a subfunction. RDIR.m was downloaded from the MATLAB File Exchange:
- 
+
         www.mathworks.com/matlabcentral/fileexchange/
         32226-recursive-directory-listing-enhanced-rdir
- 
+
 
 </pre><h2>Use FILES to select all 10 mask.img files<a name="2"></a></h2><pre class="codeinput">allmask = files(<span class="string">'sub*/**/precooked/2x2/mask.img'</span>, 1)
 </pre><pre class="codeoutput">
@@ -124,7 +124,7 @@ allanat =
 /Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub10/anatomy/precooked/wanat_hires.nii
 
 </pre><h2>Use BSPM_CHECKREG to examine the selected images using Check Reg<a name="5"></a></h2><pre class="codeinput">bspm_checkreg(allanat);
-</pre><img vspace="5" hspace="5" src="file_selection_and_checkreg_02.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="file_selection_and_checkreg_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% Using the function FILES to select files for fMRI data analysis
 % File selection is one of the most time consuming aspects of working with
@@ -136,7 +136,7 @@ allanat =
 % how files can be used to grab a specific file from all 10 subjects. In
 % addition, I illustrate why this is useful with a function called
 % BSPM_CHECKREG (which is basically a command line version of the "Check
-% Reg" button you're already familiar with). 
+% Reg" button you're already familiar with).
 %
 
 %% Use the HELP function to see documentation for using FILES
@@ -146,7 +146,7 @@ help files
 allmask = files('sub*/**/precooked/2x2/mask.img', 1)
 
 %% Use BSPM_CHECKREG to examine the selected images using Check Reg
-bspm_checkreg(allmask); 
+bspm_checkreg(allmask);
 
 %% Use FILES to select all 10 wanat_hires.nii files
 allanat = files('sub*/**/wanat_hires.nii', 1)

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>More FILES usage, and BSPM_IMCALC to manipulate fMRI data</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-08-12"><meta name="DC.source" content="file_select_and_imcalc.m"><style type="text/css">
+      --><title>More FILES usage, and BSPM_IMCALC to manipulate fMRI data</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="https://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-08-12"><meta name="DC.source" content="file_select_and_imcalc.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img { margin-bottom:0px; }
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -82,16 +82,16 @@ allanat =
 
 </pre><h2>Use the HELP function to see documentation for using "bspm_imcalc"<a name="2"></a></h2><pre class="codeinput">help <span class="string">bspm_imcalc</span>
 </pre><pre class="codeoutput">  BSPM_IMCALC  Calculate Output Image based on Input Image(s)
- 
+
     USAGE: bspm_imcalc(in, outname, operation)
-        
+
         in          = array of images to smooth (full path)
         outname     = name for output image
         operation   = string specifying operation to apply
- 
+
             LOGICAL OPERATORS
                 &gt;, &lt;, &gt;=, &lt;=, ==
-                
+
             NON-LOGICAL OPERATORS (ACROSS IMAGES)
                 'sum'   - sum across images
                 'prod'  - produce across images
@@ -102,7 +102,7 @@ allanat =
                 'min'   - min across images
                 'max'   - max across images
                 'diff'  - contrast across images (2 only)
- 
+
             NON-LOGICAL OPERATORS (SINGLE IMAGE)
                 'negative' - negative of image
                 'nan2zero' - convert NaNs to 0s
@@ -111,10 +111,10 @@ allanat =
                 'prctile'  - convert to percentile
                 'prctilesym' - convert to percentile for pos/neg separately
                 'fill'     - uses IMFILL to fill in holes in volume
- 
+
             SPECIAL OPERATORS
                 'colorcode' - combine and colorcode multiple images
- 
+
 
 </pre><h2>Use BSPM_IMCALC to compute the mean anatomical<a name="3"></a></h2><pre class="codeinput">bspm_imcalc(allanat, <span class="string">'mean_wanat_hires.nii'</span>, <span class="string">'mean'</span>);
 </pre><h2>Use BSPM_DISPLAY to examine the mean anatomical<a name="4"></a></h2><pre class="codeinput">bspm_display(<span class="string">'mean_wanat_hires.nii'</span>);
@@ -133,7 +133,7 @@ conimg =
 /Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub09/results/precooked/2x2/con_0001.img
 /Users/bobspunt/Desktop/Personal/SPM_Labs_Data/sub10/results/precooked/2x2/con_0001.img
 
-</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% More FILES usage, and BSPM_IMCALC to manipulate fMRI data
 
@@ -144,9 +144,9 @@ allanat = files('sub*/**/wanat_hires.nii', 1)
 help bspm_imcalc
 
 %% Use BSPM_IMCALC to compute the mean anatomical
-bspm_imcalc(allanat, 'mean_wanat_hires.nii', 'mean'); 
+bspm_imcalc(allanat, 'mean_wanat_hires.nii', 'mean');
 
-%% Use BSPM_DISPLAY to examine the mean anatomical 
+%% Use BSPM_DISPLAY to examine the mean anatomical
 bspm_display('mean_wanat_hires.nii');
 
 %% Use FILES to select all 10 con_0001.img files for the 2x2 model

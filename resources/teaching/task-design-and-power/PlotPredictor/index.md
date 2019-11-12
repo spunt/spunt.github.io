@@ -6,7 +6,7 @@ author_profile: false
 
 {% include toc title="Contents" icon="file-text" %}
 
-In this exercise, we will use the program `PlotPredictorGUI` to interactively specify and explore various timeseries predictors of the BOLD response. Much of this content is adapted from from Rik Henson's [excellent webpage on design efficiency](http://imaging.mrc-cbu.cam.ac.uk/imaging/DesignEfficiency).
+In this exercise, we will use the program `PlotPredictorGUI` to interactively specify and explore various timeseries predictors of the BOLD response. Much of this content is adapted from from Rik Henson's [excellent webpage on design efficiency](https://imaging.mrc-cbu.cam.ac.uk/imaging/DesignEfficiency).
 
 ## Basic Concepts
 

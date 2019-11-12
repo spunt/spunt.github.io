@@ -34,7 +34,7 @@ redirect_from:
 | Selected Honors ||                                                                                                               |
 | :-------------  | -------------------------------------------------------------                                                          |
 | 2013 - Present  | Consulting Editor, *Social, Cognitive, and Affective Neuroscience*                                                     |
-| 2015            | Most Downloaded Article, *Journal of Cognitive Neuroscience* ([*10.1162/jocn\_a\_00785*](http://10.1162/jocn_a_00785)) |
+| 2015            | Most Downloaded Article, *Journal of Cognitive Neuroscience* ([*10.1162/jocn\_a\_00785*](https://10.1162/jocn_a_00785)) |
 | 2014 - 2016     | Della Martin Postdoctoral Fellow in Mental Health                                                                      |
 | 2014            | Instructor, University of Michigan Summer Training Course in fMRI                                                      |
 | 2013            | Rising Star Award, Association for Psychological Science                                                               |

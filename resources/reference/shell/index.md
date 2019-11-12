@@ -34,5 +34,5 @@ You should get a message like this:
 
 ## Jekyll and Git
 [Git Documentation](https://help.github.com/articles/using-jekyll-with-pages/)
-[Your website with Jekyll and Git](http://tuxette.nathalievilla.org/?p=1403&lang=en)
+[Your website with Jekyll and Git](https://tuxette.nathalievilla.org/?p=1403&lang=en)
 [How To Deploy Jekyll Blogs with Git](https://www.digitalocean.com/community/tutorials/how-to-deploy-jekyll-blogs-with-git)

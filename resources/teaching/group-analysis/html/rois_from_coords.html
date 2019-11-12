@@ -10,7 +10,7 @@ To make changes, update the MATLAB code and republish this document.
       -->
     <title>rois_from_coords</title>
     <meta name="generator" content="MATLAB 8.2">
-    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/">
     <meta name="DC.date" content="2014-08-13">
     <meta name="DC.source" content="rois_from_coords.m">
     <style type="text/css">
@@ -352,14 +352,14 @@ To make changes, update the MATLAB code and republish this document.
             <a name="4"></a>
         </h2><pre class="codeinput">help <span class="string">bspm_coords2roi</span>
 </pre><pre class="codeoutput">  BSPM_COORDS2ROI
- 
+
     USAGE: bspm_coords2roi(ref,xyz,roi)
- 
+
     ARGUMENTS
         xyz = coordinates (rows are ROIs)
         roi.shape = 'Sphere' or 'Box'
         roi.size = radius of ROI
-        
+
   Uses code authored by:
   Dr. Robert Welsh (SimpleROIBuilder.m)
   Drs. Donald McLaren &amp; Aaron Schultz (peak_nii.m)
@@ -404,7 +404,7 @@ bspm_checkreg({anatimg; roiimg}, {<span class="string">'Anatomical'</span> <span
 </pre>
         <img vspace="5" hspace="5" src="rois_from_coords_04.png" alt="">
         <p class="footer">
-            <br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a>
+            <br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a>
             <br>
         </p>
     </div>
@@ -425,7 +425,7 @@ figure('color', 'white'); imdisp(imread('citation.png'));
 
 figure('color', 'white'); imdisp(imread('meta-analysis.png'));
 
-% 
+%
 % Wouldn't it be nice to easily convert those coordinates into ROI images
 % that you can use in your own research? Here's a way:
 %
@@ -440,26 +440,26 @@ roi.size    = 9;            % radius of our sphere (millimeters)
 labels       = 'L_IFG';     % label for the region (for the filename)
 
 % Run it
-bspm_coords2roi(xyz, roi, labels); 
+bspm_coords2roi(xyz, roi, labels);
 
 % Check to make sure it looks like left inferior frontal gyrus
-anatimg = 'mean_wanat_hires.nii'; 
+anatimg = 'mean_wanat_hires.nii';
 roiimg = 'ROI_Sphere9_-50_9_30_L_IFG.nii';
-bspm_checkreg({anatimg; roiimg}, {'Anatomical' 'ROI'}, xyz); 
+bspm_checkreg({anatimg; roiimg}, {'Anatomical' 'ROI'}, xyz);
 
-% Here's what a box looks like. A BIG box. 
+% Here's what a box looks like. A BIG box.
 xyz         = [-50 9 30];   % the XYZ coordinate from the top of Table 3
 roi.shape   = 'Box';     % Box is an option too
 roi.size    = 18;            % radius of our sphere (millimeters)
 labels       = 'L_IFG';     % label for the region (for the filename)
 
 % Run it
-bspm_coords2roi(xyz, roi, labels); 
+bspm_coords2roi(xyz, roi, labels);
 
 % Check to make sure it looks like left inferior frontal gyrus
-anatimg = 'mean_wanat_hires.nii'; 
+anatimg = 'mean_wanat_hires.nii';
 roiimg = 'ROI_Box18_-50_9_30_L_IFG.nii';
-bspm_checkreg({anatimg; roiimg}, {'Anatomical' 'ROI'}, xyz); 
+bspm_checkreg({anatimg; roiimg}, {'Anatomical' 'ROI'}, xyz);
 
 
 

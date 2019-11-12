@@ -15,8 +15,8 @@ title: OSX
 * [Use Dictation Commands](https://support.apple.com/en-us/HT203085)
 
 # Other Useful Resources
-* [Mac OS X Unleashed User Guide](http://www.informit.com/library/library.aspx?b=Mac_OS_X_Unleashed)
-* [Mac Network Commands Cheat Sheet](http://krypted.com/mac-security/mac-network-commands-cheat-sheet/)
+* [Mac OS X Unleashed User Guide](https://www.informit.com/library/library.aspx?b=Mac_OS_X_Unleashed)
+* [Mac Network Commands Cheat Sheet](https://krypted.com/mac-security/mac-network-commands-cheat-sheet/)
 
 # Special Key Symbols
 

@@ -23,7 +23,7 @@ redirect_from:
 
 ## About
 
-*bspmview* is a graphical user interface for overlaying, thresholding, and visualizing 3D statistical neuroimages in MATLAB. It requires a number of core functions from the MATLAB software [Statistical Parametric Mapping](http://www.fil.ion.ucl.ac.uk/spm/). It has been tested on SPM8+. *bspmview* was directly inspired by and in some cases incorporates code from from two other statistical image viewers: [xjview](http://www.alivelearn.net/xjview8/developers/) and [FIVE](http://mrtools.mgh.harvard.edu/index.php/Main_Page). The idea behind bspmview was to integrate and improve some of the great features of these two viewing programs in an interface that I find to be more intuitive, accessible, and customizable. Most importantly, all of its features require **no additional third-party software** (other than SPM, of course). Note that some features in *bspmview* will be automatically disabled if you load in a statistical image that was generated outside of SPM (for instance, in FSL), or if *bspmview* is unable to locate the model output files (e.g., SPM.mat, ResMS.nii) associated with the provided statistical image.
+*bspmview* is a graphical user interface for overlaying, thresholding, and visualizing 3D statistical neuroimages in MATLAB. It requires a number of core functions from the MATLAB software [Statistical Parametric Mapping](https://www.fil.ion.ucl.ac.uk/spm/). It has been tested on SPM8+. *bspmview* was directly inspired by and in some cases incorporates code from from two other statistical image viewers: [xjview](https://www.alivelearn.net/xjview8/developers/) and [FIVE](https://mrtools.mgh.harvard.edu/index.php/Main_Page). The idea behind bspmview was to integrate and improve some of the great features of these two viewing programs in an interface that I find to be more intuitive, accessible, and customizable. Most importantly, all of its features require **no additional third-party software** (other than SPM, of course). Note that some features in *bspmview* will be automatically disabled if you load in a statistical image that was generated outside of SPM (for instance, in FSL), or if *bspmview* is unable to locate the model output files (e.g., SPM.mat, ResMS.nii) associated with the provided statistical image.
 
 ## Features
 
@@ -38,7 +38,7 @@ redirect_from:
 - save thresholded whole-brain maps or specific clusters as either intensity images or binary masks
 - save region-of-interest images by growing spheres/boxes around a coordinate (and optionally intersect the sphere/box with thresholded overlay image)
 - customizable color maps (different maps, set max/min, reverse)
-- automatically open [Neurosynth](http://neurosynth.org/locations/)in browser to examine connectivity/coactivation maps for current coordinate
+- automatically open [Neurosynth](https://neurosynth.org/locations/)in browser to examine connectivity/coactivation maps for current coordinate
 - and many other random features…
 
 ## Installation
@@ -121,7 +121,7 @@ Under **Anatomical Labeling** you can modify:
 
 * **Name**: This is the Atlas to grab the labels from (currently the Anatomy Toolbox and Harvard-Oxford are the only two preloaded into *bspmview*)
 
-Under **Surface Rendering** you can modify parameters that control how your surface renderings will look. Most of the parameters correspond to those present in [SurfPlot](http://mrtools.mgh.harvard.edu/index.php/SurfPlot) by Aaron P. Schultz, which is the function upon which this feature is based:
+Under **Surface Rendering** you can modify parameters that control how your surface renderings will look. Most of the parameters correspond to those present in [SurfPlot](https://mrtools.mgh.harvard.edu/index.php/SurfPlot) by Aaron P. Schultz, which is the function upon which this feature is based:
 
 * **Surfaces to Render**: This controls which of the four views to show (L=Left, R=Right). For instance, the default L/R Medial/Lateral will show:
 

@@ -134,7 +134,7 @@ When SPM is done talking, open the directory that you chose to save our analysis
 
 <img src='htmlfiles/part1_singlesubjectfoldercontents.jpg' height='370px' />
 
-To get a sense for what information these images contain, check out this  [SPM Model Output Cheat Sheet](spmdoc/SPMdotMAT.pdf), which also contains a lot of information about the data contained within the SPM.mat file. The SPM.mat file is loaded with information. To be a power user of SPM, you will need to become intimately acquainted with that file. To learn more about the hidden charms of the SPM.mat file, check out that PDF or [this blog about it.](http://andysbrainblog.blogspot.com/2013/02/using-spmmat-to-stay-on-track-ii.html)
+To get a sense for what information these images contain, check out this  [SPM Model Output Cheat Sheet](spmdoc/SPMdotMAT.pdf), which also contains a lot of information about the data contained within the SPM.mat file. The SPM.mat file is loaded with information. To be a power user of SPM, you will need to become intimately acquainted with that file. To learn more about the hidden charms of the SPM.mat file, check out that PDF or [this blog about it.](https://andysbrainblog.blogspot.com/2013/02/using-spmmat-to-stay-on-track-ii.html)
 
 ## 2x2 Model Contrast Specification
 
@@ -232,11 +232,11 @@ If you feel comfortable with the procedures described above and there's still ti
 
 As you know by now, fMRI features a low signal to noise ratio. Some of this noise is caused by brief events that are incidental to the behavioral task the subjects are performing. For instance, your subject might cough, producing a sudden motion of the head that causes a large spike in the signal. As you might recall from the **Preprocessing Lab,** while motion correction procedures are effective at aligning the image timeseries anatomically, the functional signal often still shows residual noise. The Robust Weight Least Squares (rwls) SPM Toolbox adds functionality to SPM8 that allows you to estimate your single-subject models in a manner that is robust to this residual noise.
 
-Start by reading out the excellent description found on the [toolbox webpage](http://www.icn.ucl.ac.uk/motorcontrol/imaging/robustWLS.html). Then, install the toolbox in the **toolbox** folder located in the folder containing the SPM software (note that it may already be there). If you installed it correctly, you should be able to see it availble in the **toolbox** list found in the SPM main window.
+Start by reading out the excellent description found on the [toolbox webpage](https://www.icn.ucl.ac.uk/motorcontrol/imaging/robustWLS.html). Then, install the toolbox in the **toolbox** folder located in the folder containing the SPM software (note that it may already be there). If you installed it correctly, you should be able to see it availble in the **toolbox** list found in the SPM main window.
 
 <img src='htmlfiles/rwls_dropdown.jpg' height='250px' />
 
-To use the toolbox, following the  [usage instructions](http://www.icn.ucl.ac.uk/motorcontrol/imaging/robustWLS_spm8.html)provided on the webpage. Once you're ready, re-estimate one of your models using the estimation option provided by the toolbox. Note that the procedures for doing so are nearly identical. The only difference is that you will create the Model Specification and Model Estimation batch jobs through the options provided by the toolbox.
+To use the toolbox, following the  [usage instructions](https://www.icn.ucl.ac.uk/motorcontrol/imaging/robustWLS_spm8.html)provided on the webpage. Once you're ready, re-estimate one of your models using the estimation option provided by the toolbox. Note that the procedures for doing so are nearly identical. The only difference is that you will create the Model Specification and Model Estimation batch jobs through the options provided by the toolbox.
 
 Once you successfully estimate your model, use the **Plot Residual Timeseries** feature to examine the performance of the robust estimation. Then, check out the results and compare them to the original model. Did it help? (Given that these subjects were selected for being generally low in motion, you may not notice much difference.)
 
@@ -244,10 +244,10 @@ Once you successfully estimate your model, use the **Plot Residual Timeseries** 
 
 In the models you've already done, you used the motion parameters from the rp*txt file as **nuisance regressors** in the GLM. Here, you'll see how to create additional nuisance regressors that will probably do a better job of explaining the artifactual BOLD signal in your images. Briefly, the approach taken here is as follows:
 
-  1. Compute an index of "noisiness" for every image in the timeseries. Here, the index used is called the **Derivative VARiance (DVARS),** which was validated in [Power et al. (2011).](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3254728/)Briefly, DVARS summarizes the extent to which there was a global (i.e,. across the entire brain) shift in signal in an image (e.g, swrun_01.nii,100) when compared to the image collected immediately before it (e.g., swrun_01.nii,99). When DVARS is high, an artifact is probably to blame.
+  1. Compute an index of "noisiness" for every image in the timeseries. Here, the index used is called the **Derivative VARiance (DVARS),** which was validated in [Power et al. (2011).](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3254728/)Briefly, DVARS summarizes the extent to which there was a global (i.e,. across the entire brain) shift in signal in an image (e.g, swrun_01.nii,100) when compared to the image collected immediately before it (e.g., swrun_01.nii,99). When DVARS is high, an artifact is probably to blame.
   2. Once you've computed DVARS for every image (image 1 is given a DVARS of 0), use some cutoff point to identify the timepoints that are "bad", and create a separate dummy regressor for each that contains a zero for every timepoint except for the one identified as "bad". These regressors can then be added to the rp*txt file for use as nuisance covariates in your single-subject model. This approach effectively "scrubs" or "censors" these timepoints from the timeseries.
 
-Implementing this is easy with the program **scrubTimeseries.m**, which utilizes the functions for calculating DVARS in the [BRAMILA tools.](http://becs.aalto.fi/~eglerean/bramila.html/)To run the program with the default values, simply enter **scrubTimeseries**at the MATLAB command line. You will see a sequence of 2 file selection dialogues where you will select:
+Implementing this is easy with the program **scrubTimeseries.m**, which utilizes the functions for calculating DVARS in the [BRAMILA tools.](https://becs.aalto.fi/~eglerean/bramila.html/)To run the program with the default values, simply enter **scrubTimeseries**at the MATLAB command line. You will see a sequence of 2 file selection dialogues where you will select:
 
   1. The 4D image file you would like to scrub (swrun_01.nii)
   2. The realignment (motion) parameter file for the 4D image you would like to scrub (rp_run_01.txt)

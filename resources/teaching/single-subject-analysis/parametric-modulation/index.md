@@ -67,5 +67,5 @@ Wow, no more correlation! Check it out:
 
 ![](makeParametricModulator_06.png)
 
-In SPM, parametric modulators are automatically orthongalized by default, so you don't have to manually de-mean them yourself. However, note that when your have more than 1 parametric modulator specified for a given condition, SPM uses what is called **serial orthogonalisation**to orthogonalise the parameters. There is a good explanation of orthogonalization in SPM on the[MRC-CBU Wiki](http://imaging.mrc-cbu.cam.ac.uk/imaging/ParametricModulations).
+In SPM, parametric modulators are automatically orthongalized by default, so you don't have to manually de-mean them yourself. However, note that when your have more than 1 parametric modulator specified for a given condition, SPM uses what is called **serial orthogonalisation**to orthogonalise the parameters. There is a good explanation of orthogonalization in SPM on the[MRC-CBU Wiki](https://imaging.mrc-cbu.cam.ac.uk/imaging/ParametricModulations).
 

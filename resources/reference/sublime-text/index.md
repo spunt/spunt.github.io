@@ -16,14 +16,14 @@ title: Sublime Text
 This is just a <sub>crazy</sub> test
 
 # Documentation
-* [ShortCuts](http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/keyboard_shortcuts_osx.html)
-* [Complete Index](http://docs.sublimetext.info/en/latest/index.html)
-* [Basic Concepts](http://docs.sublimetext.info/en/latest/basic_concepts.html)
-* [Customizing Sublime Text](http://docs.sublimetext.info/en/latest/customization/customization.html)
-* [Key Bindings](http://www.sublimetext.com/docs/key-bindings)
-* [Commands](http://www.sublimetext.com/docs/commands)
-* [Build Systems](http://www.sublimetext.com/docs/build) (see also [Unofficial Doc](http://docs.sublimetext.info/en/latest/file_processing/build_systems.html))
-* [File Navigation and File Management](http://docs.sublimetext.info/en/latest/file_management/file_management.html)
+* [ShortCuts](https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/keyboard_shortcuts_osx.html)
+* [Complete Index](https://docs.sublimetext.info/en/latest/index.html)
+* [Basic Concepts](https://docs.sublimetext.info/en/latest/basic_concepts.html)
+* [Customizing Sublime Text](https://docs.sublimetext.info/en/latest/customization/customization.html)
+* [Key Bindings](https://www.sublimetext.com/docs/key-bindings)
+* [Commands](https://www.sublimetext.com/docs/commands)
+* [Build Systems](https://www.sublimetext.com/docs/build) (see also [Unofficial Doc](https://docs.sublimetext.info/en/latest/file_processing/build_systems.html))
+* [File Navigation and File Management](https://docs.sublimetext.info/en/latest/file_management/file_management.html)
 
 # Packages
 * [Sublime Text Package Control](https://packagecontrol.io/browse)
@@ -35,7 +35,7 @@ This is just a <sub>crazy</sub> test
 * [MarkdownSlideshow](https://packagecontrol.io/packages/Markdown%20Slideshow)
 * [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing)
 * [MarkdownExtended](https://github.com/jonschlinkert/sublime-markdown-extended)
-* [SFTP](http://wbond.net/sublime_packages/sftp)
+* [SFTP](https://wbond.net/sublime_packages/sftp)
 * [FileBrowser](https://github.com/aziz/SublimeFileBrowser)
 * [iOpener](https://github.com/rosshemsley/iOpener)
 * [Pandoc](https://packagecontrol.io/packages/Pandoc)

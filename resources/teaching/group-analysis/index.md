@@ -43,7 +43,7 @@ Use check reg in SPM to verify that all 10 sets of images are adequately aligned
 
 ### Is anyone missing functional data?
 
-For this, use check reg to compare the 10 "mask.img" file located in your single subject analysis folders. (Do this just for the 2x2 model, but know that it is generally good practice to do this for every model that you estimate.) SPM automatically generates these images to show the User (that's you!) which voxels were included in their analysis. This is called masking, in which only a subset of all voxels in the image are singled out for computation. When SPM decides which voxels to include and which to exclude (which it does by default), the masking is known as "implicit" since it happens without the User having to "explicitly" specify a mask. You can learn more about "implicit" versus "explicit" masking in the SPM manual, or [here](http://akiraoconnor.org/2010/04/07/masking-in-spm/). This is very important to know, for the following reason: By default, SPM will only include a voxel in your group analysis if and only if EVERY individual subject has data at that voxel. If 9/10 have it, it will be excluded. With that in mind, check out your group's mask images, playing close attention to ventral regions of the frontal and temporal lobe that are notoriously susceptible to signal distortion and signal loss. Are there any subjects who seem to have more signal loss than others?
+For this, use check reg to compare the 10 "mask.img" file located in your single subject analysis folders. (Do this just for the 2x2 model, but know that it is generally good practice to do this for every model that you estimate.) SPM automatically generates these images to show the User (that's you!) which voxels were included in their analysis. This is called masking, in which only a subset of all voxels in the image are singled out for computation. When SPM decides which voxels to include and which to exclude (which it does by default), the masking is known as "implicit" since it happens without the User having to "explicitly" specify a mask. You can learn more about "implicit" versus "explicit" masking in the SPM manual, or [here](https://akiraoconnor.org/2010/04/07/masking-in-spm/). This is very important to know, for the following reason: By default, SPM will only include a voxel in your group analysis if and only if EVERY individual subject has data at that voxel. If 9/10 have it, it will be excluded. With that in mind, check out your group's mask images, playing close attention to ventral regions of the frontal and temporal lobe that are notoriously susceptible to signal distortion and signal loss. Are there any subjects who seem to have more signal loss than others?
 
 <img src='html/datacheck2.jpg' height='500px' />
 
@@ -132,11 +132,11 @@ Use the Display utility to take a look at the "functional" ROI you've just creat
 
 ## Visualization of Results using `bspmview`
 
-`bspmview` is a graphical user interface for overlaying, thresholding, and visualizing 3D statistical neuroimages in MATLAB, and is especially suited for viewing group-level fMRI results estimated in SPM. It is freely available on [GitHub](https://github.com/spunt/bspmview), with documentation available [here](http://www.bobspunt.com/bspmview/). Give it a look!
+`bspmview` is a graphical user interface for overlaying, thresholding, and visualizing 3D statistical neuroimages in MATLAB, and is especially suited for viewing group-level fMRI results estimated in SPM. It is freely available on [GitHub](https://github.com/spunt/bspmview), with documentation available [here](https://www.bobspunt.com/bspmview/). Give it a look!
 
 ## Region of Interest Analyses
 
-You've already seen above how you can easily make functional ROIs from activation maps in SPM. Guess what? You can also do this using `bspmview`! Read [this](http://www.bobspunt.com/bspmview/#the-main-interface) to start learning how. Such fun!
+You've already seen above how you can easily make functional ROIs from activation maps in SPM. Guess what? You can also do this using `bspmview`! Read [this](https://www.bobspunt.com/bspmview/#the-main-interface) to start learning how. Such fun!
 
 But WAIT, there's more! In [this tutorial](html/rois_from_coords.html), you'll see how to make ROIs based on the peak coordinates reported in previous neuroimaging studies.
 

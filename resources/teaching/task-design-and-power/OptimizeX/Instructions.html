@@ -10,7 +10,7 @@ To make changes, update the MATLAB code and republish this document.
 -->
     <title>makeParametricModulator</title>
     <meta name="generator" content="MATLAB 8.2">
-    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/">
     <meta name="DC.date" content="2014-08-09">
     <meta name="DC.source" content="makeParametricModulator.m">
     <style type="text/css">
@@ -323,8 +323,8 @@ To make changes, update the MATLAB code and republish this document.
 <body>
     <div class="content">
         <h2>Numerical Optimization of Event-Related Designs</h2>
-        <p>Here you'll learn to use a program called OptimizeXGUI.m to optimize a complex, randomized event-related design that contains multiple event types (i.e., conditions). This software is specifically designed for optimizing the detection of specific linear contrasts of interest (i.e., activation differences). Most importantly, it (hopefully) will be easy for you to use, leaving you with no excuse for not optimizing your design for your next event-related study. In addition, you should check out Tor Wager's<a href="http://wagerlab.colorado.edu/tools">Design Optimization software,</a>which is more powerful than this software but requires more MATLAB experience and time to be able to use effectively.<p> 
-        <p>To get started, go ahead and run the program in a MATLAB command window: 
+        <p>Here you'll learn to use a program called OptimizeXGUI.m to optimize a complex, randomized event-related design that contains multiple event types (i.e., conditions). This software is specifically designed for optimizing the detection of specific linear contrasts of interest (i.e., activation differences). Most importantly, it (hopefully) will be easy for you to use, leaving you with no excuse for not optimizing your design for your next event-related study. In addition, you should check out Tor Wager's<a href="https://wagerlab.colorado.edu/tools">Design Optimization software,</a>which is more powerful than this software but requires more MATLAB experience and time to be able to use effectively.<p>
+        <p>To get started, go ahead and run the program in a MATLAB command window:
         </p><pre class="codeinput">
         optimizeXGUI;               <span class="comment">% make sure you're in the right directory</span></pre>
         <p>You should now see the main input dialogue:</p>
@@ -335,17 +335,17 @@ To make changes, update the MATLAB code and republish this document.
         <img vspace="5" hspace="5" src="html/optimizexgui_output.jpg" alt="" height=400px>
         <p>Once it finishes, you should see a figure pop up showing you the most efficient design matrix:</p>
         <img vspace="5" hspace="5" src="html/optimizexgui_bestx.jpg" alt="" height=300px>
-        <p>In addition, you should see a new folder in the directory in which you ran the program. Inside that directory are .csv files (and .txt files, which can be read a bit easier back into MATLAB) like this:</p> 
+        <p>In addition, you should see a new folder in the directory in which you ran the program. Inside that directory are .csv files (and .txt files, which can be read a bit easier back into MATLAB) like this:</p>
         <img vspace="5" hspace="5" src="html/optimizexgui_csv.jpg" alt="" height=300px>
         <p>For most applications, this should be all of the information you need to implement your experiment, and to do so in a manner that is optimal given the contrasts you care about. Of course, you might want to think about running the software for more than a minute if you do decide to use this for a study! There is no hard-and-fast rule for how long you do need to run it, but it wouldn't hurt (presumably) to run it overnight.</p>
         <p class="footer">
-            <br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a>
+            <br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a>
             <br>
         </p>
     </div>
     <!--
 ##### SOURCE BEGIN #####
-clear all; close all; 
+clear all; close all;
 % Parametric Modulation
 % In SPM, a parametric modulation regressor is used to predict variability in
 % the strength (that is, height/amplitude) of the neural response across
@@ -358,25 +358,25 @@ ME = zeros(nTR,1);  % creates a vector of 100 TRs (all zeros for now)
 ME(onsets) = 1;     % puts 1s where trial onsets occur
 
 
-% 
+%
 % Convolve with a hemodynamic respones function to get a BOLD prediction
 figure('color', 'white', 'units', 'normal', 'position',[.2 .2 .5 .25]);
-plot(ME, '-', 'LineWidth', 2, 'Color', [0 0 0]); hold on; 
-axis([0 nTR+1 -.15 1.15]); box off; 
+plot(ME, '-', 'LineWidth', 2, 'Color', [0 0 0]); hold on;
+axis([0 nTR+1 -.15 1.15]); box off;
 xlabel(gca, 'TR', 'fontname', 'Arial', 'fontsize', 12, 'fontweight', 'bold');
-ylabel(gca, 'Predicted Response', 'fontsize', 12, 'fontweight', 'bold'); hold on; 
+ylabel(gca, 'Predicted Response', 'fontsize', 12, 'fontweight', 'bold'); hold on;
 
 
-% 
+%
 % Convolve with a hemodynamic respones function to get a BOLD prediction
 bf = spm_hrf(2);    % define the basis function
 cME = conv(bf,ME);  % convolve mian effect with basis function
 cME = cME(1:nTR);   % remove extra values added by convolution
 cME = cME/max(cME); % puts on scale comparable to main effect
 
-plot(cME, '-', 'LineWidth', 2, 'Color', 'r'); 
+plot(cME, '-', 'LineWidth', 2, 'Color', 'r');
 
-% 
+%
 % Now, use a parameter to create a new regressor that modulates the height
 % of the main effect regressor
 parameter = [5 3 1 7 1.5]; % the parameter (size corresponds to onsets)
@@ -384,29 +384,29 @@ PM = zeros(nTR,1);  % creates a vector of 100 TRs (all zeros for now)
 PM(onsets) = parameter/max(parameter); % puts same scale as main effect
 
 figure('color', 'white', 'units', 'normal', 'position',[.2 .2 .5 .25]);
-plot(PM, '-', 'LineWidth', 2, 'Color', [0 0 0]); hold on; 
-axis([0 nTR+1 -.15 1.15]); box off; 
+plot(PM, '-', 'LineWidth', 2, 'Color', [0 0 0]); hold on;
+axis([0 nTR+1 -.15 1.15]); box off;
 xlabel(gca, 'TR', 'fontname', 'Arial', 'fontsize', 12, 'fontweight', 'bold');
-ylabel(gca, 'Predicted Response', 'fontsize', 12, 'fontweight', 'bold'); hold on; 
+ylabel(gca, 'Predicted Response', 'fontsize', 12, 'fontweight', 'bold'); hold on;
 
-% 
+%
 % Convolve with a hemodynamic respones function to get a BOLD prediction
 cPM = conv(bf,PM);
 cPM = cPM(1:100);
 cPM = cPM/max(cPM);
 
-plot(cPM, '-', 'LineWidth', 2, 'Color', 'r'); 
+plot(cPM, '-', 'LineWidth', 2, 'Color', 'r');
 
-% 
+%
 % But wait, there's a problem here. The parametric modulation regressor is
-% highly correlated with the main effect regressor: 
+% highly correlated with the main effect regressor:
 figure('color', 'white', 'units', 'normal', 'position',[.2 .2 .5 .25]);
-plot(cME, '-', 'LineWidth', 2, 'Color', 'r'); hold on; 
-axis([0 nTR+1 -.15 1.15]); box off; 
+plot(cME, '-', 'LineWidth', 2, 'Color', 'r'); hold on;
+axis([0 nTR+1 -.15 1.15]); box off;
 xlabel(gca, 'TR', 'fontname', 'Arial', 'fontsize', 15, 'fontweight', 'bold');
-ylabel(gca, 'Predicted Response', 'fontsize', 15, 'fontweight', 'bold'); hold on; 
-plot(cPM-.025, '-', 'LineWidth', 2, 'Color', 'b'); 
-title(gca, sprintf('Predictor Correlation = %2.4f', corr(cPM, cME)), 'fontsize', 18, 'fontweight', 'bold'); 
+ylabel(gca, 'Predicted Response', 'fontsize', 15, 'fontweight', 'bold'); hold on;
+plot(cPM-.025, '-', 'LineWidth', 2, 'Color', 'b');
+title(gca, sprintf('Predictor Correlation = %2.4f', corr(cPM, cME)), 'fontsize', 18, 'fontweight', 'bold');
 legend(gca, {'Average Effect' 'Parametric Effect'}, 'fontsize', 15);
 
 
@@ -424,15 +424,15 @@ coPM = conv(bf,oPM); % convolve
 coPM = coPM(1:100); % remove extra values
 coPM = coPM/max(coPM); % re-scale
 
-% 
-% We'e eliminated the problem, so says the CORR function MATLAB: 
+%
+% We'e eliminated the problem, so says the CORR function MATLAB:
 figure('color', 'white', 'units', 'normal', 'position',[.2 .2 .5 .25]);
-plot(cME, '-', 'LineWidth', 2, 'Color', 'r'); hold on; 
+plot(cME, '-', 'LineWidth', 2, 'Color', 'r'); hold on;
 xlabel(gca, 'TR', 'fontname', 'Arial', 'fontsize', 15, 'fontweight', 'bold');
-ylabel(gca, 'Predicted Response', 'fontsize', 15, 'fontweight', 'bold'); hold on; 
-plot(coPM-.025, '-', 'LineWidth', 2, 'Color', 'b'); hold on; 
-axis([0 nTR+1 min(coPM)-.10 1.15]); box off; 
-title(gca, sprintf('Predictor Correlation = %2.4f', corr(coPM, cME)), 'fontsize', 18, 'fontweight', 'bold'); 
+ylabel(gca, 'Predicted Response', 'fontsize', 15, 'fontweight', 'bold'); hold on;
+plot(coPM-.025, '-', 'LineWidth', 2, 'Color', 'b'); hold on;
+axis([0 nTR+1 min(coPM)-.10 1.15]); box off;
+title(gca, sprintf('Predictor Correlation = %2.4f', corr(coPM, cME)), 'fontsize', 18, 'fontweight', 'bold');
 legend(gca, {'Average Effect' 'Parametric Effect'}, 'fontsize', 15);
 ##### SOURCE END #####
 -->

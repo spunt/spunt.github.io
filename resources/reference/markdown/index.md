@@ -6,11 +6,11 @@ title: Markdown
 ---
 
 # Additional Resources
-- [Markdown Tester](http://daringfireball.net/projects/markdown/dingus)
-- [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax)
+- [Markdown Tester](https://daringfireball.net/projects/markdown/dingus)
+- [Markdown Syntax](https://daringfireball.net/projects/markdown/syntax)
 - [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
-- [MultiMarkdown](http://fletcherpenney.net/multimarkdown/)
-- [Markdown Cheatsheet](http://scottboms.com/downloads/documentation/markdown_cheatsheet.pdf)
+- [MultiMarkdown](https://fletcherpenney.net/multimarkdown/)
+- [Markdown Cheatsheet](https://scottboms.com/downloads/documentation/markdown_cheatsheet.pdf)
 
 
 # HEADERS
@@ -42,17 +42,17 @@ This is an H2
 I get 10 times more traffic from [Google] [1] than from
 [Yahoo] [2] or [MSN] [3].
 
-  [1]: http://google.com/        "Google"
-  [2]: http://search.yahoo.com/  "Yahoo Search"
-  [3]: http://search.msn.com/    "MSN Search"
+  [1]: https://google.com/        "Google"
+  [2]: https://search.yahoo.com/  "Yahoo Search"
+  [3]: https://search.msn.com/    "MSN Search"
 Using the implicit link name shortcut, you could instead write:
 
 I get 10 times more traffic from [Google][] than from
 [Yahoo][] or [MSN][].
 
-  [google]: http://google.com/        "Google"
-  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
-  [msn]:    http://search.msn.com/    "MSN Search"
+  [google]: https://google.com/        "Google"
+  [yahoo]:  https://search.yahoo.com/  "Yahoo Search"
+  [msn]:    https://search.msn.com/    "MSN Search"
 
 # LISTS
 -   Red
@@ -95,11 +95,11 @@ A backtick-delimited string in a code span: `` `foo` ``
 
 
 # IMAGES
-![Alt text](http://www.psychologicalscience.org/redesign/wp-content/uploads/2013/03/Spunt_Bob250X300.jpg)
-![Alt text](http://www.psychologicalscience.org/redesign/wp-content/uploads/2013/03/Spunt_Bob250X300.jpg "Bob Spunts")
+![Alt text](https://www.psychologicalscience.org/redesign/wp-content/uploads/2013/03/Spunt_Bob250X300.jpg)
+![Alt text](https://www.psychologicalscience.org/redesign/wp-content/uploads/2013/03/Spunt_Bob250X300.jpg "Bob Spunts")
 
 # LINKS
-<http://bobspunt.com/>
+<https://bobspunt.com/>
 <bobspunt@gmail.com>
 
 # BACKSLASH ESCAPES

@@ -10,7 +10,7 @@ The first two parts primarily deal with making a behavioral task that is optimal
 
 [Part 1. Making BOLD Predictions](/resources/teaching/task-design-and-power/PlotPredictor)
 
-[Part 2. Optimization of Event-Related Design Efficiency](http://www.bobspunt.com/easy-optimize-x/)
+[Part 2. Optimization of Event-Related Design Efficiency](https://www.bobspunt.com/easy-optimize-x/)
 
 The last part will introduce you to a tool - fMRIPower - that you can use to calculate power for fMRI studies and, in particular, estimate the number of participants you will need plan on collecting to have sufficient power to detect your effects of interest:
 

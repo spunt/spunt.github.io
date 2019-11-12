@@ -1,8 +1,8 @@
 function optimizeXGUI(varargin)
-% Uses FEX tool "settingsdlg.m" (http://goo.gl/DFvcQ5)
+% Uses FEX tool "settingsdlg.m" (https://goo.gl/DFvcQ5)
 
 %% Request Major Settings from User
-try 
+try
 [params, button] = settingsdlg(...
     'title'                 ,       'OptimizeX Settings', ...
     'separator'                ,   'General Settings', ...
@@ -27,19 +27,19 @@ try
 catch err
     rethrow err
 end
-    
+
 %% Check User Input
 if strcmp(button, 'cancel') || isempty(button), return; end % canceled
-params.trialsPerCond = str2num(params.trialsPerCond); 
-if length(params.trialsPerCond)==1, params.trialsPerCond = repmat(params.trialsPerCond, 1, params.nconds); 
+params.trialsPerCond = str2num(params.trialsPerCond);
+if length(params.trialsPerCond)==1, params.trialsPerCond = repmat(params.trialsPerCond, 1, params.nconds);
 elseif length(params.trialsPerCond)~=params.nconds
-    msg = sprintf('The number of entries in "N Trials Per Condition" does not match the number of conditions'); 
+    msg = sprintf('The number of entries in "N Trials Per Condition" does not match the number of conditions');
     errordlg(msg);
     optimizeXGUI
 end
 if params.minISI > params.meanISI | params.maxISI < params.meanISI
-    msg = sprintf('The ISI values you''ve specified look odd: Min ISI cannot be greater than the Mean ISI, and the Max ISI cannot be less than the Mean ISI'); 
-    errordlg(msg); 
+    msg = sprintf('The ISI values you''ve specified look odd: Min ISI cannot be greater than the Mean ISI, and the Max ISI cannot be less than the Mean ISI');
+    errordlg(msg);
     optimizeXGUI
 end
 
@@ -51,33 +51,33 @@ if strcmp(button, 'cancel') || isempty(button), return; end
 vec = repmat('0 ', 1, params.nconds);
 all = [];
 for c = 1:condata.ncontrast
-    tmp = [{{sprintf('Vector for Contrast %d', c); sprintf('con%d', c)}}, 
-        {vec}, 
-        {{sprintf('Weight for Contrast %d', c); sprintf('con%dw', c)}}, 
+    tmp = [{{sprintf('Vector for Contrast %d', c); sprintf('con%d', c)}},
+        {vec},
+        {{sprintf('Weight for Contrast %d', c); sprintf('con%dw', c)}},
         {1}];
     all = [all; tmp];
 end
 [data2, button] = settingsdlg(...
     'title', 'Contrast Specification', ...
-    all{:}); 
+    all{:});
 if strcmp(button, 'cancel') || isempty(button), return; end
-con = struct2cell(data2); 
+con = struct2cell(data2);
 params.L = [];
 convec = con(1:2:end);
 conweight = con(2:2:end);
-params.L = []; 
+params.L = [];
 params.conWeights = [];
 for c = 1:length(conweight)
-    params.L = [params.L; str2num(convec{c})]; 
-    params.conWeights(c) = conweight{c}; 
+    params.L = [params.L; str2num(convec{c})];
+    params.conWeights(c) = conweight{c};
 end
 
 
 %% Get X params structure, including jitter
-params = defineX(params); 
+params = defineX(params);
 %% Search for the best
-optimizeX(params); 
-        
+optimizeX(params);
+
 end
 function params = defineX(params)
 
@@ -95,24 +95,24 @@ maxISI = params.maxISI;
 meanISI = params.meanISI;
 TReff = params.TReff;
 
-mu = TReff:TReff:meanISI; 
-jitSample = zeros(1000,length(mu)); 
+mu = TReff:TReff:meanISI;
+jitSample = zeros(1000,length(mu));
 for s = 1:length(mu)
     jitSample(:,s) = random('Rayleigh', mu(s), 1000, 1);
 end
-jitSample(jitSample<minISI) = NaN; 
+jitSample(jitSample<minISI) = NaN;
 jitSample(jitSample>maxISI) = NaN;
 jitdist = abs(meanISI - nanmean(jitSample));
 minIDX = find(jitdist==min(jitdist));
 params.jitSample = jitSample(:,minIDX(1));
-params.jitSample(isnan(params.jitSample)) = []; 
+params.jitSample(isnan(params.jitSample)) = [];
 % save params.mat params % save the Xparams variable
 
 %% VISUALIZE THE RESULTS
-% strucdisp(params); 
+% strucdisp(params);
 % f = figure('color', 'white', 'units', 'normal', 'position', [.25 .30 .25 .30], 'menubar','none', 'name', 'Result');
-% facecolor = [0.50196      0.69412      0.82745];  
-% hist(params.jitSample); 
+% facecolor = [0.50196      0.69412      0.82745];
+% hist(params.jitSample);
 % h = findobj(gca,'Type','patch');
 % set(h,'FaceColor',facecolor)
 % xlabel('SOA (s)', 'fontname', 'Arial', 'fontsize', 16);
@@ -124,12 +124,12 @@ end
 function optimizeX(params)
 
 % paramfile = 'params.mat';
-keep = params.keep; 
+keep = params.keep;
 L = params.L;
-conWeights = params.conWeights; 
-gensize = params.gensize; 
-ngen = params.ngen; 
-maxtime = params.maxtime; 
+conWeights = params.conWeights;
+gensize = params.gensize;
+ngen = params.ngen;
+maxtime = params.maxtime;
 
 %% Derive Some Settings %%
 nalpha = round(gensize*.005);
@@ -149,7 +149,7 @@ if length(conWeights)~=size(L,2), error('# of contrast weights does not equal # 
 
 %% Begin Optimization %%
 [d, t] = get_timestamp;
-fprintf('\nDesign Optimization Started %s on %s', t, d); 
+fprintf('\nDesign Optimization Started %s on %s', t, d);
 fprintf('\n\n\tDESIGN PARAMETERS\n');
 strucdisp(params)
 tic; % start the timer
@@ -160,7 +160,7 @@ efficiency = zeros(gensize,1);
 order = cell(gensize,1);
 jitter = cell(gensize,1);
 for i = 1:gensize
-    
+
     d=makeX(params);
     X=d.X;
     X(:,end+1) = 1;
@@ -177,8 +177,8 @@ fprintf(' Max Efficiency = %2.15f', max(efficiency));
 maxgeneff(1) = max(efficiency);
 
 %% Visualize the Best and Worst %%
-winneridx = find(efficiency==max(efficiency)); 
-loseridx = find(efficiency==min(efficiency)); 
+winneridx = find(efficiency==max(efficiency));
+loseridx = find(efficiency==min(efficiency));
 winner = breedX(params, order{winneridx(1)}, jitter{winneridx(1)});
 winner = scalemat(winner(1).X);
 winner = [winner ones(size(winner,1), 1)];
@@ -201,24 +201,24 @@ loser = [loser ones(size(loser,1), 1)];
 for g = 2:ngen
 
     fprintf('\nGeneration %03d/%03d ', g, ngen);
-    
+
     %% Grab the Alphas %%
     tmp = sortrows([(1:length(efficiency))' efficiency], -2);
     fitidx = tmp(1:nalpha,1);
     fit.efficiency = efficiency(fitidx);
     fit.order = order(fitidx);
     fit.jitter = jitter(fitidx);
-    
+
     %% Use the Alphas to Breed %%
     cross.efficiency = zeros(halfgen,1);
     cross.order = cell(halfgen,1);
     cross.jitter = cell(halfgen,1);
     for i = 1:halfgen
-        
+
         %% Combine Orders %%
         conidx = randperm(params.nconds);
         orderidx = randperm(length(fit.order));
-        fixcon = conidx(1); 
+        fixcon = conidx(1);
         varcon = conidx(2:end);
         calpha = fit.order{orderidx(1)};
         mate = fit.order{orderidx(2)};
@@ -235,7 +235,7 @@ for g = 2:ngen
         if ismember(i,genbins), fprintf('.'), end
 
     end
-    
+
     %% Introduce Some Nasty Mutants %%
     if g>2 && maxgeneff(g-1)==maxgeneff(g-2)
         mutsize = gensize;
@@ -257,28 +257,28 @@ for g = 2:ngen
         mut.jitter{i} = d.combined(:,5);
         if ismember(i,genbins), fprintf('.'), end
     end
-    
+
      %% Combine this Genertation and Compute Max Efficiency %%
     efficiency = [fit.efficiency; cross.efficiency; mut.efficiency];
     order = [fit.order; cross.order; mut.order];
     jitter = [fit.jitter; cross.jitter; mut.jitter];
     fprintf(' Max Efficiency = %2.15f', max(efficiency));
     maxgeneff(g) = max(efficiency);
-    
+
     %% Break if Over Time %%
     if toc>=maxtime*60, break, end
-    
+
     %% UPDATE VISUALIZATION
-%     winneridx = find(efficiency==max(efficiency)); 
-%     loseridx = find(efficiency==min(efficiency)); 
+%     winneridx = find(efficiency==max(efficiency));
+%     loseridx = find(efficiency==min(efficiency));
 %     winner = breedX(params, order{winneridx(1)}, jitter{winneridx(1)});
 %     winner = scalemat(winner(1).X);
 %     winner = [winner ones(size(winner,1), 1)];
 %     loser = breedX(params, order{loseridx(1)}, jitter{loseridx(1)});
 %     loser = scalemat(loser(1).X);
 %     loser = [loser ones(size(loser,1), 1)];
-%     set(vx(1), 'CData', winner); 
-%     set(vx(2), 'CData', loser); 
+%     set(vx(1), 'CData', winner);
+%     set(vx(2), 'CData', loser);
 
 end
 
@@ -296,14 +296,14 @@ for i = 1:keep
     fname = [outdir filesep 'design' num2str(i) '.txt'];
     dlmwrite(fname, design{i}.combined, 'delimiter', '\t')
     fname2 = [outdir filesep 'design' num2str(i) '.csv'];
-    cc = [{'Trial' 'Condition' 'Onset' 'Duration' 'ISI'}; num2cell(design{i}.combined)]; 
-    writedesign(cc, fname2); 
+    cc = [{'Trial' 'Condition' 'Onset' 'Duration' 'ISI'}; num2cell(design{i}.combined)];
+    writedesign(cc, fname2);
 end
 save([outdir filesep 'designinfo.mat'], 'design', 'params');
 fprintf('\n\nFinished in %d minutes at %s on %s\n\n', round(toc/60), t, d);
 
 %% Visualize the Best Design
-figure('color', 'white', 'units', 'normal', 'position', [.30 .30 .30 .40]); 
+figure('color', 'white', 'units', 'normal', 'position', [.30 .30 .30 .40]);
 winner = scalemat(design{1}.X);
 winner = [winner ones(size(winner,1), 1)];
 imagesc(winner); colormap('gray');
@@ -315,7 +315,7 @@ function design = makeX(params, order)
 if nargin==1, makeorder = 1; else makeorder = 0; end
 
 %-----------------------------------------------------------------
-% Get a pseudoexponential distribution of ISIs 
+% Get a pseudoexponential distribution of ISIs
 %-----------------------------------------------------------------
 goodJit=0;
 while goodJit==0
@@ -343,11 +343,11 @@ if makeorder
     for i = 1:params.nconds, order = [order; repmat(i, params.trialsPerCond(i), 1)];end
     move_on = 0;
     while ~move_on
-        tmp = order(randperm(params.ntrials)); 
-        nchunk = getchunks(tmp); 
+        tmp = order(randperm(params.ntrials));
+        nchunk = getchunks(tmp);
         if ~any(nchunk>params.maxRep), move_on = 1; end
     end
-    order = tmp; 
+    order = tmp;
 end
 %------------------------------------------------------------------------
 % Create the design matrix (oversample the HRF depending on effective TR)
@@ -356,7 +356,7 @@ cond=order;
 oversamp_rate=params.TR/params.TReff;
 dmlength=params.scan_length*oversamp_rate;
 oversamp_onset=(onset/params.TR)*oversamp_rate;
-hrf=spm_hrf(params.TReff);  
+hrf=spm_hrf(params.TReff);
 desmtx=zeros(dmlength,params.nconds);
 for c=1:params.nconds
   r=zeros(1,dmlength);
@@ -413,7 +413,7 @@ cond=order;
 oversamp_rate=params.TR/params.TReff;
 dmlength=params.scan_length*oversamp_rate;
 oversamp_onset=(onset/params.TR)*oversamp_rate;
-hrf=spm_hrf(params.TReff);  
+hrf=spm_hrf(params.TReff);
 desmtx=zeros(dmlength,params.nconds);
 for c=1:params.nconds
   r=zeros(1,dmlength);
@@ -457,7 +457,7 @@ function [settings, button] = settingsdlg(varargin)
 % dialog box that returns a structure formed according to user input. The
 % input should be given in the form of 'fieldname', default_value - pairs,
 % where 'fieldname' is the fieldname in the structure [settings], and
-% default_value the initial value displayed in the dialog box. 
+% default_value the initial value displayed in the dialog box.
 %
 % SETTINGSDLG uses UIWAIT to suspend execution until the user responds.
 %
@@ -468,24 +468,24 @@ function [settings, button] = settingsdlg(varargin)
 % [settings, button] = SETTINGSDLG(settings) returns which button was
 % pressed, in addition to the (modified) structure [settings]. Either 'ok',
 % 'cancel' or [] are possible values. The empty output means that the
-% dialog was closed before either Cancel or OK were pressed. 
+% dialog was closed before either Cancel or OK were pressed.
 %
 % SETTINGSDLG('title', 'window_title') uses 'window_title' as the dialog's
-% title. The default is 'Adjust settings'. 
+% title. The default is 'Adjust settings'.
 %
 % SETTINGSDLG('description', 'brief_description',...) starts the dialog box
-% with 'brief_description', followed by the input fields.   
+% with 'brief_description', followed by the input fields.
 %
 % SETTINGSDLG('windowposition', P, ...) positions the dialog box according to
-% the string or vector [P]; see movegui() for valid values.  
+% the string or vector [P]; see movegui() for valid values.
 %
 % SETTINGSDLG( {'display_string', 'fieldname'}, default_value,...) uses the
 % 'display_string' in the dialog box, while assigning the corresponding
-% user-input to fieldname 'fieldname'. 
+% user-input to fieldname 'fieldname'.
 %
 % SETTINGSDLG(..., 'checkbox_string', true, ...) displays a checkbox in
-% stead of the default edit box, and SETTINGSDLG('fieldname', {'string1', 
-% 'string2'},... ) displays a popup box with the strings given in 
+% stead of the default edit box, and SETTINGSDLG('fieldname', {'string1',
+% 'string2'},... ) displays a popup box with the strings given in
 % the second cell-array.
 %
 % Additionally, you can put [..., 'separator', 'seperator_string',...]
@@ -495,38 +495,38 @@ function [settings, button] = settingsdlg(varargin)
 % You can also modify the display behavior in the case of checkboxes. When
 % defining checkboxes with a 2-element logical array, the second boolean
 % determines whether all fields below that checkbox are initially disabled
-% (true) or not (false). 
+% (true) or not (false).
 %
 % Example:
-% 
+%
 % [settings, button] = settingsdlg(...
-%     'Description', 'This dialog will set the parameters used by FMINCON()',... 
+%     'Description', 'This dialog will set the parameters used by FMINCON()',...
 %     'title'      , 'FMINCON() options',...
 %     'separator'  , 'Unconstrained/General',...
 %     {'This is a checkbox'; 'Check'}, [true true],...
 %     {'Tolerance X';'TolX'}, 1e-6,...
 %     {'Tolerance on Function';'TolFun'}, 1e-6,...
 %     'Algorithm'  , {'active-set','interior-point'},...
-%     'separator'  , 'Constrained',...    
+%     'separator'  , 'Constrained',...
 %     {'Tolerance on Constraints';'TolCon'}, 1e-6)
-% 
-% See also inputdlg, dialog, errordlg, helpdlg, listdlg, msgbox, questdlg, textwrap, 
+%
+% See also inputdlg, dialog, errordlg, helpdlg, listdlg, msgbox, questdlg, textwrap,
 % uiwait, warndlg.
-    
 
-% Please report bugs and inquiries to: 
+
+% Please report bugs and inquiries to:
 %
 % Name       : Rody P.S. Oldenhuis
 % E-mail     : oldenhuis@gmail.com    (personal)
 %              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
+% Affiliation: LuxSpace sï¿½rl
 % Licence    : BSD
 
 
 % Changelog
 %{
 2014/July/07 (Rody Oldenhuis)
-- FIXED: The example in the help section didn't work correctly 
+- FIXED: The example in the help section didn't work correctly
   (thanks Elco Bakker)
 
 2014/February/14 (Rody Oldenhuis)
@@ -541,14 +541,14 @@ function [settings, button] = settingsdlg(varargin)
 
 % If you find this work useful, please consider a donation:
 % https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6G3S5UYM7HJ3N
-    
+
     %% Initialize
-        
+
     % errortraps
     narg = nargin;
     error(nargchk(1, inf, narg, 'struct'));
-        
-    % parse input (+errortrap) 
+
+    % parse input (+errortrap)
     have_settings = 0;
     if isstruct(varargin{1})
         settings = varargin{1}; have_settings = 1; end
@@ -564,29 +564,29 @@ function [settings, button] = settingsdlg(varargin)
         parameters = varargin(1+have_settings : 2 : end);
         values     = varargin(2+have_settings : 2 : end);
     end
-    
-    % Initialize data    
+
+    % Initialize data
     button = [];
     fields = cell(numel(parameters),1);
     tags   = fields;
-    
+
     % Fill [settings] with default values & collect data
     for ii = 1:numel(parameters)
-        
+
         % Extract fields & tags
         if iscell(parameters{ii})
             tags{ii}   = parameters{ii}{1};
-            fields{ii} = parameters{ii}{2};            
-        else 
+            fields{ii} = parameters{ii}{2};
+        else
             % More errortraps
             if ~ischar(parameters{ii})
                 error('settingsdlg:nonstring_parameter',...
                 'Arguments should be given as [''parameter'', value,...] pairs.')
             end
             tags{ii}   = parameters{ii};
-            fields{ii} = parameters{ii};            
+            fields{ii} = parameters{ii};
         end
-        
+
         % More errortraps
         if ~ischar(fields{ii})
             error('settingsdlg:fieldname_not_char',...
@@ -596,10 +596,10 @@ function [settings, button] = settingsdlg(varargin)
             error('settingsdlg:tag_not_char',...
                 'Display name should be a string.')
         end
-        
-        % NOTE: 'Separator' is now in 'fields' even though 
+
+        % NOTE: 'Separator' is now in 'fields' even though
         % it will not be used as a fieldname
-        
+
         % Make sure all fieldnames are properly formatted
         % (alternating capitals, no whitespace)
         if ~strcmpi(fields{ii}, {'Separator';'Title';'Description'})
@@ -615,65 +615,65 @@ function [settings, button] = settingsdlg(varargin)
             else
                 settings.(fields{ii}) = values{ii};
             end
-        end        
+        end
     end
-    
+
     % Avoid (some) confusion
     clear parameters
-    
+
     % Use default colorscheme from the OS
     bgcolor = get(0, 'defaultUicontrolBackgroundColor');
     bgcolor = [234 234 230]/255;
     fgcolor = [0 0 0];
     % Default fontsize
-    fontsize = get(0, 'defaultuicontrolfontsize'); 
-    fontsize = fontsize*1.33; 
-    % Edit-bgcolor is platform-dependent. 
-    % MS/Windows: white. 
+    fontsize = get(0, 'defaultuicontrolfontsize');
+    fontsize = fontsize*1.33;
+    % Edit-bgcolor is platform-dependent.
+    % MS/Windows: white.
     % UNIX: same as figure bgcolor
 %     if ispc, edit_bgcolor = 'White';
 %     else     edit_bgcolor = bgcolor;
 %     end
 
-% TODO: not really applicable since defaultUicontrolBackgroundColor 
+% TODO: not really applicable since defaultUicontrolBackgroundColor
 % doesn't really seem to work on Unix...
 edit_bgcolor = 'White';
-    
+
     % Get basic window properties
     title         = getValue('Adjust settings', 'Title');
     description   = getValue( [], 'Description');
-    total_width   = getValue(325, 'WindowWidth');     
-    control_width = getValue(100, 'ControlWidth');       
-    
-    % Window positioning:     
+    total_width   = getValue(325, 'WindowWidth');
+    control_width = getValue(100, 'ControlWidth');
+
+    % Window positioning:
     % Put the window in the center of the screen by default.
-    % This will usually work fine, except on some  multi-monitor setups.     
-    scz  = get(0, 'ScreenSize'); 
-    scxy = round(scz(3:4)/2-control_width/2);    
+    % This will usually work fine, except on some  multi-monitor setups.
+    scz  = get(0, 'ScreenSize');
+    scxy = round(scz(3:4)/2-control_width/2);
     scx  = min(scz(3),max(1,scxy(1)));
     scy  = min(scz(4),max(1,scxy(2)));
-    
+
     % String to pass on to movegui
-    window_position = getValue('center', 'WindowPosition');   
-    
-        
+    window_position = getValue('center', 'WindowPosition');
+
+
     % Calculate best height for all uicontrol()
     control_height = max(18, (fontsize+6));
-    
+
     % Calculate figure height (will be adjusted later according to description)
     total_height = numel(fields)*1.25*control_height + ... % to fit all controls
                      1.5*control_height + 20; % to fit "OK" and "Cancel" buttons
-                 
+
     % Total number of separators
     num_separators = nnz(strcmpi(fields,'Separator'));
-        
+
     % Draw figure in background
     fighandle = figure(...
          'integerhandle'   , 'off',...         % use non-integers for the handle (prevents accidental plots from going to the dialog)
          'Handlevisibility', 'off',...         % only visible from within this function
          'position'        , [scx, scy, total_width, total_height],...% figure position
          'visible'         , 'off',...         % hide the dialog while it is being constructed
-         'backingstore'    , 'off',...         % DON'T save a copy in the background         
+         'backingstore'    , 'off',...         % DON'T save a copy in the background
          'resize'          , 'off', ...        % but just keep it resizable
          'renderer'        , 'zbuffer', ...    % best choice for speed vs. compatibility
          'WindowStyle'     ,'modal',...        % window is modal
@@ -685,23 +685,23 @@ edit_bgcolor = 'White';
          'NumberTitle'     , 'off',...         % "Figure 1.4728...:" just looks corny
          'Defaultuicontrolfontsize', fontsize, ...
          'color'           , bgcolor);         % use default colorscheme
-          
-    %% Draw all required uicontrols(), and unhide window 
-    
+
+    %% Draw all required uicontrols(), and unhide window
+
     % Define X-offsets (different when separators are used)
     separator_offset_X = 2;
     if num_separators > 0
         text_offset_X = 20;
-        text_width = (total_width-control_width-text_offset_X);        
+        text_width = (total_width-control_width-text_offset_X);
     else
         text_offset_X = separator_offset_X;
         text_width = (total_width-control_width);
     end
-    
+
     % Handle description
     description_offset = 0;
     if ~isempty(description)
-        
+
         % create textfield (negligible height initially)
         description_panel = uicontrol(...
             'parent'  , fighandle,...
@@ -711,39 +711,39 @@ edit_bgcolor = 'White';
             'Horizontalalignment', 'left',...
             'position', [separator_offset_X,...
                          total_height,total_width,1]);
-                     
+
         % wrap the description
-        description = textwrap(description_panel, {description});        
-        
-        % adjust the height of the figure        
+        description = textwrap(description_panel, {description});
+
+        % adjust the height of the figure
         textheight = size(description,1)*(fontsize+6);
-        description_offset = textheight + 20;        
+        description_offset = textheight + 20;
         total_height = total_height + description_offset;
         set(fighandle,...
-            'position', [scx, scy, total_width, total_height])        
-        
-        % adjust the position of the textfield and insert the description        
+            'position', [scx, scy, total_width, total_height])
+
+        % adjust the position of the textfield and insert the description
         set(description_panel, ...
             'string'  , description,...
             'position', [separator_offset_X, total_height-textheight, ...
                          total_width, textheight]);
     end
-    
+
     % Define Y-offsets (different when descriptions are used)
     control_offset_Y = total_height-control_height-description_offset;
-    
+
     % initialize loop
-    controls = zeros(numel(tags)-num_separators,1);    
+    controls = zeros(numel(tags)-num_separators,1);
     ii = 1;             sep_ind = 1;
     enable = 'on';      separators = zeros(num_separators,1);
-    
+
     % loop through the controls
     if numel(tags) > 0
         while true
-            
+
             % Should we draw a separator?
             if strcmpi(tags{ii}, 'Separator')
-                
+
                 % Print separator
                 uicontrol(...
                     'style'   , 'text',...
@@ -756,24 +756,24 @@ edit_bgcolor = 'White';
                     'fontsize', fontsize, ...
                     'position', [separator_offset_X,control_offset_Y-4, ...
                     total_width, control_height]);
-                
+
                 % remove separator, but save its position
                 fields(ii) = [];
                 tags(ii)   = [];  separators(sep_ind) = ii;
                 values(ii) = [];  sep_ind = sep_ind + 1;
-                
+
                 % reset enable (when neccessary)
                 if strcmpi(enable, 'off')
                     enable = 'on'; end
-                
+
                 % NOTE: DON'T increase loop index
-                
+
             % ... or a setting?
             else
-                
+
                 % logicals: use checkbox
                 if islogical(values{ii})
-                    
+
                     % First draw control
                     controls(ii) = uicontrol(...
                         'style'   , 'checkbox',...
@@ -785,7 +785,7 @@ edit_bgcolor = 'White';
                         'value'   , values{ii}(1),...
                         'position', [text_offset_X,control_offset_Y-4, ...
                         total_width, control_height]);
-                    
+
                     % Should everything below here be OFF?
                     if (length(values{ii})>1)
                         % turn next controls off when asked for
@@ -795,7 +795,7 @@ edit_bgcolor = 'White';
                         set(controls(ii),...
                             'Callback', @(varargin) EnableDisable(ii,varargin{:}));
                     end
-                    
+
                 % doubles      : use edit box
                 % cells        : use popup
                 % cell-of-cells: use table
@@ -810,7 +810,7 @@ edit_bgcolor = 'White';
                     'foreg', fgcolor, ...
                         'position', [text_offset_X,control_offset_Y-4, ...
                         text_width, control_height]);
-                    
+
                     % Popup, edit box or table?
                     style = 'edit';
                     draw_table = false;
@@ -819,7 +819,7 @@ edit_bgcolor = 'White';
                         if all(cellfun('isclass', values{ii}, 'cell'))
                             draw_table = true; end
                     end
-                    
+
                     % Draw appropriate control
                     if ~draw_table
                         controls(ii) = uicontrol(...
@@ -836,23 +836,23 @@ edit_bgcolor = 'White';
                         warning(...
                             'settingsdlg:not_yet_implemented',...
                             'Treatment of cells is not yet implemented.');
-                        
+
                     end
                 end
-                
+
                 % increase loop index
                 ii = ii + 1;
             end
-            
+
             % end loop?
             if ii > numel(tags)
                 break, end
-            
+
             % Decrease offset
             control_offset_Y = control_offset_Y - 1.25*control_height;
         end
     end
-    
+
     % Draw cancel button
     uicontrol(...
         'style'   , 'pushbutton',...
@@ -860,7 +860,7 @@ edit_bgcolor = 'White';
         'string'  , 'Cancel',...
         'position', [separator_offset_X,2, total_width/2.5,control_height*1.5],...
         'Callback', @Cancel)
-    
+
     % Draw OK button
     uicontrol(...
         'style'   , 'pushbutton',...
@@ -868,25 +868,25 @@ edit_bgcolor = 'White';
         'string'  , 'OK',...
         'position', [total_width*(1-1/2.5)-separator_offset_X,2, ...
                      total_width/2.5,control_height*1.5],...
-        'Callback', @OK)  
-    
+        'Callback', @OK)
+
     % move to center of screen and make visible
     movegui(fighandle, window_position);
     set(fighandle, 'Visible', 'on');
-    
+
     % WAIT until OK/Cancel is pressed
     uiwait(fighandle);
-    
-    
-    
+
+
+
     %% Helper funcitons
-    
-    % Get a value from the values array: 
+
+    % Get a value from the values array:
     % - if it does not exist, return the default value
     % - if it exists, assign it and delete the appropriate entries from the
     %   data arrays
-    function val = getValue(default, tag)        
-        index = strcmpi(fields, tag);        
+    function val = getValue(default, tag)
+        index = strcmpi(fields, tag);
         if any(index)
             val = values{index};
             values(index) = [];
@@ -896,18 +896,18 @@ edit_bgcolor = 'White';
             val = default;
         end
     end
-    
+
     %% callback functions
-    
+
     % Enable/disable controls associated with (some) checkboxes
     function EnableDisable(which, varargin) %#ok<VANUS>
-        
+
         % find proper range of controls to switch
         if (num_separators > 1)
              range = (which+1):(separators(separators > which)-1);
         else range = (which+1):numel(controls);
         end
-        
+
         % enable/disable these controls
         if strcmpi(get(controls(range(1)), 'enable'), 'off')
             set(controls(range), 'enable', 'on')
@@ -915,47 +915,47 @@ edit_bgcolor = 'White';
             set(controls(range), 'enable', 'off')
         end
     end
-    
-    % OK button: 
+
+    % OK button:
     % - update fields in [settings]
     % - assign [button] output argument ('ok')
     % - kill window
     function OK(varargin) %#ok<VANUS>
-        
+
         % button pressed
         button = 'OK';
-        
+
         % fill settings
         for i = 1:numel(controls)
-            
-            % extract current control's string, value & type            
+
+            % extract current control's string, value & type
             str   = get(controls(i), 'string');
             val   = get(controls(i), 'value');
             style = get(controls(i), 'style');
-            
+
             % popups/edits
             if ~strcmpi(style, 'checkbox')
                 % extract correct string (popups only)
                 if strcmpi(style, 'popupmenu'), str = str{val}; end
                 % try to convert string to double
-                val = str2double(str); 
-                % insert this double in [settings]. If it was not a 
+                val = str2double(str);
+                % insert this double in [settings]. If it was not a
                 % double, insert string instead
                 if ~isnan(val), settings.(fields{i}) = val;
                 else            settings.(fields{i}) = str;
-                end  
-                
+                end
+
             % checkboxes
             else
                 % we can insert value immediately
                 settings.(fields{i}) = val;
             end
         end
-        
+
         %  kill window
         delete(fighandle);
     end
-    
+
     % Cancel button:
     % - assign [button] output argument ('cancel')
     % - delete figure (so: return default settings)
@@ -963,7 +963,7 @@ edit_bgcolor = 'White';
         button = 'cancel';
         delete(fighandle);
     end
-    
+
 end
 function [day, time] = get_timestamp(varargin)
 % GET_TIMESTAMP
@@ -981,7 +981,7 @@ function out = scalemat(in)
 % SCALEMAT
 %
 %   USAGE: out = scalemat(in)
-% 
+%
 %   images = volumes to harvest from
 %   roi = volume with roi
 %   method = 0: mean, >0: pca (value specifies number of dimensions)
@@ -1069,27 +1069,27 @@ if nargin == 2
   if ~ischar(opt)
     error('Additional argument must be a string array');
   end
-  
+
   % Allow for partial arguments
   possibleOptions = ['-full '; '-reps '; '-alpha'];
   iOpt = strmatch(lower(opt), possibleOptions);
-  
+
   if isempty(iOpt) || length(iOpt) > 1
     error('Invalid option. Allowed option: ''-full'', ''-reps'', ''-alpha''');
   else
     switch iOpt
-      
+
       case 1  % '-full'
         % Include single-element chunks
         fullList = true;
         if ischar(a)
           fprintf('''-full'' option not applicable to CHAR arrays.\n');
         end
-        
+
       case 2  % '-reps'
         % Only find 2 or more repeating blocks
         fullList = false;
-        
+
       case 3  % '-alpha'
         % For char arrays, only consider alphabets and numbers as part of
         % words. Punctuations and symbols are regarded as space.
@@ -1097,7 +1097,7 @@ if nargin == 2
         if ~ischar(a)
           fprintf('''-alpha'' option only applicable to CHAR arrays.\n');
         end
-        
+
     end
   end
 end
@@ -1111,14 +1111,14 @@ a = a(:)';
 % Deal with differet classes
 %--------------------------------------------------------------------------
 switch class(a)
-  
+
   case 'double'
     % Leave as is
-    
+
   case {'logical', 'uint8', 'int8', 'uint16', 'int16', 'uint32', 'int32', 'single'}
     % Convert to DOUBLE
     a = double(a);
-    
+
   case 'char'
     if alphanumeric % Get alphabet and number locations
       try % call C-helper function directly (slightly faster)
@@ -1126,11 +1126,11 @@ switch class(a)
       catch %#ok<CTCH>
         a = isletter(a) | ismember(a, 48:57);
       end
-      
+
     else  % Get non-space locations
-      a = ~isspace(a);  
+      a = ~isspace(a);
     end
-  
+
   case 'cell'
     % Convert cell array of strings into unique numbers
     if all(cellfun('isclass', a, 'char'))
@@ -1138,7 +1138,7 @@ switch class(a)
     else
       error('Cell arrays must be array of strings.');
     end
-    
+
   otherwise
     error('Invalid type. Allowed type: CHAR, LOGICAL, NUMERIC, and CELL arrays of strings.');
 end
@@ -1169,10 +1169,10 @@ else
   b(ii)             = 1;
   c                 = diff(b);
   id                = strfind(c, -1);
-  
+
   % Get single-element chunks also
   if fullList
-  
+
     % And more convoluted code
     b1(id)          = 0;
     ii2             = find(b1(1:end-1));
@@ -1180,33 +1180,33 @@ else
     id              = [id,ii2];
     [id,tmp]        = sort(id);
     d               = d(tmp);
-    
+
   else
-    
+
     d               = strfind(c, 1) - id + 1;
-    
+
   end
 end
 function jitsample = makeJitters(minSOA, meanSOA, nTrials)
-% MAKEJITTERS 
+% MAKEJITTERS
 % Make jitters from Poisson distributin with specified min and mean values
 %
 % USAGE: jitsample = makeJitters(minSOA, meanSOA, nTrials)
 %
-goodjit = 0; 
+goodjit = 0;
 while ~goodjit
     jitsample = minSOA + poissrnd(meanSOA-minSOA, nTrials, 1);
     if round(mean(jitsample)*100)==meanSOA*100, goodjit = 1; end
 end
-    
+
 end
 function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 %STRUCDISP  display structure outline
 %
 %   STRUCDISP(STRUC, DEPTH, PRINTVALUES, MAXARRAYLENGTH, FILENAME) displays
-%   the hierarchical outline of a structure and its substructures. 
+%   the hierarchical outline of a structure and its substructures.
 %
-%   STRUC is a structure datatype with unknown field content. It can be 
+%   STRUC is a structure datatype with unknown field content. It can be
 %   either a scalar or a vector, but not a matrix. STRUC is the only
 %   mandatory argument in this function. All other arguments are optional.
 %
@@ -1239,13 +1239,13 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 %% Creator and Version information
 % Created by B. Roossien <roossien@ecn.nl> 14-12-2006
 %
-% Based on the idea of 
+% Based on the idea of
 %       M. Jobse - display_structure (Matlab Central FileID 2031)
 %
 % Acknowledgements:
 %       S. Wegerich - printmatrix (Matlab Central FileID 971)
 %
-% Beta tested by: 
+% Beta tested by:
 %       K. Visscher
 %
 % Feedback provided by:
@@ -1270,7 +1270,7 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 % 1.2.2 : Bug fix - a field being an empty array gave an error
 % 1.2.1 : Bug fix
 % 1.2.0 : Increased readability of code
-%         Makes use of 'structfun' and 'cellfun' to increase speed and 
+%         Makes use of 'structfun' and 'cellfun' to increase speed and
 %         reduce the amount of code
 %         Solved bug with empty fieldname parameter
 % 1.1.2 : Command 'eval' removed with a more simple and efficient solution
@@ -1289,12 +1289,12 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
     if ~isstruct(Structure)
         error('First input argument must be structure');
     end
-    
+
     % first argument can be a scalar or vector, but not a matrix
     if ~isvector(Structure)
         error('First input argument can be a scalar or vector, but not a matrix');
     end
-    
+
     % default value for second argument is -1 (print all levels)
     if nargin < 2 || isempty(depth)
         depth = -1;
@@ -1307,7 +1307,7 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 
     % second argument only works if it is an integer, therefore floor it
     depth = floor(depth);
-    
+
     % default value for third argument is 1
     if nargin < 3 || isempty(printValues)
         printValues = 1;
@@ -1318,43 +1318,43 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
         maxArrayLength = 10;
     end
 
-    
-    % start recursive function   
-    listStr = recFieldPrint(Structure, 0, depth, printValues, ... 
+
+    % start recursive function
+    listStr = recFieldPrint(Structure, 0, depth, printValues, ...
                             maxArrayLength);
 
-    
+
     % 'listStr' is a cell array containing the output
     % Now it's time to actually output the data
     % Default is to output to the command window
     % However, if the filename argument is defined, output it into a file
 
     if nargin < 5 || isempty(fileName)
-        
+
         % write data to screen
         for i = 1 : length(listStr)
             disp(cell2mat(listStr(i, 1)));
         end
-        
+
     else
-        
+
         % open file and check for errors
         fid = fopen(fileName, 'wt');
-        
+
         if fid < 0
             error('Unable to open output file');
         end
-        
+
         % write data to file
         for i = 1 : length(listStr)
             fprintf(fid, '%s\n', cell2mat(listStr(i, 1)));
         end
-        
+
         % close file
         fclose(fid);
-        
+
     end
-    
+
 end
 function listStr = recFieldPrint(Structure, indent, depth, printValues, ...
                                  maxArrayLength)
@@ -1423,7 +1423,7 @@ isStruct = structfun(@isstruct, Structure);
 strucFields = fields(isStruct == 1);
 
 
-%% Recursively print structure fields 
+%% Recursively print structure fields
 % The next step is to select each structure field and handle it
 % accordingly. Each structure can be empty, a scalar, a vector or a matrix.
 % Matrices and long vectors are only printed with their fields and not with
@@ -1447,7 +1447,7 @@ for iField = 1 : length(strucFields)
 
     fieldName = cell2mat(strucFields(iField));
     Field =  Structure.(fieldName);
-    
+
     % Empty structure
     if isempty(Field)
 
@@ -1474,7 +1474,7 @@ for iField = 1 : length(strucFields)
             listStr = [listStr; {line}];
         end
 
-    % Short vector structure of which the values should be printed    
+    % Short vector structure of which the values should be printed
     elseif (isvector(Field)) &&  ...
            (printValues > 0) && ...
            (length(Field) < maxArrayLength) && ...
@@ -1532,7 +1532,7 @@ maxFieldLength = max(cellfun(@length, fields));
 % Print non-structure fields without the values. This can be done very
 % quick.
 if printValues == 0
-    
+
     noStrucFields = fields(isStruct == 0);
 
     for iField  = 1 : length(noStrucFields)
@@ -1611,8 +1611,8 @@ otherFields = fields(isOther == 1);
 % - The values of cells are not printed
 
 
-% Start with printing strings and characters. To avoid the display screen 
-% becoming a mess, the part of the string that is printed is limited to 31 
+% Start with printing strings and characters. To avoid the display screen
+% becoming a mess, the part of the string that is printed is limited to 31
 % characters. In the future this might become an optional parameter in this
 % function, but for now, it is placed in the code itself.
 % if the string is longer than 31 characters, only the first 31  characters
@@ -1626,19 +1626,19 @@ for iField = 1 : length(charFields)
     Field = cell2mat(charFields(iField));
 
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if (size(Structure.(Field), 1) > 1) && (size(Structure.(Field), 2) > 1)
-        
+
         varStr = createArraySize(Structure.(Field), 'char');
-        
+
     elseif length(Field) > maxStrLength
-        
+
         varStr = sprintf(' ''%s...''', Structure.(Field(1:maxStrLength)));
-        
+
     else
-        
+
         varStr = sprintf(' ''%s''', Structure.(Field));
-        
+
     end
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1648,12 +1648,12 @@ end
 % Print empty fields
 
 for iField = 1 : length(emptyFields)
-    
-    
+
+
     Field = cell2mat(emptyFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' : [ ]' ]}];
 
 end
@@ -1663,25 +1663,25 @@ end
 % information
 
 for iField = 1 : length(logicalFields)
-    
+
     Field = cell2mat(logicalFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if isscalar(Structure.(Field))
-        
+
         logicalValue = {'False', 'True'};
-        
+
         varStr = sprintf(' %s', logicalValue{Structure.(Field) + 1});
 
     else
 
         varStr = createArraySize(Structure.(Field), 'Logic array');
-                
+
     end
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
-    
+
 end
 
 
@@ -1689,11 +1689,11 @@ end
 % floats and exponential numbers are printed in their own format.
 
 for iField = 1 : length(scalarFields)
-    
+
     Field = cell2mat(scalarFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = sprintf(' %g', Structure.(Field));
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1706,23 +1706,23 @@ end
 % the array.
 
 for iField = 1 : length(vectorFields)
-    
+
     Field = cell2mat(vectorFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if length(Structure.(Field)) > maxArrayLength
-        
+
         varStr = createArraySize(Structure.(Field), 'Array');
-        
+
     else
 
         varStr = sprintf('%g ', Structure.(Field));
 
         varStr = ['[' varStr(1:length(varStr) - 1) ']'];
-                    
+
     end
-    
+
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' : ' varStr]}];
 
 end
@@ -1739,27 +1739,27 @@ end
 % This method was developed by S. Wegerich.
 
 for iField = 1 : length(matrixFields)
-    
+
     Field = cell2mat(matrixFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if numel(Structure.(Field)) > maxArrayLength
-        
+
         varStr = createArraySize(Structure.(Field), 'Array');
 
         varCell = {[strIndent '   |' filler ' ' Field ' :' varStr]};
-        
+
     else
 
         matrixSize = size(Structure.(Field));
-        
+
         filler2 = char(ones(1, maxFieldLength + 6) * 32);
 
         dashes = char(ones(1, 12 * matrixSize(2) + 1) * 45);
 
         varCell = {[strIndent '   |' filler2 dashes]};
-        
+
         % first line with field name
         varStr = sprintf('%#10.2e |', Structure.(Field)(1, :));
 
@@ -1770,14 +1770,14 @@ for iField = 1 : length(matrixFields)
         for j = 2 : matrixSize(1)
 
             varStr = sprintf('%#10.2e |', Structure.(Field)(j, :));
-            
+
             varCell = [varCell; {[strIndent '   |' filler2 '|' varStr]}];
         end
 
         varCell = [varCell; {[strIndent '   |' filler2 dashes]}];
-                    
+
     end
-    
+
     listStr = [listStr; varCell];
 
 end
@@ -1789,9 +1789,9 @@ end
 for iField = 1 : length(cellFields)
 
     Field = cell2mat(cellFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = createArraySize(Structure.(Field), 'Cell');
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1804,9 +1804,9 @@ end
 for iField = 1 : length(otherFields)
 
     Field = cell2mat(otherFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = createArraySize(Structure.(Field), 'Unknown');
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -1817,7 +1817,7 @@ end
 function str = getIndentation(indent)
     x = '   |    ';
     str = '';
-    
+
     for i = 1 : indent
         str = cat(2, str, x);
     end
@@ -1827,12 +1827,12 @@ function varStr = createArraySize(varName, type)
 
     arraySizeStr = sprintf('%gx', varSize);
     arraySizeStr(length(arraySizeStr)) = [];
-    
+
     varStr = [' [' arraySizeStr ' ' type ']'];
 end
 
 
-  
+
 end
 function writedesign(in, outname)
 % CS_WRITEREPORT
@@ -1861,9 +1861,9 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 %STRUCDISP  display structure outline
 %
 %   STRUCDISP(STRUC, DEPTH, PRINTVALUES, MAXARRAYLENGTH, FILENAME) displays
-%   the hierarchical outline of a structure and its substructures. 
+%   the hierarchical outline of a structure and its substructures.
 %
-%   STRUC is a structure datatype with unknown field content. It can be 
+%   STRUC is a structure datatype with unknown field content. It can be
 %   either a scalar or a vector, but not a matrix. STRUC is the only
 %   mandatory argument in this function. All other arguments are optional.
 %
@@ -1896,13 +1896,13 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 %% Creator and Version information
 % Created by B. Roossien <roossien@ecn.nl> 14-12-2006
 %
-% Based on the idea of 
+% Based on the idea of
 %       M. Jobse - display_structure (Matlab Central FileID 2031)
 %
 % Acknowledgements:
 %       S. Wegerich - printmatrix (Matlab Central FileID 971)
 %
-% Beta tested by: 
+% Beta tested by:
 %       K. Visscher
 %
 % Feedback provided by:
@@ -1927,7 +1927,7 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 % 1.2.2 : Bug fix - a field being an empty array gave an error
 % 1.2.1 : Bug fix
 % 1.2.0 : Increased readability of code
-%         Makes use of 'structfun' and 'cellfun' to increase speed and 
+%         Makes use of 'structfun' and 'cellfun' to increase speed and
 %         reduce the amount of code
 %         Solved bug with empty fieldname parameter
 % 1.1.2 : Command 'eval' removed with a more simple and efficient solution
@@ -1946,12 +1946,12 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
     if ~isstruct(Structure)
         error('First input argument must be structure');
     end
-    
+
     % first argument can be a scalar or vector, but not a matrix
     if ~isvector(Structure)
         error('First input argument can be a scalar or vector, but not a matrix');
     end
-    
+
     % default value for second argument is -1 (print all levels)
     if nargin < 2 || isempty(depth)
         depth = -1;
@@ -1964,7 +1964,7 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
 
     % second argument only works if it is an integer, therefore floor it
     depth = floor(depth);
-    
+
     % default value for third argument is 1
     if nargin < 3 || isempty(printValues)
         printValues = 1;
@@ -1975,43 +1975,43 @@ function strucdisp(Structure, depth, printValues, maxArrayLength, fileName)
         maxArrayLength = 10;
     end
 
-    
-    % start recursive function   
-    listStr = recFieldPrint(Structure, 0, depth, printValues, ... 
+
+    % start recursive function
+    listStr = recFieldPrint(Structure, 0, depth, printValues, ...
                             maxArrayLength);
 
-    
+
     % 'listStr' is a cell array containing the output
     % Now it's time to actually output the data
     % Default is to output to the command window
     % However, if the filename argument is defined, output it into a file
 
     if nargin < 5 || isempty(fileName)
-        
+
         % write data to screen
         for i = 1 : length(listStr)
             disp(cell2mat(listStr(i, 1)));
         end
-        
+
     else
-        
+
         % open file and check for errors
         fid = fopen(fileName, 'wt');
-        
+
         if fid < 0
             error('Unable to open output file');
         end
-        
+
         % write data to file
         for i = 1 : length(listStr)
             fprintf(fid, '%s\n', cell2mat(listStr(i, 1)));
         end
-        
+
         % close file
         fclose(fid);
-        
+
     end
-    
+
 end
 function listStr = recFieldPrint(Structure, indent, depth, printValues, ...
                                  maxArrayLength)
@@ -2080,7 +2080,7 @@ isStruct = structfun(@isstruct, Structure);
 strucFields = fields(isStruct == 1);
 
 
-%% Recursively print structure fields 
+%% Recursively print structure fields
 % The next step is to select each structure field and handle it
 % accordingly. Each structure can be empty, a scalar, a vector or a matrix.
 % Matrices and long vectors are only printed with their fields and not with
@@ -2104,7 +2104,7 @@ for iField = 1 : length(strucFields)
 
     fieldName = cell2mat(strucFields(iField));
     Field =  Structure.(fieldName);
-    
+
     % Empty structure
     if isempty(Field)
 
@@ -2131,7 +2131,7 @@ for iField = 1 : length(strucFields)
             listStr = [listStr; {line}];
         end
 
-    % Short vector structure of which the values should be printed    
+    % Short vector structure of which the values should be printed
     elseif (isvector(Field)) &&  ...
            (printValues > 0) && ...
            (length(Field) < maxArrayLength) && ...
@@ -2189,7 +2189,7 @@ maxFieldLength = max(cellfun(@length, fields));
 % Print non-structure fields without the values. This can be done very
 % quick.
 if printValues == 0
-    
+
     noStrucFields = fields(isStruct == 0);
 
     for iField  = 1 : length(noStrucFields)
@@ -2268,8 +2268,8 @@ otherFields = fields(isOther == 1);
 % - The values of cells are not printed
 
 
-% Start with printing strings and characters. To avoid the display screen 
-% becoming a mess, the part of the string that is printed is limited to 31 
+% Start with printing strings and characters. To avoid the display screen
+% becoming a mess, the part of the string that is printed is limited to 31
 % characters. In the future this might become an optional parameter in this
 % function, but for now, it is placed in the code itself.
 % if the string is longer than 31 characters, only the first 31  characters
@@ -2283,19 +2283,19 @@ for iField = 1 : length(charFields)
     Field = cell2mat(charFields(iField));
 
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if (size(Structure.(Field), 1) > 1) && (size(Structure.(Field), 2) > 1)
-        
+
         varStr = createArraySize(Structure.(Field), 'char');
-        
+
     elseif length(Field) > maxStrLength
-        
+
         varStr = sprintf(' ''%s...''', Structure.(Field(1:maxStrLength)));
-        
+
     else
-        
+
         varStr = sprintf(' ''%s''', Structure.(Field));
-        
+
     end
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -2305,12 +2305,12 @@ end
 % Print empty fields
 
 for iField = 1 : length(emptyFields)
-    
-    
+
+
     Field = cell2mat(emptyFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' : [ ]' ]}];
 
 end
@@ -2320,25 +2320,25 @@ end
 % information
 
 for iField = 1 : length(logicalFields)
-    
+
     Field = cell2mat(logicalFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if isscalar(Structure.(Field))
-        
+
         logicalValue = {'False', 'True'};
-        
+
         varStr = sprintf(' %s', logicalValue{Structure.(Field) + 1});
 
     else
 
         varStr = createArraySize(Structure.(Field), 'Logic array');
-                
+
     end
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
-    
+
 end
 
 
@@ -2346,11 +2346,11 @@ end
 % floats and exponential numbers are printed in their own format.
 
 for iField = 1 : length(scalarFields)
-    
+
     Field = cell2mat(scalarFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = sprintf(' %g', Structure.(Field));
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -2363,23 +2363,23 @@ end
 % the array.
 
 for iField = 1 : length(vectorFields)
-    
+
     Field = cell2mat(vectorFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if length(Structure.(Field)) > maxArrayLength
-        
+
         varStr = createArraySize(Structure.(Field), 'Array');
-        
+
     else
 
         varStr = sprintf('%g ', Structure.(Field));
 
         varStr = ['[' varStr(1:length(varStr) - 1) ']'];
-                    
+
     end
-    
+
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' : ' varStr]}];
 
 end
@@ -2396,27 +2396,27 @@ end
 % This method was developed by S. Wegerich.
 
 for iField = 1 : length(matrixFields)
-    
+
     Field = cell2mat(matrixFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     if numel(Structure.(Field)) > maxArrayLength
-        
+
         varStr = createArraySize(Structure.(Field), 'Array');
 
         varCell = {[strIndent '   |' filler ' ' Field ' :' varStr]};
-        
+
     else
 
         matrixSize = size(Structure.(Field));
-        
+
         filler2 = char(ones(1, maxFieldLength + 6) * 32);
 
         dashes = char(ones(1, 12 * matrixSize(2) + 1) * 45);
 
         varCell = {[strIndent '   |' filler2 dashes]};
-        
+
         % first line with field name
         varStr = sprintf('%#10.2e |', Structure.(Field)(1, :));
 
@@ -2427,14 +2427,14 @@ for iField = 1 : length(matrixFields)
         for j = 2 : matrixSize(1)
 
             varStr = sprintf('%#10.2e |', Structure.(Field)(j, :));
-            
+
             varCell = [varCell; {[strIndent '   |' filler2 '|' varStr]}];
         end
 
         varCell = [varCell; {[strIndent '   |' filler2 dashes]}];
-                    
+
     end
-    
+
     listStr = [listStr; varCell];
 
 end
@@ -2446,9 +2446,9 @@ end
 for iField = 1 : length(cellFields)
 
     Field = cell2mat(cellFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = createArraySize(Structure.(Field), 'Cell');
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -2461,9 +2461,9 @@ end
 for iField = 1 : length(otherFields)
 
     Field = cell2mat(otherFields(iField));
-    
+
     filler = char(ones(1, maxFieldLength - length(Field) + 2) * 45);
-    
+
     varStr = createArraySize(Structure.(Field), 'Unknown');
 
     listStr = [listStr; {[strIndent '   |' filler ' ' Field ' :' varStr]}];
@@ -2474,7 +2474,7 @@ end
 function str = getIndentation(indent)
     x = '   |    ';
     str = '';
-    
+
     for i = 1 : indent
         str = cat(2, str, x);
     end
@@ -2484,7 +2484,7 @@ function varStr = createArraySize(varName, type)
 
     arraySizeStr = sprintf('%gx', varSize);
     arraySizeStr(length(arraySizeStr)) = [];
-    
+
     varStr = [' [' arraySizeStr ' ' type ']'];
 end
 
