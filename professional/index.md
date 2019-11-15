@@ -14,51 +14,53 @@ redirect_from:
 
 ---
 
-| Employment ||
-| :-------------- | --------------------------------------------------------------------------------------------- |
-| 2017 - Present  | **California Institute of Technology**<br>Research Consultant                                 |
-| 2012 - 2017     | **California Institute of Technology**<br>Postdoctoral Fellow in Social Neuroscience          |
-| 2011 - 2012     | **University of California, Los Angeles**<br>Postdoctoral Scholar in Affective Neuroscience   |
+| Employment     |                                                                                             |
+| :------------- | ------------------------------------------------------------------------------------------- |
+| 2018 - Present | **Oracle Corp.**<br>Principal Data Scientist                                                |
+| 2017 - 2018    | **Snap Inc.**<br>Data Scientist                                                             |
+| 2017 - Present | **California Institute of Technology**<br>Research Consultant                               |
+| 2012 - 2017    | **California Institute of Technology**<br>Postdoctoral Fellow in Social Neuroscience        |
+| 2011 - 2012    | **University of California, Los Angeles**<br>Postdoctoral Scholar in Affective Neuroscience |
 
-| Education ||
+| Education   |                                                                                |
 | :---------- | ------------------------------------------------------------------------------ |
-| 2005 - 2011 | **University of California, Los Angeles**<br>Ph.D. - Social Psychology<br>      |
-| 1999 - 2003 | **University of California, Berkeley**<br>B.A. - Psychology<br>B.A. - Rhetoric  |
+| 2005 - 2011 | **University of California, Los Angeles**<br>Ph.D. - Social Psychology<br>     |
+| 1999 - 2003 | **University of California, Berkeley**<br>B.A. - Psychology<br>B.A. - Rhetoric |
 
-| Selected Training ||
-| :------------------------- | ------------------------------------------------------------- |
-| 2011                       | UCLA Neuroimaging Training Program                            |
-| 2009                       | University of Michigan Summer Training Course in fMRI         |
-| 2007                       | UC Santa Barbara Summer Institute In Cognitive Neuroscience   |
+| Selected Training |                                                             |
+| :---------------- | ----------------------------------------------------------- |
+| 2011              | UCLA Neuroimaging Training Program                          |
+| 2009              | University of Michigan Summer Training Course in fMRI       |
+| 2007              | UC Santa Barbara Summer Institute In Cognitive Neuroscience |
 
-| Selected Honors ||                                                                                                               |
-| :-------------  | -------------------------------------------------------------                                                          |
-| 2013 - Present  | Consulting Editor, *Social, Cognitive, and Affective Neuroscience*                                                     |
+| Selected Honors |                                                                                                                         |  |
+| :-------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 2013 - Present  | Consulting Editor, *Social, Cognitive, and Affective Neuroscience*                                                      |
 | 2015            | Most Downloaded Article, *Journal of Cognitive Neuroscience* ([*10.1162/jocn\_a\_00785*](https://10.1162/jocn_a_00785)) |
-| 2014 - 2016     | Della Martin Postdoctoral Fellow in Mental Health                                                                      |
-| 2014            | Instructor, University of Michigan Summer Training Course in fMRI                                                      |
-| 2013            | Rising Star Award, Association for Psychological Science                                                               |
-| 2011            | Dissertation in Social Psychology Award, UCLA Department of Psychology                                                 |
-| 2010            | Distinguished Teaching Award, UCLA Department of Psychology                                                            |
+| 2014 - 2016     | Della Martin Postdoctoral Fellow in Mental Health                                                                       |
+| 2014            | Instructor, University of Michigan Summer Training Course in fMRI                                                       |
+| 2013            | Rising Star Award, Association for Psychological Science                                                                |
+| 2011            | Dissertation in Social Psychology Award, UCLA Department of Psychology                                                  |
+| 2010            | Distinguished Teaching Award, UCLA Department of Psychology                                                             |
 
-| Graduate-Level Teaching ||
-| :---------- | :--------------------------------------------------------------------------------------------------------------------- |
-| Summer 2014 | **Functional MRI Design and Data Analysis Labs**<br>Instructor, Summer Training Course in fMRI, University of Michigan |
-| Summer 2011 | **Methods in Social Cognitive Neuroscience**<br>Workshop for Social Cognitive and Affective Neuroscience Labs, UCLA    |
-| Winter 2011 | **Computational Methods in Neuroimaging**<br>Teaching Assistant, University of California, Los Angeles                 |
-| 2009 - 2010 | **Presentation of Psychological Materials**<br>Teaching Assistant Consultant, University of California, Los Angeles    |
+| Graduate-Level Teaching |                                                                                                                        |
+| :---------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| Summer 2014             | **Functional MRI Design and Data Analysis Labs**<br>Instructor, Summer Training Course in fMRI, University of Michigan |
+| Summer 2011             | **Methods in Social Cognitive Neuroscience**<br>Workshop for Social Cognitive and Affective Neuroscience Labs, UCLA    |
+| Winter 2011             | **Computational Methods in Neuroimaging**<br>Teaching Assistant, University of California, Los Angeles                 |
+| 2009 - 2010             | **Presentation of Psychological Materials**<br>Teaching Assistant Consultant, University of California, Los Angeles    |
 
-| Undergraduate-Level Teaching ||
-| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Winter 2009 | **Human Motivation**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Bernard Weiner                                                      |
-| Fall 2008   | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Naomi Eisenberger                 |
-| Spring 2008 | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Sabrina Pagano                                     |
-| Winter 2008 | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Benjamin Karney                                    |
-| Fall 2007   | **Introduction to Social Cognition**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Matthew D. Lieberman                                |
-| Spring 2007 | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elisheva Gross                    |
-| Winter 2007 | **Experimental Research Methods in Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elizabeth Bjork                          |
-| Fall 2006   | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Paul Davies                                        |
-| Summer 2006 | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Adam Fingerhut and Elisheva Gross |
+| Undergraduate-Level Teaching |                                                                                                                                                                      |
+| :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Winter 2009                  | **Human Motivation**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Bernard Weiner                                                      |
+| Fall 2008                    | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Naomi Eisenberger                 |
+| Spring 2008                  | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Sabrina Pagano                                     |
+| Winter 2008                  | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Benjamin Karney                                    |
+| Fall 2007                    | **Introduction to Social Cognition**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Matthew D. Lieberman                                |
+| Spring 2007                  | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elisheva Gross                    |
+| Winter 2007                  | **Experimental Research Methods in Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Elizabeth Bjork                          |
+| Fall 2006                    | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Paul Davies                                        |
+| Summer 2006                  | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Adam Fingerhut and Elisheva Gross |
 
 | Selected Presentations ||
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
