@@ -15,7 +15,4 @@ The beginnings of a collection of resources related to conducting, teaching, and
 ### [Reference](/resources/reference/)
 
 
-
-
-
-
+Just a wacky test.
