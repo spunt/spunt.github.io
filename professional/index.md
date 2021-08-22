@@ -17,8 +17,8 @@ redirect_from:
 | Employment     |                                                                                             |
 | :------------- | ------------------------------------------------------------------------------------------- |
 | 2018 - Present | **Oracle Corp.**<br>Principal Data Scientist                                                |
-| 2017 - 2018    | **Snap Inc.**<br>Data Scientist                                                             |
 | 2017 - Present | **California Institute of Technology**<br>Research Consultant                               |
+| 2017 - 2018    | **Snap Inc.**<br>Data Scientist                                                             |
 | 2012 - 2017    | **California Institute of Technology**<br>Postdoctoral Fellow in Social Neuroscience        |
 | 2011 - 2012    | **University of California, Los Angeles**<br>Postdoctoral Scholar in Affective Neuroscience |
 
