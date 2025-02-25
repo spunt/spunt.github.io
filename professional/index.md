@@ -15,20 +15,21 @@ redirect_from:
 ---
 
 | Employment     |                                                                                             |
-| :------------- | ------------------------------------------------------------------------------------------- |
-| 2018 - Present | **Oracle Corp.**<br>Principal Data Scientist                                                |
-| 2017 - Present | **California Institute of Technology**<br>Research Consultant                               |
+|:---------------|---------------------------------------------------------------------------------------------|
+| 2022 - Present | **Adobe Corp.**<br>Senior Data Scientist                                                    |
+| 2018 - 2022    | **Oracle Corp.**<br>Principal Data Scientist                                                |
+| 2017 - 2021    | **California Institute of Technology**<br>Research Consultant                               |
 | 2017 - 2018    | **Snap Inc.**<br>Data Scientist                                                             |
 | 2012 - 2017    | **California Institute of Technology**<br>Postdoctoral Fellow in Social Neuroscience        |
 | 2011 - 2012    | **University of California, Los Angeles**<br>Postdoctoral Scholar in Affective Neuroscience |
 
 | Education   |                                                                                |
-| :---------- | ------------------------------------------------------------------------------ |
+|:------------|--------------------------------------------------------------------------------|
 | 2005 - 2011 | **University of California, Los Angeles**<br>Ph.D. - Social Psychology<br>     |
 | 1999 - 2003 | **University of California, Berkeley**<br>B.A. - Psychology<br>B.A. - Rhetoric |
 
 | Selected Training |                                                             |
-| :---------------- | ----------------------------------------------------------- |
+|:------------------|-------------------------------------------------------------|
 | 2011              | UCLA Neuroimaging Training Program                          |
 | 2009              | University of Michigan Summer Training Course in fMRI       |
 | 2007              | UC Santa Barbara Summer Institute In Cognitive Neuroscience |
@@ -44,14 +45,14 @@ redirect_from:
 | 2010            | Distinguished Teaching Award, UCLA Department of Psychology                                                             |
 
 | Graduate-Level Teaching |                                                                                                                        |
-| :---------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+|:------------------------|:-----------------------------------------------------------------------------------------------------------------------|
 | Summer 2014             | **Functional MRI Design and Data Analysis Labs**<br>Instructor, Summer Training Course in fMRI, University of Michigan |
 | Summer 2011             | **Methods in Social Cognitive Neuroscience**<br>Workshop for Social Cognitive and Affective Neuroscience Labs, UCLA    |
 | Winter 2011             | **Computational Methods in Neuroimaging**<br>Teaching Assistant, University of California, Los Angeles                 |
 | 2009 - 2010             | **Presentation of Psychological Materials**<br>Teaching Assistant Consultant, University of California, Los Angeles    |
 
 | Undergraduate-Level Teaching |                                                                                                                                                                      |
-| :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:-----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Winter 2009                  | **Human Motivation**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Bernard Weiner                                                      |
 | Fall 2008                    | **Experimental Research Methods in Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Naomi Eisenberger                 |
 | Spring 2008                  | **Introduction to Social Psychology**<br>Teaching Assistant, University of California, Los Angeles<br>Instructor: Sabrina Pagano                                     |
