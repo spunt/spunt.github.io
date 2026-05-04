@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-03T20:34:35Z",
+  "detectedStack": {
+    "primary": "Jekyll (Ruby)",
+    "languages": ["JavaScript", "Ruby"],
+    "frameworks": ["Jekyll"],
+    "platforms": ["Web"],
+    "signals": {
+      "package.json": true,
+      "Gemfile": true,
+      "_config.yml": true
+    }
+  },
+  "disabled": [
+    "app-store-optimization",
+    "audiocraft-audio-generation",
+    "gsd-eval-review",
+    "mobile-ios-design",
+    "remotion-best-practices",
+    "system-setup",
+    "ui-ux-pro-max"
+  ],
+  "stats": {
+    "total": 1008,
+    "essential": 57,
+    "useful": 934,
+    "irrelevant": 7,
+    "universal": 10
+  },
+  "overrides": {
+    "forceEnable": [],
+    "forceDisable": []
+  }
+}
