@@ -5,20 +5,27 @@ author_profile: true
 toc: true
 toc_label: "On this page"
 toc_icon: "file-text"
-redirect_from:
-  - /markup-mode
-  - /Markup-Mode
-  - /markupmode
 ---
 
 **A frontend-only review layer for the reports, pages, and drafts your agents build.** Your agent applies it to its own output in one command. You mark the exact word or element that's off, and your notes compile into a tagged-Markdown handback you pass back. You make the judgment calls; what's automated is applying the layer and compiling the handback. It closes the agent→human→agent loop, no build step required.
 
-[![Markup Mode in action: arming the dock, highlighting a claim, writing a note, marking an element, and compiling to Markdown](https://www.bobspunt.com/markup-mode/docs/demo.gif)](https://www.bobspunt.com/markup-mode/assets/templates/markup-mode.html)
+## Try it live
 
-## Quick Links
+The frame below **is** Markup Mode, running live. Arm it, drag-select a sentence or click an element, leave a note, and hit **Compile** to see the Markdown handback it produces. Prefer it full-screen? [Open the demo in its own tab](https://www.bobspunt.com/markup-mode/assets/templates/markup-mode.html).
 
-- [Try the live demo](https://www.bobspunt.com/markup-mode/assets/templates/markup-mode.html) — one HTML file, opens in any browser
-- [View on GitHub](https://github.com/spunt/markup-mode)
+<iframe
+  src="https://www.bobspunt.com/markup-mode/assets/templates/markup-mode.html"
+  title="Markup Mode — live, interactive demo"
+  loading="lazy"
+  style="width:100%; height:680px; border:1px solid #d0d7de; border-radius:10px; margin:0.5em 0;">
+  Your browser can't show the embedded demo —
+  <a href="https://www.bobspunt.com/markup-mode/assets/templates/markup-mode.html">open it in a new tab</a>.
+</iframe>
+
+## Quick links
+
+- [Open the live demo in a new tab](https://www.bobspunt.com/markup-mode/assets/templates/markup-mode.html) — one HTML file, opens in any browser
+- [View the source on GitHub](https://github.com/spunt/markup-mode)
 - Install as a Claude Code plugin: `/plugin marketplace add spunt/markup-mode` then `/plugin install markup-mode@markup-mode`
 
 ## The problem it solves
