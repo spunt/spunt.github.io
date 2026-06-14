@@ -16,3 +16,9 @@ I like to code. I also like to share my code, which you can find on my [GitHub](
 - [Psychtoolbox Utilities](https://spunt.github.io/ptb-utilities)
 
 If you're a MATLAB user, you might find some of [my contributions to the MATLAB File Exchange](https://www.mathworks.com/matlabcentral/profile/authors/3893829-bob-spunt) generally useful.
+
+## Developer & AI tooling
+
+More recently I've been building tools for working with AI agents:
+
+- [**Markup Mode**](markup-mode) — a zero-backend review layer your agent applies to its own output. You pin feedback to the exact word or element, and your notes compile to Markdown you hand back to the agent. It closes the agent→human→agent review loop with no infrastructure.
