@@ -22,3 +22,4 @@ If you're a MATLAB user, you might find some of [my contributions to the MATLAB 
 More recently I've been building tools for working with AI agents:
 
 - [**Markup Mode**](markup-mode) — a zero-backend review layer your agent applies to its own output. You pin feedback to the exact word or element, and your notes compile to Markdown you hand back to the agent. It closes the agent→human→agent review loop with no infrastructure.
+- [**datatable**](datatable) — turn a DataFrame, query result, or data file into an interactive HTML table you can sort, filter, and label row by row, then export just the rows you labeled. Ask an agent to "datatable this" and it opens in your browser.
