@@ -16,7 +16,8 @@ redirect_from:
 
 | Employment     |                                                                                             |
 |:---------------|---------------------------------------------------------------------------------------------|
-| 2022 - Present | **Adobe Corp.**<br>Senior Data Scientist                                                    |
+| 2026 - Present | **Adobe Corp.**<br>Principal Data Scientist                                                 |
+| 2022 - 2026    | **Adobe Corp.**<br>Senior Data Scientist                                                    |
 | 2018 - 2022    | **Oracle Corp.**<br>Principal Data Scientist                                                |
 | 2017 - 2021    | **California Institute of Technology**<br>Research Consultant                               |
 | 2017 - 2018    | **Snap Inc.**<br>Data Scientist                                                             |
