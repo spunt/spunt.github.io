@@ -9,6 +9,7 @@ redirect_from:
 Electronic versions of my papers are provided here to ensure the timely and unbiased dissemination of science to the public. Copyright resides with the respective copyright holders as stated in each article. Please consult <a href="/papers/pdf/better_call_saul_copyright.jpg">your neighborhood lawyer</a> for further details on this matter.
 
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Tusche A, **Spunt RP**, Paul LK, Tyszka JM, &amp; Adolphs R (2023). Neural signatures of social inferences predict the number of real-life social contacts and autism severity. _Nature Communications_. 14, 4399. <br>[Download PDF][44]                                                                                                     |
 | **Spunt RP** &amp; Adolphs R (2019). The neuroscience of understanding the emotions of others. _Neuroscience Letters_. 693, 44-48. <br>[Download PDF][35]                                                                                                                                                                                    |
 | **Spunt RP** &amp; Adolphs R (2017). A new look at domain specificity: insights from social neuroscience. _Nature Reviews Neuroscience_. 18(9), 559–567. <br>[Download PDF][34]                                                                                                                                                                           |
 | **Spunt RP**, Ellsworth E, &amp; Adolphs R (2017). The neural basis of understanding the expression of the emotions in man and animals. _Social Cognitive &amp; Affective Neuroscience_. 12(1), 95-105. <br>[Download PDF][1] ∙ [Open Science Framework Page][2] ∙ [GitHub Repo][41] ∙ [NeuroVault][3]                                                   |
@@ -76,5 +77,6 @@ Electronic versions of my papers are provided here to ensure the timely and unbi
 [41]: https://github.com/spunt/scan-animal-emotion-attribution
 [42]: https://github.com/spunt/whyhowlocalizer
 [43]: https://github.com/spunt/jocn-spuntmeyerlieberman-2015
+[44]: https://www.bobspunt.com/papers/pdf/Tusche_Spunt_etal_2023_NatureComm.pdf
 
 
